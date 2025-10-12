@@ -1,76 +1,69 @@
-# Website Section Catalog
+# Seções Modulares do Website "Futuro Digital"
 
-This document provides a technical reference for all the modular UI sections created for the Futuro Digital website. Use these names to request the assembly of new pages.
-
----
-
-## Global Components
-
-These components appear on most or all pages.
-
-### `header`
-- **Description:** The main site navigation bar. It is sticky at the top of the page.
-- **Content:** Contains the site logo, a list of navigation links, and a primary "Inscrever-me" call-to-action button.
-- **Features:** Fully responsive, collapsing into a "burger menu" on tablet and mobile devices.
-
-### `footer`
-- **Description:** The main site footer.
-- **Content:** A multi-column layout containing the logo, an "About" paragraph, lists of navigation and course links, and contact information. Includes a bottom bar with the copyright notice.
-
-### `preview-nav-bar`
-- **Description:** A special navigation bar for the development environment only.
-- **Content:** A thin bar fixed to the bottom of the screen with links to all existing HTML pages.
-- **Features:** Only visible when the site is not running on the production domain (`github.io`). Uses JavaScript to load page content dynamically, avoiding the AI Studio preview's navigation limitations.
+Este documento serve como um catálogo para todas as seções de conteúdo modulares que foram criadas. Cada seção tem um nome técnico e uma descrição concisa para facilitar a montagem de novas páginas.
 
 ---
 
-## Homepage Sections (`index.html`)
+### 1. `hero`
+- **Descrição:** A seção de abertura principal da página inicial. Contém um título grande (H1), um parágrafo de subtítulo, um botão de chamada para ação (CTA) à esquerda e uma imagem grande e impactante à direita.
+- **Uso:** Apenas na página inicial.
 
-### `hero`
-- **Description:** The main introduction section at the top of the homepage.
-- **Content:** A two-column layout with a large headline (H1), descriptive paragraph, and a call-to-action button on the left, opposite a large illustrative image on the right.
+### 2. `course-grid`
+- **Descrição:** Uma grade para exibir os cartões dos cursos. Atualmente configurada para exibir um layout de 2x2 em desktops. Cada cartão é um componente `course-card-v2` horizontal.
+- **Uso:** Na página inicial para listar os cursos disponíveis.
 
-### `course-grid`
-- **Description:** A section to display the available courses.
-- **Content:** Features a centered section header (H2, paragraph) followed by a 2x2 responsive grid. Each item in the grid is a horizontal `course-card` with an image, a tag (e.g., duration), a title, a short description, and a "Saber mais" button.
+### 3. `about-program`
+- **Descrição:** Uma seção de duas colunas com uma imagem à esquerda e texto (título, parágrafo, botão) à direita.
+- **Uso:** Para apresentar informações sobre o programa "Futuro Digital".
 
-### `about-program`
-- **Description:** A two-column informational section.
-- **Content:** A large image on the left with a headline (H2), descriptive text, and a call-to-action button on the right.
+### 4. `testimonial-slider`
+- **Descrição:** Um slider dinâmico que exibe testemunhos de formandos. Inclui o nome, classificação por estrelas e o texto da avaliação. É interativo com navegação por pontos e reprodução automática.
+- **Uso:** Para prova social na página inicial.
 
-### `testimonial-slider`
-- **Description:** A section to display user feedback dynamically.
-- **Content:** A centered section header followed by an auto-playing slider. Each slide contains a star rating, a review text, and the author's name. Includes dot navigation and a link to view more reviews on Google.
+### 5. `registration-cards`
+- **Descrição:** Uma seção de duas colunas, cada uma sendo um "cartão" com um título, parágrafo e um botão. Projetada para apresentar diferentes opções de inscrição.
+- **Uso:** Na parte inferior da página inicial para direcionar os utilizadores para os formulários de inscrição corretos.
 
-### `registration-cards`
-- **Description:** A call-to-action section for user registration.
-- **Content:** A centered section header followed by a two-column grid. Each card is aimed at a different audience (e.g., "Trabalhadores", "Cidadãos") and contains a title, description, and a specific registration button.
+### 6. `course-hero`
+- **Descrição:** Uma seção de herói para páginas de detalhes de cursos. Apresenta uma imagem do curso no topo, seguida por um título principal (H1) e um parágrafo descritivo, tudo centralizado.
+- **Uso:** No topo de cada página de detalhe de curso (`wordloop.html`, etc.).
 
----
+### 7. `course-intro`
+- **Descrição:** Uma seção de introdução para o conteúdo de uma sessão de curso. Inclui uma "pílula" de sessão (ex: "Sessão 1"), um título (H2) e um parágrafo, tudo centralizado.
+- **Uso:** Para iniciar o conteúdo detalhado numa página de curso.
 
-## Course Detail Page Sections (`wordloop.html`)
+### 8. `feature-slide-text-left`
+- **Descrição:** Um slide de conteúdo de duas colunas com texto (título, parágrafo, etc.) à esquerda e uma imagem à direita.
+- **Uso:** Em páginas de detalhe de curso para alternar o layout visual.
 
-### `course-hero`
-- **Description:** The main introduction for a specific course page.
-- **Content:** A centered layout featuring a prominent course image on top, followed by the main course title (H1) and a descriptive paragraph.
+### 9. `feature-slide-text-right`
+- **Descrição:** Um slide de conteúdo de duas colunas com uma imagem à esquerda e texto (título, parágrafo, lista, etc.) à direita.
+- **Uso:** Em páginas de detalhe de curso para alternar o layout visual.
 
-### `session-intro`
-- **Description:** A simple header to introduce a specific session or module.
-- **Content:** A centered H2 title preceded by a colored, rounded "pill" element that displays the session number (e.g., "Sessão 1").
+### 10. `two-column-features`
+- **Descrição:** Uma seção que apresenta dois itens de destaque lado a lado. Cada item contém um ícone, um subtítulo e um pequeno parágrafo descritivo.
+- **Uso:** Para comparar ou apresentar duas ferramentas ou conceitos relacionados numa página de curso.
 
-### `content-slide`
-- **Description:** A flexible two-column section for presenting detailed content.
-- **Content:** Consists of a text block (with headings, paragraphs, lists) on one side and a large image on the other.
-- **Variations:** Supports a reversed layout (using the `alt-layout` class) to alternate the position of the image and text.
+### 11. `accordion`
+- **Descrição:** Uma seção para exibir conteúdo de forma compacta e interativa. Consiste em vários itens que podem ser clicados para revelar ou ocultar o conteúdo.
+- **Uso:** Para detalhar passos, FAQs ou informações técnicas sem sobrecarregar visualmente a página.
 
-### `feature-columns`
-- **Description:** A section designed to highlight key features or concepts side-by-side.
-- **Content:** A centered section header followed by a two-column grid. Each column contains an SVG icon, a feature title (H4), and a descriptive paragraph.
+### 12. `final-cta`
+- **Descrição:** Uma seção de chamada para ação de largura total com um fundo escuro contrastante. Contém um título, um parágrafo e um botão proeminente.
+- **Uso:** No final das páginas de detalhe do curso para incentivar a inscrição.
 
-### `accordion`
-- **Description:** An interactive section to display detailed information in a compact way.
-- **Content:** A centered section header followed by a series of vertically stacked accordion items. Each item has a clickable header that reveals or hides its content panel.
+### 13. `feature-grid-three-col`
+- **Descrição:** Uma grade de três colunas com um cabeçalho de seção centralizado. Cada item na grade contém uma imagem, um título e um parágrafo.
+- **Uso:** Para exibir três características ou benefícios principais de forma visualmente equilibrada.
 
-### `final-cta`
-- **Description:** A strong, concluding call-to-action section.
-- **Content:** A full-width section with a dark background, a compelling headline (H2), a short paragraph, and a prominent call-to-action button.
+### 14. `icon-grid-three-col`
+- **Descrição:** Uma grade de três colunas com um cabeçalho de seção centralizado. Cada item na grade contém um ícone, um título e um parágrafo.
+- **Uso:** Para listar características ou valores de forma concisa e simbólica.
+
+### 15. `feature-list-with-image`
+- **Descrição:** Uma seção de duas colunas com uma lista de características (com títulos em negrito) à esquerda e uma imagem grande (orientada verticalmente) à direita.
+- **Uso:** Para detalhar um conjunto de benefícios ou funcionalidades ao lado de uma imagem de produto ou conceito.
+
+### 16. `image-grid-two-col`
+- **Descrição:** Uma seção com um cabeçalho centralizado (que pode incluir um ícone grande) e uma grade de duas colunas abaixo. Cada item da grade é uma imagem com uma legenda de texto por baixo.
+- **Uso:** Para exibir exemplos visuais, designs ou capturas de ecrã.
