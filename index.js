@@ -133,12 +133,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Accordion Logic ---
     function initializeAccordions() {
         const accordionItems = document.querySelectorAll('.accordion-item');
+        if (accordionItems.length === 0) return; // Guard Clause: Exit if no accordions on page
+
         accordionItems.forEach(item => {
             const header = item.querySelector('.accordion-header');
             if(header) {
                  header.addEventListener('click', () => {
                     const wasActive = item.classList.contains('active');
-                    // Simple toggle logic - remove if active, add if not.
                     if (wasActive) {
                         item.classList.remove('active');
                     } else {
