@@ -138,10 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if(header) {
                  header.addEventListener('click', () => {
                     const wasActive = item.classList.contains('active');
-                    if (!wasActive) {
-                        item.classList.add('active');
+                    // Simple toggle logic - remove if active, add if not.
+                    if (wasActive) {
+                        item.classList.remove('active');
                     } else {
-                         item.classList.remove('active');
+                         item.classList.add('active');
                     }
                 });
             }
@@ -203,7 +204,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             },
-            { root: null, threshold: 0.8, rootMargin: '0px' } // Increased threshold for precision
+             // More precise configuration
+            { root: null, threshold: 0.5, rootMargin: '-40% 0px -40% 0px' }
         );
 
         slides.forEach(slide => observer.observe(slide));
@@ -264,6 +266,32 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         
         remoteToggle.addEventListener('change', (e) => setMode(e.target.checked));
+    }
+
+    // --- Scroll Animation ---
+    function initializeScrollAnimations() {
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        if (animatedElements.length === 0) return;
+
+        // Check if user prefers reduced motion
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) return;
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Animate only once
+                }
+            });
+        }, {
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
     }
 
 
@@ -365,6 +393,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initializeAccordions();
         initializeTestimonialSlider();
         handlePresentationMode();
+        initializeScrollAnimations(); // Add scroll animation initialization here
     }
 
 
