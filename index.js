@@ -148,20 +148,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Slide Mode Presentation ---
-    function initializeSlideMode() {
-        const presenterRemote = document.getElementById('presenter-remote');
-        if (!presenterRemote) return;
+    // --- Presentation (Slide) Mode ---
+    let destroySlideMode = null;
 
+    function initializeSlideMode() {
         const slides = Array.from(document.querySelectorAll('main > section[data-slide-title]'));
-        if (slides.length === 0) return;
+        if (slides.length === 0) return null;
 
         const slideCounter = document.getElementById('slide-counter');
         const prevBtn = document.getElementById('prev-slide-btn');
         const nextBtn = document.getElementById('next-slide-btn');
         const jumpBtn = document.getElementById('jump-to-slide-btn');
         const slideMenu = document.getElementById('slide-menu');
-
+        
         let currentSlideIndex = 0;
         
         slideMenu.innerHTML = ''; // Clear previous menu items
@@ -176,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             slideMenu.appendChild(listItem);
         });
-
+        
         const scrollToSlide = (index) => {
             if (index >= 0 && index < slides.length) {
                 slides[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -184,6 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const updateActiveSlide = (index) => {
+            if (index === currentSlideIndex) return;
             currentSlideIndex = index;
             slides.forEach((slide, i) => {
                 slide.classList.toggle('current-slide', i === index);
@@ -195,39 +195,78 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const observer = new IntersectionObserver(
             (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const index = slides.indexOf(entry.target);
-                        if(index !== -1) {
-                            updateActiveSlide(index);
-                        }
+                const intersectingEntry = entries.find(entry => entry.isIntersecting);
+                if (intersectingEntry) {
+                    const index = slides.indexOf(intersectingEntry.target);
+                    if (index !== -1) {
+                        updateActiveSlide(index);
                     }
-                });
+                }
             },
             { root: null, threshold: 0.5, rootMargin: '0px' }
         );
 
         slides.forEach(slide => observer.observe(slide));
 
-        prevBtn.addEventListener('click', () => scrollToSlide(currentSlideIndex - 1));
-        nextBtn.addEventListener('click', () => scrollToSlide(currentSlideIndex + 1));
-        jumpBtn.addEventListener('click', (e) => {
+        const handlePrevClick = () => scrollToSlide(currentSlideIndex - 1);
+        const handleNextClick = () => scrollToSlide(currentSlideIndex + 1);
+        const handleJumpClick = (e) => {
             e.stopPropagation();
             slideMenu.classList.toggle('visible');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!presenterRemote.contains(e.target)) {
+        };
+        const handleDocClick = (e) => {
+            const presenterRemote = document.getElementById('presenter-remote');
+            if (presenterRemote && !presenterRemote.contains(e.target)) {
                 slideMenu.classList.remove('visible');
             }
-        });
+        };
 
-        if(slides.length > 0) {
-            slides[0].classList.add('current-slide');
-            if (slideCounter) {
-                slideCounter.textContent = `1 / ${slides.length}`;
+        prevBtn.addEventListener('click', handlePrevClick);
+        nextBtn.addEventListener('click', handleNextClick);
+        jumpBtn.addEventListener('click', handleJumpClick);
+        document.addEventListener('click', handleDocClick);
+        
+        // Initial setup
+        const firstVisibleSlideIndex = slides.findIndex(slide => slide.offsetParent !== null);
+        updateActiveSlide(firstVisibleSlideIndex !== -1 ? firstVisibleSlideIndex : 0);
+        slides.forEach((slide, i) => slide.classList.toggle('current-slide', i === currentSlideIndex));
+
+        // Return a cleanup function
+        return () => {
+            observer.disconnect();
+            prevBtn.removeEventListener('click', handlePrevClick);
+            nextBtn.removeEventListener('click', handleNextClick);
+            jumpBtn.removeEventListener('click', handleJumpClick);
+            document.removeEventListener('click', handleDocClick);
+            slides.forEach(slide => slide.classList.remove('current-slide'));
+            slideMenu.classList.remove('visible');
+        };
+    }
+
+    function handlePresentationMode() {
+        const headerToggle = document.getElementById('header-slide-toggle');
+        const remoteToggle = document.getElementById('remote-slide-toggle');
+
+        if (!headerToggle || !remoteToggle) return;
+
+        const setMode = (isActive) => {
+            if (isActive) {
+                document.body.classList.add('presentation-active');
+                if (typeof destroySlideMode === 'function') destroySlideMode();
+                destroySlideMode = initializeSlideMode();
+            } else {
+                document.body.classList.remove('presentation-active');
+                if (typeof destroySlideMode === 'function') {
+                    destroySlideMode();
+                    destroySlideMode = null;
+                }
             }
-        }
+            headerToggle.checked = isActive;
+            remoteToggle.checked = isActive;
+        };
+
+        headerToggle.addEventListener('change', (e) => setMode(e.target.checked));
+        remoteToggle.addEventListener('change', (e) => setMode(e.target.checked));
     }
 
 
@@ -275,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     const newMain = doc.querySelector('main');
                     const newTitle = doc.querySelector('title');
-                    const newBodyData = doc.body.dataset.pageName;
+                    const newBody = doc.querySelector('body');
 
                     if (newMain) {
                         document.querySelector('main').innerHTML = newMain.innerHTML;
@@ -283,8 +322,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (newTitle) {
                         document.title = newTitle.textContent;
                     }
-                    if (newBodyData) {
-                        document.body.dataset.pageName = newBodyData;
+                    
+                    // Replace body class and data attributes to handle special pages like presentation-active
+                    if (newBody) {
+                        document.body.className = newBody.className;
+                        document.body.classList.add('preview-active'); // Ensure preview nav class is always present
+                        document.body.dataset.pageName = newBody.dataset.pageName;
                     }
 
                     updateActiveLink();
@@ -307,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initializes components that might appear on any page loaded via preview nav
         initializeAccordions();
         initializeTestimonialSlider();
-        initializeSlideMode();
+        handlePresentationMode();
     }
 
 

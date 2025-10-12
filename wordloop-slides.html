@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
-<body class="slide-mode" data-page-name="wordloop-slides.html">
+<body data-page-name="wordloop-slides.html">
     <header>
         <div class="container">
             <nav>
@@ -19,7 +19,13 @@
                 <ul class="nav-links" id="nav-links">
                     <li><a href="index.html#courses">Cursos</a></li>
                     <li><a href="index.html#about-program">O Programa</a></li>
-                    <li><a href="index.html#testimonials">Testemunhos</a></li>
+                    <li class="nav-item-slide-toggle">
+                        <span>Modo Slide</span>
+                        <label class="slide-switch">
+                            <input type="checkbox" id="header-slide-toggle">
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
                     <li class="nav-item-btn"><a href="index.html#inscricao" class="btn btn-primary">Inscrever-me</a></li>
                 </ul>
                 <div class="burger-menu" id="burger-menu">
@@ -40,7 +46,7 @@
             </div>
         </section>
 
-        <section class="course-intro" data-slide-title="Sessão 1: Trabalho Colaborativo">
+        <section class="course-intro" data-slide-title="Sessão 1: A Transição">
             <div class="container">
                 <h2><span class="session-pill">Sessão 1</span>A Transição para o Trabalho Colaborativo</h2>
             </div>
@@ -161,6 +167,12 @@
             <ul id="slide-menu">
                 <!-- Slide links will be injected by JS -->
             </ul>
+        </div>
+        <div class="presenter-slide-toggle" style="margin-left: 5px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 10px;">
+             <label class="slide-switch">
+                <input type="checkbox" id="remote-slide-toggle">
+                <span class="slider round"></span>
+            </label>
         </div>
     </div>
 

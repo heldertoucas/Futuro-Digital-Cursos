@@ -132,6 +132,11 @@ header {
     top: 0;
     z-index: 1000;
     width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+body.presentation-active header {
+    transform: translateY(-100%);
 }
 
 header nav {
@@ -773,21 +778,79 @@ footer {
     font-weight: 700;
 }
 
-/* --- Slide Mode Styles --- */
-body.slide-mode {
-    padding-bottom: 80px; /* Space for presenter remote and preview nav */
+/* --- Presentation (Slide) Mode Styles --- */
+.nav-item-slide-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
 }
 
-.slide-mode main > section {
+.slide-switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.slide-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-blue);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+body.presentation-active {
+    padding-bottom: 80px;
+}
+
+.presentation-active main > section {
     transition: opacity 0.4s ease-in-out;
 }
 
-.slide-mode main > section:not(.current-slide) {
+.presentation-active main > section:not(.current-slide) {
     opacity: 0.2;
     pointer-events: none;
 }
 
-.slide-mode main > section.current-slide {
+.presentation-active main > section.current-slide {
     opacity: 1;
 }
 
@@ -801,11 +864,16 @@ body.slide-mode {
     color: white;
     border-radius: 50px;
     padding: 8px;
-    display: flex;
+    display: none; /* Hidden by default */
     align-items: center;
     gap: 5px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
+
+body.presentation-active #presenter-remote {
+    display: flex;
+}
+
 
 .presenter-btn {
     background-color: transparent;
@@ -901,6 +969,11 @@ body.slide-mode {
     
     .nav-item-btn { width: 100%; }
     .nav-item-btn .btn { width: 100%; text-align: center; }
+
+    .nav-item-slide-toggle {
+        width: 100%;
+        justify-content: space-between;
+    }
 
     .burger-menu { display: flex; }
     .burger-menu.active .line:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
