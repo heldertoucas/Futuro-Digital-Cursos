@@ -1,6 +1,6 @@
 /* --- Global Styles & Variables --- */
 :root {
-    --primary-blue: #4f75ff;
+    --primary-blue: #5271FF;
     --dark-blue: #1b1b1b;
     --light-gray: #f4f4f4;
     --text-color: #575757;
@@ -27,6 +27,10 @@ body {
     color: var(--text-color);
     background-color: var(--white);
     line-height: 1.6;
+}
+
+body.preview-active {
+    padding-bottom: 60px; /* Space for the preview nav bar */
 }
 
 .container {
@@ -504,7 +508,15 @@ footer {
 .course-detail {
     padding: 60px 0;
     background-color: var(--white);
+}
+.course-detail-container {
     text-align: center;
+}
+.course-hero-image {
+    max-width: 250px;
+    height: auto;
+    margin: 0 auto 30px auto;
+    border-radius: var(--border-radius);
 }
 .course-detail-container h1 {
     font-size: 2.8rem;
@@ -521,6 +533,17 @@ footer {
     text-align: center;
 }
 .course-intro h2 { font-size: 2rem; }
+
+.session-pill {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-right: 15px;
+}
 
 .course-slide {
     background-color: var(--white);
@@ -631,6 +654,44 @@ footer {
 .final-cta p {
     color: #a9a9a9;
     margin-bottom: 30px;
+}
+
+/* --- AI Studio Preview-Only Nav Bar --- */
+.preview-nav-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(27, 27, 27, 0.9);
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+    z-index: 9999;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    height: 50px; /* Explicit height */
+}
+.preview-nav-bar span {
+    font-weight: 700;
+}
+.preview-nav-link {
+    color: #ccc;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+.preview-nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+.preview-nav-link.active {
+    background-color: var(--primary-blue);
+    color: white;
+    font-weight: 700;
 }
 
 
