@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso Word e Loop - Futuro Digital CMLisboa</title>
+    <title>Apresentação: Curso Word e Loop - Futuro Digital CMLisboa</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
-<body data-page-name="wordloop.html">
+<body class="slide-mode" data-page-name="wordloop-slides.html">
     <header>
         <div class="container">
             <nav>
@@ -32,7 +32,7 @@
     </header>
 
     <main>
-        <section class="course-detail">
+        <section class="course-detail" data-slide-title="Introdução ao Curso">
             <div class="container course-detail-container">
                 <img src="https://i.imgur.com/HODzPjK.png" alt="Ilustração do curso Microsoft Word e Loop" class="course-hero-image">
                 <h1>Trabalhar em equipa com Microsoft Word e Loop</h1>
@@ -40,13 +40,13 @@
             </div>
         </section>
 
-        <section class="course-intro">
+        <section class="course-intro" data-slide-title="Sessão 1: Trabalho Colaborativo">
             <div class="container">
                 <h2><span class="session-pill">Sessão 1</span>A Transição para o Trabalho Colaborativo</h2>
             </div>
         </section>
 
-        <section class="course-slide">
+        <section class="course-slide" data-slide-title="Trabalho OFF vs ON">
             <div class="container course-slide-container">
                 <div class="course-slide-text">
                     <h3>Trabalhar em Equipa: A Diferença entre OFF e ON</h3>
@@ -58,7 +58,7 @@
             </div>
         </section>
         
-        <section class="feature-columns-section">
+        <section class="feature-columns-section" data-slide-title="Ferramentas: OneDrive e SharePoint">
              <div class="container">
                  <div class="section-header">
                     <h2>As Suas Novas Ferramentas: OneDrive e SharePoint</h2>
@@ -82,7 +82,7 @@
             </div>
         </section>
 
-        <section class="course-slide alt-layout">
+        <section class="course-slide alt-layout" data-slide-title="Organização do Espaço Digital">
             <div class="container course-slide-container">
                 <div class="course-slide-text">
                     <h3>Como Organizar o Seu Espaço Digital</h3>
@@ -100,7 +100,7 @@
             </div>
         </section>
 
-        <section class="accordion-section">
+        <section class="accordion-section" data-slide-title="Potenciar o Word na Nuvem">
             <div class="container">
                 <div class="section-header">
                     <h2>Potenciar o Word para o Trabalho na Nuvem</h2>
@@ -137,7 +137,7 @@
             </div>
         </section>
         
-        <section class="final-cta">
+        <section class="final-cta" data-slide-title="Inscrição">
             <div class="container">
                 <h2>Pronto para Transformar a Sua Forma de Trabalhar?</h2>
                 <p>Junte-se a nós no curso 'Trabalhar em equipa com Microsoft Word e Loop' e dê o próximo passo na sua produtividade.</p>
@@ -145,6 +145,25 @@
             </div>
         </section>
     </main>
+
+    <div id="presenter-remote">
+        <button class="presenter-btn" id="prev-slide-btn" aria-label="Slide Anterior">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </button>
+        <span id="slide-counter">1 / 7</span>
+        <button class="presenter-btn" id="next-slide-btn" aria-label="Próximo Slide">
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div style="position: relative;">
+            <button class="presenter-btn" id="jump-to-slide-btn" aria-label="Saltar para um slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+            </button>
+            <ul id="slide-menu">
+                <!-- Slide links will be injected by JS -->
+            </ul>
+        </div>
+    </div>
+
 
     <footer>
         <div class="container footer-container">

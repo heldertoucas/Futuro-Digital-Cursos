@@ -859,32 +859,3 @@ footer {
 @media (max-width: 576px) {
     .footer-container { grid-template-columns: 1fr; }
 }
---- END OF FILE index.css ---
-
---- END OF FILE index.js ---
-
---- END OF FILE library.html ---
-
---- END OF FILE teamssharepoint.html ---
-
---- END OF FILE excelforms.html ---
-
---- END OF FILE copilot.html ---
-
---- END OF FILE wordloop.html ---
-
---- END OF FILE index.html ---
-
---- END OF FILE log/sections.md ---
-
---- END OF FILE log/2024-10-28.md ---
-
---- END OF FILE log/2024-10-27.md ---
-
---- END OF FILE index.tsx ---
-
---- END OF FILE metadata.json ---
-
---- END OF FILE log/pages_backup.md ---
-
-the accordion is not working. I can't click to expand and see the text. please fix. don't change anything else.
