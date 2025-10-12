@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     // Burger Menu Logic
     const burgerMenu = document.querySelector('.burger-menu');
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dotsContainer = document.querySelector('.testimonial-dots');
 
     if (sliderContainer && dotsContainer) {
-        const sliderWrapper = sliderContainer.parentElement as HTMLElement;
+        const sliderWrapper = sliderContainer.parentElement;
         const testimonials = [
             {
                 name: "Cláudia P.",
@@ -78,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const showSlide = (index) => {
-            const slides = sliderContainer.querySelectorAll('.testimonial-slide') as NodeListOf<HTMLElement>;
+            const slides = sliderContainer.querySelectorAll('.testimonial-slide');
             const dots = dotsContainer.querySelectorAll('.dot');
 
             if (index >= slides.length) index = 0;
