@@ -163,29 +163,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const jumpBtn = document.getElementById('jump-to-slide-btn');
         const slideMenu = document.getElementById('slide-menu');
         
-        let currentSlideIndex = 0;
-        
-        slideMenu.innerHTML = ''; // Clear previous menu items
-
-        slides.forEach((slide, index) => {
-            const title = slide.dataset.slideTitle;
-            const listItem = document.createElement('li');
-            listItem.textContent = title;
-            listItem.addEventListener('click', () => {
-                scrollToSlide(index);
-                slideMenu.classList.remove('visible');
-            });
-            slideMenu.appendChild(listItem);
-        });
-        
-        const scrollToSlide = (index) => {
-            if (index >= 0 && index < slides.length) {
-                slides[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        };
+        let currentSlideIndex = -1; // Use -1 for safer initial state update
 
         const updateActiveSlide = (index) => {
-            if (index === currentSlideIndex) return;
+            if (index === currentSlideIndex) return; // Guard against redundant updates
             currentSlideIndex = index;
             slides.forEach((slide, i) => {
                 slide.classList.toggle('current-slide', i === index);
@@ -195,24 +176,47 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
+        const goToSlide = (index) => {
+            if (index >= 0 && index < slides.length) {
+                // This is the key fix: update the state immediately, THEN scroll.
+                // This makes the UI feel responsive and prevents race conditions.
+                updateActiveSlide(index);
+                slides[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        };
+        
+        slideMenu.innerHTML = ''; // Clear previous menu items
+
+        slides.forEach((slide, index) => {
+            const title = slide.dataset.slideTitle;
+            const listItem = document.createElement('li');
+            listItem.textContent = title;
+            listItem.addEventListener('click', () => {
+                goToSlide(index); // Use the new robust function
+                slideMenu.classList.remove('visible');
+            });
+            slideMenu.appendChild(listItem);
+        });
+        
         const observer = new IntersectionObserver(
             (entries) => {
                 const intersectingEntry = entries.find(entry => entry.isIntersecting);
                 if (intersectingEntry) {
                     const index = slides.indexOf(intersectingEntry.target);
                     if (index !== -1) {
+                        // The observer now only updates state on manual scrolls.
+                        // Clicks are handled authoritatively by goToSlide.
                         updateActiveSlide(index);
                     }
                 }
             },
-             // More precise configuration
             { root: null, threshold: 0.5, rootMargin: '-40% 0px -40% 0px' }
         );
 
         slides.forEach(slide => observer.observe(slide));
 
-        const handlePrevClick = () => scrollToSlide(currentSlideIndex - 1);
-        const handleNextClick = () => scrollToSlide(currentSlideIndex + 1);
+        const handlePrevClick = () => goToSlide(currentSlideIndex - 1);
+        const handleNextClick = () => goToSlide(currentSlideIndex + 1);
         const handleJumpClick = (e) => {
             e.stopPropagation();
             slideMenu.classList.toggle('visible');
@@ -232,7 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initial setup
         const firstVisibleSlideIndex = slides.findIndex(slide => slide.offsetParent !== null);
         updateActiveSlide(firstVisibleSlideIndex !== -1 ? firstVisibleSlideIndex : 0);
-        slides.forEach((slide, i) => slide.classList.toggle('current-slide', i === currentSlideIndex));
 
         // Return a cleanup function
         return () => {

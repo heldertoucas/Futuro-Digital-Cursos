@@ -985,6 +985,33 @@ body.presentation-active .presenter-jump-control {
     color: white;
 }
 
+/* --- Slide Content Animations --- */
+/* These styles should ONLY apply when presentation mode is active */
+.presentation-active .slide-anim-item {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: var(--animation-delay, 0s);
+}
+.presentation-active .slide-anim-up {
+    transform: translateY(20px);
+}
+.presentation-active .slide-anim-down {
+    transform: translateY(-20px);
+}
+.presentation-active .slide-anim-left {
+     transform: translateX(20px);
+}
+.presentation-active .slide-anim-right {
+     transform: translateX(-20px);
+}
+
+/* Trigger the animation when the slide is active */
+.current-slide .slide-anim-item {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+}
+
+
 /* --- Presentation Mode Typography & Image Adjustments --- */
 /*
   Making these selectors hyper-specific to the slides page
