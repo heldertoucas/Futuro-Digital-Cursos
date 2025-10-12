@@ -1,30 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Mobile Burger Menu ---
-    // This needs to be re-run whenever the header is replaced.
-    function initializeBurgerMenu() {
-        const burgerMenu = document.getElementById('burger-menu');
-        const navLinks = document.getElementById('nav-links');
+    const burgerMenu = document.getElementById('burger-menu');
+    const navLinks = document.getElementById('nav-links');
 
-        if (burgerMenu && navLinks) {
-            burgerMenu.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                burgerMenu.classList.toggle('active');
+    if (burgerMenu && navLinks) {
+        burgerMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burgerMenu.classList.toggle('active');
+        });
+        
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                burgerMenu.classList.remove('active');
             });
-            
-            // Close menu when a link is clicked
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    // Don't close if it's not a page jump (e.g. anchor link)
-                    if (link.getAttribute('href').startsWith('#')) {
-                         navLinks.classList.remove('active');
-                         burgerMenu.classList.remove('active');
-                    }
-                });
-            });
-        }
+        });
     }
-
 
     // --- Testimonial Slider ---
     const testimonials = [
@@ -103,13 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 const activeSlide = slides[index];
                 if (activeSlide) {
-                    // Use a timeout to ensure the element is fully rendered before getting height
-                    setTimeout(() => {
-                        const slideHeight = activeSlide.offsetHeight;
-                        if (slideHeight > 0) {
-                             sliderWrapper.style.height = `${slideHeight}px`;
-                        }
-                    }, 50);
+                    const slideHeight = activeSlide.offsetHeight;
+                    sliderWrapper.style.height = `${slideHeight}px`;
                 }
             }
             currentSlide = index;
@@ -173,8 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const jumpBtn = document.getElementById('jump-to-slide-btn');
         const slideMenu = document.getElementById('slide-menu');
         
-        if (!slideCounter || !prevBtn || !nextBtn || !jumpBtn || !slideMenu) return null;
-        
         let currentSlideIndex = 0;
         
         slideMenu.innerHTML = ''; // Clear previous menu items
@@ -197,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const updateActiveSlide = (index) => {
-            if (index === currentSlideIndex && slides[index]?.classList.contains('current-slide')) return;
+            if (index === currentSlideIndex) return;
             currentSlideIndex = index;
             slides.forEach((slide, i) => {
                 slide.classList.toggle('current-slide', i === index);
@@ -258,10 +244,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handlePresentationMode() {
-        const headerToggle = document.getElementById('header-slide-toggle');
         const remoteToggle = document.getElementById('remote-slide-toggle');
 
-        if (!headerToggle || !remoteToggle) return;
+        if (!remoteToggle) return;
 
         const setMode = (isActive) => {
             if (isActive) {
@@ -275,11 +260,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     destroySlideMode = null;
                 }
             }
-            headerToggle.checked = isActive;
             remoteToggle.checked = isActive;
         };
-
-        headerToggle.addEventListener('change', (e) => setMode(e.target.checked));
+        
         remoteToggle.addEventListener('change', (e) => setMode(e.target.checked));
     }
 
@@ -330,15 +313,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     const newMain = doc.querySelector('main');
                     const newTitle = doc.querySelector('title');
                     const newBody = doc.querySelector('body');
-                    
-                    const currentHeader = document.querySelector('header');
-                    const currentMain = document.querySelector('main');
 
-                    if (newHeader && currentHeader) {
-                        currentHeader.innerHTML = newHeader.innerHTML;
+                    if (newHeader) {
+                         document.querySelector('header').innerHTML = newHeader.innerHTML;
                     }
-                    if (newMain && currentMain) {
-                        currentMain.innerHTML = newMain.innerHTML;
+                    if (newMain) {
+                        document.querySelector('main').innerHTML = newMain.innerHTML;
                     }
                     if (newTitle) {
                         document.title = newTitle.textContent;
@@ -368,7 +348,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Global Initializer ---
     function initializeAllComponents() {
         // Initializes components that might appear on any page loaded via preview nav
-        initializeBurgerMenu();
         initializeAccordions();
         initializeTestimonialSlider();
         handlePresentationMode();

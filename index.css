@@ -779,13 +779,6 @@ footer {
 }
 
 /* --- Presentation (Slide) Mode Styles --- */
-.nav-item-slide-toggle {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 500;
-}
-
 .slide-switch {
     position: relative;
     display: inline-block;
@@ -864,14 +857,38 @@ body.presentation-active {
     color: white;
     border-radius: 50px;
     padding: 8px;
-    display: none; /* Hidden by default */
+    display: flex; 
     align-items: center;
     gap: 5px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease-in-out;
 }
 
-body.presentation-active #presenter-remote {
-    display: flex;
+#presenter-remote > :not(.presenter-slide-toggle) {
+    opacity: 0;
+    max-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: all 0.4s ease-in-out;
+}
+
+body.presentation-active #presenter-remote > :not(.presenter-slide-toggle) {
+    opacity: 1;
+    max-width: 50px; 
+    pointer-events: auto;
+    margin-left: 5px;
+}
+
+/* Restore specific paddings for items when visible */
+body.presentation-active #presenter-remote #slide-counter {
+    padding: 0 10px;
+}
+body.presentation-active #presenter-remote .presenter-btn {
+    padding: 8px;
 }
 
 
