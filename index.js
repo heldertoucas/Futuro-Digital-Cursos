@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             },
-            { root: null, threshold: 0.5, rootMargin: '0px' }
+            { root: null, threshold: 0.8, rootMargin: '0px' } // Increased threshold for precision
         );
 
         slides.forEach(slide => observer.observe(slide));

@@ -864,33 +864,51 @@ body.presentation-active {
     transition: all 0.3s ease-in-out;
 }
 
-#presenter-remote > :not(.presenter-slide-toggle) {
+#presenter-label {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 5px 0 10px;
+    white-space: nowrap;
+    transition: all 0.4s ease-in-out;
+}
+
+.presenter-nav-controls,
+.presenter-jump-control,
+.presenter-slide-toggle {
+    display: flex;
+    align-items: center;
+}
+
+/* Contracted State: Hide controls */
+.presenter-nav-controls, .presenter-jump-control {
     opacity: 0;
     max-width: 0;
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: 0;
-    margin-right: 0;
     overflow: hidden;
     pointer-events: none;
     transition: all 0.4s ease-in-out;
 }
 
-body.presentation-active #presenter-remote > :not(.presenter-slide-toggle) {
+
+/* Expanded State: Show controls, hide label */
+body.presentation-active #presenter-label {
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+body.presentation-active .presenter-nav-controls {
     opacity: 1;
-    max-width: 50px; 
+    max-width: 150px; /* Give it enough space */
     pointer-events: auto;
     margin-left: 5px;
 }
 
-/* Restore specific paddings for items when visible */
-body.presentation-active #presenter-remote #slide-counter {
-    padding: 0 10px;
+body.presentation-active .presenter-jump-control {
+    opacity: 1;
+    max-width: 50px;
+    pointer-events: auto;
 }
-body.presentation-active #presenter-remote .presenter-btn {
-    padding: 8px;
-}
-
 
 .presenter-btn {
     background-color: transparent;
@@ -1068,5 +1086,4 @@ body[data-page-name="wordloop-slides.html"].presentation-active .feature-list-im
         right: 10px;
         bottom: 60px;
     }
-}--- END OF FILE index.css ---
-```
+}

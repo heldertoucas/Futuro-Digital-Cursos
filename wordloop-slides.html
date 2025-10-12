@@ -221,14 +221,16 @@
     </main>
 
     <div id="presenter-remote">
-        <button class="presenter-btn" id="prev-slide-btn" aria-label="Slide Anterior">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
-        </button>
-        <span id="slide-counter">1 / 10</span>
-        <button class="presenter-btn" id="next-slide-btn" aria-label="Próximo Slide">
-             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div style="position: relative;">
+        <div class="presenter-nav-controls">
+            <button class="presenter-btn" id="prev-slide-btn" aria-label="Slide Anterior">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
+            </button>
+            <span id="slide-counter">1 / 10</span>
+            <button class="presenter-btn" id="next-slide-btn" aria-label="Próximo Slide">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+        </div>
+        <div class="presenter-jump-control" style="position: relative;">
             <button class="presenter-btn" id="jump-to-slide-btn" aria-label="Saltar para um slide">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
             </button>
@@ -236,6 +238,7 @@
                 <!-- Slide links will be injected by JS -->
             </ul>
         </div>
+        <span id="presenter-label">Slides</span>
         <div class="presenter-slide-toggle" style="margin-left: 5px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 10px;">
              <label class="slide-switch">
                 <input type="checkbox" id="remote-slide-toggle">
