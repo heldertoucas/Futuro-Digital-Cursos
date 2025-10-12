@@ -278,68 +278,73 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         
-        navBar.style.display = 'flex';
         document.body.classList.add('preview-active');
 
-        const links = navBar.querySelectorAll('.preview-nav-link');
-        
         const updateActiveLink = () => {
              const pageName = document.body.dataset.pageName || 'index.html';
+             const links = navBar.querySelectorAll('.preview-nav-link');
              links.forEach(link => {
                 const linkPath = link.getAttribute('href');
                 link.classList.toggle('active', linkPath === pageName);
             });
         };
 
-        links.forEach(link => {
-            link.addEventListener('click', async (e) => {
-                e.preventDefault();
-                const targetUrl = link.getAttribute('href');
-                const currentPage = document.body.dataset.pageName || 'index.html';
+        navBar.addEventListener('click', async (e) => {
+            if (e.target.tagName !== 'A' || !e.target.classList.contains('preview-nav-link')) {
+                return;
+            }
+            e.preventDefault();
+            
+            const link = e.target;
+            const targetUrl = link.getAttribute('href');
+            const currentPage = document.body.dataset.pageName || 'index.html';
 
-                if (targetUrl === currentPage) return;
+            if (targetUrl === currentPage) return;
 
-                try {
-                    const response = await fetch(targetUrl);
-                    if (!response.ok) {
-                        throw new Error(`Failed to fetch ${targetUrl}: ${response.statusText}`);
-                    }
-                    const htmlText = await response.text();
-                    
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(htmlText, 'text/html');
-
-                    const newHeader = doc.querySelector('header');
-                    const newMain = doc.querySelector('main');
-                    const newTitle = doc.querySelector('title');
-                    const newBody = doc.querySelector('body');
-
-                    if (newHeader) {
-                         document.querySelector('header').innerHTML = newHeader.innerHTML;
-                    }
-                    if (newMain) {
-                        document.querySelector('main').innerHTML = newMain.innerHTML;
-                    }
-                    if (newTitle) {
-                        document.title = newTitle.textContent;
-                    }
-                    
-                    if (newBody) {
-                        document.body.className = newBody.className;
-                        document.body.classList.add('preview-active');
-                        document.body.dataset.pageName = newBody.dataset.pageName;
-                    }
-
-                    updateActiveLink();
-                    
-                    // Re-initialize components for the new content
-                    initializeAllComponents();
-                    window.scrollTo(0, 0);
-
-                } catch (error) {
-                    console.error('Error loading page content:', error);
+            try {
+                const response = await fetch(targetUrl);
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch ${targetUrl}: ${response.statusText}`);
                 }
-            });
+                const htmlText = await response.text();
+                
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(htmlText, 'text/html');
+
+                const newTitle = doc.querySelector('title');
+                const newBody = doc.querySelector('body');
+                
+                if (newTitle) {
+                    document.title = newTitle.textContent;
+                }
+
+                if (newBody) {
+                    // Preserve the preview nav bar itself
+                    const previewNav = document.querySelector('.preview-nav-bar');
+                    
+                    // Replace the entire body's content
+                    document.body.innerHTML = newBody.innerHTML;
+                    
+                    // Re-append the preview nav bar
+                    if (previewNav) {
+                        document.body.appendChild(previewNav);
+                    }
+                    
+                    // Copy attributes from the new body
+                    document.body.className = newBody.className;
+                    document.body.classList.add('preview-active'); // ensure this class is always present
+                    document.body.dataset.pageName = newBody.dataset.pageName;
+                }
+                
+                updateActiveLink();
+                
+                // Re-initialize components for the new content
+                initializeAllComponents();
+                window.scrollTo(0, 0);
+
+            } catch (error) {
+                console.error('Error loading page content:', error);
+            }
         });
 
         updateActiveLink(); // Set initial active link
@@ -348,6 +353,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Global Initializer ---
     function initializeAllComponents() {
         // Initializes components that might appear on any page loaded via preview nav
+        const burgerMenu = document.getElementById('burger-menu');
+        const navLinks = document.getElementById('nav-links');
+        if (burgerMenu && navLinks) {
+             burgerMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                burgerMenu.classList.toggle('active');
+            });
+        }
+        
         initializeAccordions();
         initializeTestimonialSlider();
         handlePresentationMode();
