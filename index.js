@@ -1,23 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Mobile Burger Menu ---
-    const burgerMenu = document.getElementById('burger-menu');
-    const navLinks = document.getElementById('nav-links');
+    // This needs to be re-run whenever the header is replaced.
+    function initializeBurgerMenu() {
+        const burgerMenu = document.getElementById('burger-menu');
+        const navLinks = document.getElementById('nav-links');
 
-    if (burgerMenu && navLinks) {
-        burgerMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            burgerMenu.classList.toggle('active');
-        });
-        
-        // Close menu when a link is clicked
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                burgerMenu.classList.remove('active');
+        if (burgerMenu && navLinks) {
+            burgerMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                burgerMenu.classList.toggle('active');
             });
-        });
+            
+            // Close menu when a link is clicked
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    // Don't close if it's not a page jump (e.g. anchor link)
+                    if (link.getAttribute('href').startsWith('#')) {
+                         navLinks.classList.remove('active');
+                         burgerMenu.classList.remove('active');
+                    }
+                });
+            });
+        }
     }
+
 
     // --- Testimonial Slider ---
     const testimonials = [
@@ -96,8 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 const activeSlide = slides[index];
                 if (activeSlide) {
-                    const slideHeight = activeSlide.offsetHeight;
-                    sliderWrapper.style.height = `${slideHeight}px`;
+                    // Use a timeout to ensure the element is fully rendered before getting height
+                    setTimeout(() => {
+                        const slideHeight = activeSlide.offsetHeight;
+                        if (slideHeight > 0) {
+                             sliderWrapper.style.height = `${slideHeight}px`;
+                        }
+                    }, 50);
                 }
             }
             currentSlide = index;
@@ -161,6 +173,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const jumpBtn = document.getElementById('jump-to-slide-btn');
         const slideMenu = document.getElementById('slide-menu');
         
+        if (!slideCounter || !prevBtn || !nextBtn || !jumpBtn || !slideMenu) return null;
+        
         let currentSlideIndex = 0;
         
         slideMenu.innerHTML = ''; // Clear previous menu items
@@ -183,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const updateActiveSlide = (index) => {
-            if (index === currentSlideIndex) return;
+            if (index === currentSlideIndex && slides[index]?.classList.contains('current-slide')) return;
             currentSlideIndex = index;
             slides.forEach((slide, i) => {
                 slide.classList.toggle('current-slide', i === index);
@@ -312,21 +326,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(htmlText, 'text/html');
 
+                    const newHeader = doc.querySelector('header');
                     const newMain = doc.querySelector('main');
                     const newTitle = doc.querySelector('title');
                     const newBody = doc.querySelector('body');
+                    
+                    const currentHeader = document.querySelector('header');
+                    const currentMain = document.querySelector('main');
 
-                    if (newMain) {
-                        document.querySelector('main').innerHTML = newMain.innerHTML;
+                    if (newHeader && currentHeader) {
+                        currentHeader.innerHTML = newHeader.innerHTML;
+                    }
+                    if (newMain && currentMain) {
+                        currentMain.innerHTML = newMain.innerHTML;
                     }
                     if (newTitle) {
                         document.title = newTitle.textContent;
                     }
                     
-                    // Replace body class and data attributes to handle special pages like presentation-active
                     if (newBody) {
                         document.body.className = newBody.className;
-                        document.body.classList.add('preview-active'); // Ensure preview nav class is always present
+                        document.body.classList.add('preview-active');
                         document.body.dataset.pageName = newBody.dataset.pageName;
                     }
 
@@ -348,6 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Global Initializer ---
     function initializeAllComponents() {
         // Initializes components that might appear on any page loaded via preview nav
+        initializeBurgerMenu();
         initializeAccordions();
         initializeTestimonialSlider();
         handlePresentationMode();
