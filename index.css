@@ -164,6 +164,16 @@ header nav {
     padding: 10px 24px;
 }
 
+.nav-links a.btn-primary,
+.nav-links a.btn-primary:hover {
+    color: var(--white);
+}
+
+.nav-links a.btn-primary::after {
+    display: none;
+}
+
+
 .burger-menu {
     display: none;
     cursor: pointer;
