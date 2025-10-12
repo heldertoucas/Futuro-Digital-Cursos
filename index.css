@@ -959,24 +959,29 @@ body.presentation-active #presenter-remote .presenter-btn {
 }
 
 /* --- Presentation Mode Typography & Image Adjustments --- */
-body.presentation-active p,
-body.presentation-active li {
-    font-size: 1.25rem;
+/*
+  Making these selectors hyper-specific to the slides page
+  to prevent style leakage on the live/production site.
+*/
+body[data-page-name="wordloop-slides.html"].presentation-active p,
+body[data-page-name="wordloop-slides.html"].presentation-active li {
+    font-size: 1.35rem; /* Increased size for better visibility */
 }
 
-body.presentation-active h4 { font-size: 1.5rem; }
-body.presentation-active h3 { font-size: 1.8rem; }
-body.presentation-active h2 { font-size: 2.8rem; }
-body.presentation-active h1 { font-size: 3.8rem; }
+body[data-page-name="wordloop-slides.html"].presentation-active h4 { font-size: 1.5rem; }
+body[data-page-name="wordloop-slides.html"].presentation-active h3 { font-size: 1.8rem; }
+body[data-page-name="wordloop-slides.html"].presentation-active h2 { font-size: 2.8rem; }
+body[data-page-name="wordloop-slides.html"].presentation-active h1 { font-size: 3.8rem; }
 
-body.presentation-active .course-hero-image {
+body[data-page-name="wordloop-slides.html"].presentation-active .course-hero-image {
     max-width: 200px;
 }
 
-body.presentation-active .course-slide-image img,
-body.presentation-active .feature-list-image img {
+body[data-page-name="wordloop-slides.html"].presentation-active .course-slide-image img,
+body[data-page-name="wordloop-slides.html"].presentation-active .feature-list-image img {
     max-width: 80%;
     margin: 0 auto;
+    display: block; /* Ensures margin auto works */
 }
 
 
@@ -1063,4 +1068,5 @@ body.presentation-active .feature-list-image img {
         right: 10px;
         bottom: 60px;
     }
-}
+}--- END OF FILE index.css ---
+```
