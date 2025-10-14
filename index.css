@@ -19,7 +19,7 @@
     3d. Accordion
     3e. Pills & Tags
 
-4. PAGE-SPECIFIC STYYLES
+4. PAGE-SPECIFIC STYLES
     4a. Home Page Sections
     4b. Course Detail Page Sections
     4c. Library Page Sections
@@ -486,16 +486,12 @@ footer {
     padding: 20px 0;
     cursor: pointer;
 }
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-    padding: 0 10px; /* Add padding for content */
+.accordion-header h4 {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Spacing between icon and text */
 }
-.accordion-item.active .accordion-content {
-    max-height: 200px; /* Adjust as needed */
-    padding: 0 10px 20px 10px;
-}
+
 .accordion-icon {
     width: 20px;
     height: 20px;
@@ -521,6 +517,24 @@ footer {
 .accordion-item.active .accordion-icon::after {
     transform: translate(-50%, -50%) rotate(0deg);
 }
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 10px;
+}
+.accordion-item.active .accordion-content {
+    max-height: 600px; /* Increased to fit images */
+    padding: 0 10px 20px 10px;
+}
+.accordion-content img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    margin-top: 15px;
+    border: 1px solid var(--border-color);
+}
+
 
 /* --- 3e. Pills & Tags --- */
 .course-tag {
@@ -738,9 +752,18 @@ footer {
     color: var(--primary-blue);
     margin-bottom: 15px;
 }
-.feature-icon svg {
+.feature-icon svg,
+.feature-icon img {
     width: 48px;
     height: 48px;
+}
+.feature-icon-small {
+    color: var(--primary-blue);
+    flex-shrink: 0; /* Prevents icon from shrinking */
+}
+.feature-icon-small svg {
+    width: 24px;
+    height: 24px;
 }
 
 
@@ -759,6 +782,88 @@ footer {
 .final-cta p {
     color: #a9a9a9;
     margin-bottom: 30px;
+}
+
+#atividades {
+    background-color: #fafbff;
+}
+
+.atividades-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.atividade-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.atividade-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.atividade-card-header {
+    position: relative;
+    padding: 20px;
+    min-height: 140px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.atividade-card-header .card-number {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+/* Card Gradients */
+.atividade-card.color-1 .atividade-card-header {
+    background: linear-gradient(45deg, #4dabf7, #1c7ed6);
+}
+.atividade-card.color-2 .atividade-card-header {
+    background: linear-gradient(45deg, #69db7c, #37b24d);
+}
+.atividade-card.color-3 .atividade-card-header {
+    background: linear-gradient(45deg, #b197fc, #845ef7);
+}
+.atividade-card.color-4 .atividade-card-header {
+    background: linear-gradient(45deg, #ff8787, #f03e3e);
+}
+
+.atividade-card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.atividade-card-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+}
+
+.atividade-card-content p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    flex-grow: 1;
+    margin-bottom: 25px;
+}
+
+.atividade-card-content .btn {
+    align-self: flex-start;
+    width: 100%;
+    text-align: center;
 }
 
 
@@ -811,6 +916,15 @@ footer {
 .feature-list-with-image .feature-list-image img { max-width: 100%; border-radius: var(--border-radius); }
 .feature-list-with-image .feature-list-text ul { list-style: none; }
 .feature-list-with-image .feature-list-text ul li { margin-bottom: 20px; }
+.feature-list-with-image .feature-list-text ul li h4 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.feature-list-with-image .feature-list-text ul li .feature-icon-small svg {
+    width: 20px;
+    height: 20px;
+}
 
 
 .image-grid-two-col .grid-item img {
@@ -1197,6 +1311,9 @@ body[data-page-name="wordloop-slides.html"].presentation-active .feature-list-im
         flex-direction: column;
         text-align: center;
     }
+    .atividades-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1217,6 +1334,9 @@ body[data-page-name="wordloop-slides.html"].presentation-active .feature-list-im
     }
     .feature-columns { grid-template-columns: 1fr; }
     .image-grid-two-col .grid { grid-template-columns: 1fr; }
+    .atividades-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 576px) {
