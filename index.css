@@ -838,6 +838,24 @@ footer {
 .atividade-card.color-4 .atividade-card-header {
     background: linear-gradient(45deg, #ff8787, #f03e3e);
 }
+.atividade-card.color-5 .atividade-card-header {
+    background: linear-gradient(45deg, #ffc078, #ff922b);
+}
+.atividade-card.color-6 .atividade-card-header {
+    background: linear-gradient(45deg, #66d9e8, #22b8cf);
+}
+.atividade-card.color-7 .atividade-card-header {
+    background: linear-gradient(45deg, #ff87b7, #f06595);
+}
+.atividade-card.color-8 .atividade-card-header {
+    background: linear-gradient(45deg, #a6a6a6, #868e96);
+}
+.atividade-card.color-9 .atividade-card-header {
+    background: linear-gradient(45deg, #40c057, #228be6);
+}
+.atividade-card.color-10 .atividade-card-header {
+    background: linear-gradient(45deg, #f783ac, #da77f2);
+}
 
 .atividade-card-content {
     padding: 25px;
