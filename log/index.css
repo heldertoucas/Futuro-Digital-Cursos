@@ -1,0 +1,1380 @@
+/*
+=================================================================
+ STYLE GUIDE INDEX
+-----------------------------------------------------------------
+1. BASE STYLES
+    1a. Variables & Globals
+    1b. Typography
+    1c. Generic Helpers (Containers, Sections)
+
+2. LAYOUT
+    2a. Header & Navigation
+    2b. Footer
+    2c. Grids & Columns
+
+3. COMPONENTS
+    3a. Buttons
+    3b. Cards (Course, Registration)
+    3c. Testimonial Slider
+    3d. Accordion
+    3e. Pills & Tags
+
+4. PAGE-SPECIFIC STYLES
+    4a. Home Page Sections
+    4b. Course Detail Page Sections
+    4c. Library Page Sections
+
+5. UTILITIES & VENDOR
+    5a. Preview Navigation Bar (AI Studio Only)
+    5b. Presentation (Slide) Mode System
+    5c. Scroll Animation System
+
+6. RESPONSIVE MEDIA QUERIES
+=================================================================
+*/
+
+
+/* --- 1. BASE STYLES --- */
+/* --- 1a. Variables & Globals --- */
+:root {
+    --primary-blue: #5271FF;
+    --dark-blue: #1b1b1b;
+    --light-gray: #f4f4f4;
+    --text-color: #575757;
+    --heading-color: #151515;
+    --white: #ffffff;
+    --border-color: #e0e0e0;
+    --font-family: 'Fira Sans', sans-serif;
+    --container-width: 1140px;
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+/* --- 1b. Typography --- */
+h1, h2, h3, h4 {
+    color: var(--heading-color);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.5rem; /* Standardized H3 */
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-blue);
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- 1c. Generic Helpers (Containers, Sections) --- */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+
+/* --- 2. LAYOUT --- */
+/* --- 2a. Header & Navigation --- */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--heading-color);
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-blue);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-item-btn .btn {
+    padding: 10px 24px;
+}
+
+.nav-links a.btn-primary::after {
+    display: none;
+}
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.burger-menu .line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark-blue);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* --- 2b. Footer --- */
+footer {
+    background-color: var(--dark-blue);
+    color: #a9a9a9;
+    padding: 60px 0 0;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-logo {
+    height: 45px;
+    margin-bottom: 20px;
+}
+
+.footer-about p {
+    margin-bottom: 20px;
+}
+
+.footer-links h4 {
+    color: var(--white);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links a, .footer-links span {
+    color: #a9a9a9;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* --- 2c. Grids & Columns --- */
+.courses-grid-v2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.inscricao-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    text-align: left;
+}
+
+.feature-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    text-align: center;
+}
+
+.feature-grid-three-col .grid,
+.icon-grid-three-col .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.image-grid-two-col .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    text-align: center;
+}
+
+
+/* --- 3. COMPONENTS --- */
+/* --- 3a. Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: var(--white) !important; /* Ensure text is always white */
+}
+
+.btn-primary:hover {
+    background-color: #3a5de0;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--light-gray);
+    color: var(--heading-color);
+    border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+
+/* --- 3b. Cards (Course, Registration) --- */
+.course-card-v2 {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    overflow: hidden;
+    display: flex;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card-v2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(79, 117, 255, 0.3);
+}
+
+.course-card-v2-image {
+    flex: 0 0 40%;
+    background-size: cover;
+    background-position: center;
+}
+
+.course-card-v2-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.course-card-v2-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card-v2-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.course-card-v2-content p {
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+.course-card-v2-content .btn {
+    align-self: flex-start;
+}
+
+.inscricao-card {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.inscricao-card h3 {
+    margin-bottom: 15px;
+}
+
+.inscricao-card p {
+    margin-bottom: 30px;
+}
+
+
+/* --- 3c. Testimonial Slider --- */
+.testimonial-slider-wrapper {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+}
+
+.testimonial-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.testimonial-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.testimonial-slide.active {
+    position: relative; /* Change from absolute to allow height calculation */
+    opacity: 1;
+}
+
+.testimonial-card {
+    text-align: center;
+    padding: 20px;
+}
+
+.testimonial-card .stars {
+    color: #f39c12;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.testimonial-card .review {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.testimonial-card .name {
+    font-weight: 700;
+    color: var(--heading-color);
+}
+
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--primary-blue);
+}
+
+.testimonial-cta-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.testimonial-cta-link {
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+}
+
+.testimonial-cta-link:hover {
+    color: var(--primary-blue);
+    border-bottom-color: var(--primary-blue);
+}
+
+/* --- 3d. Accordion --- */
+.accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.accordion-item {
+    border-bottom: 1px solid var(--border-color);
+}
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+}
+.accordion-header h4 {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Spacing between icon and text */
+}
+
+.accordion-icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    transition: transform 0.4s ease;
+    flex-shrink: 0;
+}
+.accordion-icon::before,
+.accordion-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 2px;
+    background-color: var(--primary-blue);
+    transform: translate(-50%, -50%);
+}
+.accordion-icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+    transition: transform 0.4s ease;
+}
+.accordion-item.active .accordion-icon::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 10px;
+}
+.accordion-item.active .accordion-content {
+    max-height: 600px; /* Increased to fit images */
+    padding: 0 10px 20px 10px;
+}
+.accordion-content img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    margin-top: 15px;
+    border: 1px solid var(--border-color);
+}
+
+
+/* --- 3e. Pills & Tags --- */
+.course-tag {
+    color: var(--primary-blue);
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.session-pill {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+
+/* --- 4. PAGE-SPECIFIC STYLES --- */
+/* --- 4a. Home Page Sections --- */
+#hero {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin: 20px 0 30px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+#courses {
+    background-color: #fafbff;
+}
+
+#about-program {
+    background-color: var(--white);
+}
+
+.about-program-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-program-image {
+    flex: 1;
+}
+
+.about-program-image img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.about-program-text {
+    flex: 1;
+}
+
+#testimonials {
+    background-color: #fafbff;
+}
+
+#inscricao {
+    background-color: var(--light-gray);
+}
+
+.inscricao-container {
+    text-align: center;
+}
+
+.inscricao-container h2 {
+    margin-bottom: 1rem;
+}
+
+.inscricao-container > p {
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* --- 4b. Course Detail Page Sections --- */
+.course-detail {
+    padding: 60px 0;
+    background-color: var(--white);
+}
+.course-detail-container {
+    text-align: center;
+}
+.course-hero-image {
+    max-width: 250px;
+    height: auto;
+    margin: 0 auto 30px auto;
+    border-radius: var(--border-radius);
+}
+.course-detail-container h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+.course-detail-container p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+.course-intro {
+    background-color: #fafbff;
+    padding: 60px 0;
+    text-align: center;
+}
+.course-intro h2 { font-size: 2rem; }
+
+.course-intro.tall-slide {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.transversal-resource-cta {
+    padding: 80px 0 120px;
+    background-color: #fafbff;
+    text-align: center;
+    position: relative;
+}
+
+.transversal-resource-cta-image {
+    max-width: 250px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    position: relative;
+    animation: float-animation 5s ease-in-out infinite;
+}
+
+@keyframes float-animation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.transversal-resource-cta .container {
+    position: relative;
+    max-width: 700px;
+    padding-top: 0;
+}
+.transversal-resource-cta h4 {
+    color: var(--heading-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.transversal-resource-cta p {
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+
+.course-slide {
+    background-color: var(--white);
+    padding: 80px 0;
+}
+.course-slide.alt-bg { background-color: #fafbff; }
+
+.course-slide-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.course-slide.alt-layout .course-slide-container {
+    flex-direction: row-reverse;
+}
+
+.course-slide-text { flex: 1; }
+.course-slide-text ul { list-style: disc; padding-left: 20px; }
+.course-slide-text ul li { margin-bottom: 10px; }
+
+.course-slide-image {
+    flex: 1;
+    text-align: center;
+}
+.course-slide-image img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.feature-columns-section {
+    background-color: #fafbff;
+    padding: 80px 0;
+}
+
+.feature-icon {
+    display: inline-block;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+.feature-icon svg,
+.feature-icon img {
+    width: 48px;
+    height: 48px;
+}
+.feature-icon-small {
+    color: var(--primary-blue);
+    flex-shrink: 0; /* Prevents icon from shrinking */
+}
+.feature-icon-small svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+.accordion-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.final-cta {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 60px 0;
+    text-align: center;
+}
+.final-cta h2 { color: var(--white); }
+.final-cta p {
+    color: #a9a9a9;
+    margin-bottom: 30px;
+}
+
+#atividades {
+    background-color: #fafbff;
+}
+
+.atividades-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.atividade-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.atividade-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.atividade-card-header {
+    position: relative;
+    padding: 20px;
+    min-height: 140px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.atividade-card-header .card-number {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+/* Card Gradients - Refreshed Palette */
+.atividade-card.color-1 .atividade-card-header {
+    background: linear-gradient(45deg, #748ffc, #4263eb);
+}
+.atividade-card.color-2 .atividade-card-header {
+    background: linear-gradient(45deg, #63e6be, #20c997);
+}
+.atividade-card.color-3 .atividade-card-header {
+    background: linear-gradient(45deg, #e599f7, #be4bdb);
+}
+.atividade-card.color-4 .atividade-card-header {
+    background: linear-gradient(45deg, #ff8787, #fa5252);
+}
+.atividade-card.color-5 .atividade-card-header {
+    background: linear-gradient(45deg, #ffd43b, #fcc419);
+}
+.atividade-card.color-6 .atividade-card-header {
+    background: linear-gradient(45deg, #66d9e8, #15aabf);
+}
+.atividade-card.color-7 .atividade-card-header {
+    background: linear-gradient(45deg, #ff922b, #fd7e14);
+}
+.atividade-card.color-8 .atividade-card-header {
+    background: linear-gradient(45deg, #91a7ff, #5c7cfa);
+}
+.atividade-card.color-9 .atividade-card-header {
+    background: linear-gradient(45deg, #8ce99a, #51cf66);
+}
+.atividade-card.color-10 .atividade-card-header {
+    background: linear-gradient(45deg, #f06595, #d6336c);
+}
+
+
+.atividade-card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.atividade-card-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+}
+
+.atividade-card-content p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    flex-grow: 1;
+    margin-bottom: 25px;
+}
+
+.atividade-card-content .btn {
+    align-self: flex-start;
+    width: 100%;
+    text-align: center;
+}
+
+/* Excel & Forms Page Specific Styles */
+body[data-page-name="excelforms.html"] .session-pill {
+    background-color: #35B729;
+}
+
+body[data-page-name="excelforms.html"] .atividade-card .btn-primary {
+    background-color: #35B729;
+}
+
+body[data-page-name="excelforms.html"] .atividade-card .btn-primary:hover {
+    background-color: #2c9a22; /* Darker green for hover */
+}
+
+
+/* --- 4c. Library Page Sections --- */
+.library-section {
+    padding: 40px 0;
+    border-bottom: 2px solid #e0e0e0;
+}
+.library-section:last-child {
+    border-bottom: none;
+}
+.library-section-label {
+    text-align: center;
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    background-color: #f0f3ff;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.feature-grid-three-col .grid-item img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+}
+.icon-grid-three-col .grid-item {
+    text-align: center;
+}
+.icon-grid-three-col .icon-wrapper {
+    display: inline-block;
+    padding: 15px;
+    background-color: #f0f3ff;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    color: var(--primary-blue);
+}
+.icon-grid-three-col .icon-wrapper svg {
+    display: block;
+}
+
+.feature-list-with-image .feature-list-content {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+.feature-list-with-image .feature-list-text { flex: 1; }
+.feature-list-with-image .feature-list-image { flex: 1; }
+.feature-list-with-image .feature-list-image img { max-width: 100%; border-radius: var(--border-radius); }
+.feature-list-with-image .feature-list-text ul { list-style: none; }
+.feature-list-with-image .feature-list-text ul li { margin-bottom: 20px; }
+.feature-list-with-image .feature-list-text ul li h4 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.feature-list-with-image .feature-list-text ul li .feature-icon-small svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+.image-grid-two-col .grid-item img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+}
+.image-grid-two-col .icon-wrapper.large {
+    display: inline-block;
+    padding: 20px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.image-grid-two-col .icon-wrapper.large svg { display: block; }
+
+
+/* --- 5. UTILITIES & VENDOR --- */
+/* --- 5a. Preview Navigation Bar (AI Studio Only) --- */
+body.preview-active {
+    padding-bottom: 60px; /* Space for the preview nav bar */
+}
+.preview-nav-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(27, 27, 27, 0.9);
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+    z-index: 9999;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    height: 50px; /* Explicit height */
+}
+.preview-nav-bar span {
+    font-weight: 700;
+}
+.preview-nav-link {
+    color: #ccc;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+.preview-nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+.preview-nav-link.active {
+    background-color: var(--primary-blue);
+    color: white;
+    font-weight: 700;
+}
+
+/* --- 5b. Presentation (Slide) Mode System --- */
+body.presentation-active header {
+    transform: translateY(-100%);
+}
+
+.slide-switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.slide-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-blue);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+body.presentation-active {
+    padding-bottom: 80px;
+}
+
+.presentation-active main > section {
+    transition: opacity 0.4s ease-in-out;
+}
+
+.presentation-active main > section:not(.current-slide) {
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.presentation-active main > section.current-slide {
+    opacity: 1;
+}
+
+#presenter-remote {
+    position: fixed;
+    bottom: 65px; /* Above preview nav */
+    right: 20px;
+    z-index: 9998;
+    background-color: rgba(27, 27, 27, 0.9);
+    backdrop-filter: blur(5px);
+    color: white;
+    border-radius: 50px;
+    padding: 8px;
+    display: flex; 
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+#presenter-label {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 5px 0 10px;
+    white-space: nowrap;
+    transition: all 0.4s ease-in-out;
+}
+
+.presenter-nav-controls,
+.presenter-jump-control,
+.presenter-slide-toggle {
+    display: flex;
+    align-items: center;
+}
+
+/* Contracted State: Hide controls */
+.presenter-nav-controls, .presenter-jump-control {
+    opacity: 0;
+    max-width: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease-in-out, max-width 0.4s ease-in-out;
+}
+
+/* Expanded State: Show controls, hide label */
+body.presentation-active #presenter-label {
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+body.presentation-active .presenter-nav-controls {
+    opacity: 1;
+    max-width: 150px; /* Give it enough space */
+    pointer-events: auto;
+    margin-left: 5px;
+}
+
+body.presentation-active .presenter-jump-control {
+    opacity: 1;
+    max-width: 50px;
+    pointer-events: auto;
+}
+
+.presenter-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.presenter-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.presenter-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+#slide-counter {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 10px;
+    min-width: 50px;
+    text-align: center;
+}
+
+#slide-menu {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    right: 0;
+    background-color: rgba(40, 40, 40, 0.95);
+    backdrop-filter: blur(5px);
+    list-style: none;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    width: 280px;
+    max-height: 40vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+#slide-menu.visible {
+    display: block;
+}
+
+#slide-menu li {
+    color: #ccc;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#slide-menu li:hover {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+/* These styles should ONLY apply when presentation mode is active */
+.presentation-active .slide-anim-item {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: var(--animation-delay, 0s);
+}
+.presentation-active .slide-anim-up {
+    transform: translateY(20px);
+}
+.presentation-active .slide-anim-down {
+    transform: translateY(-20px);
+}
+.presentation-active .slide-anim-left {
+     transform: translateX(20px);
+}
+.presentation-active .slide-anim-right {
+     transform: translateX(-20px);
+}
+
+/* Trigger the animation when the slide is active */
+.current-slide .slide-anim-item {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+}
+
+/* Typography & Image Adjustments for Presentation Mode */
+body[data-page-name="wordloop-slides.html"].presentation-active p,
+body[data-page-name="wordloop-slides.html"].presentation-active li {
+    font-size: 1.35rem; /* Increased size for better visibility */
+}
+
+body[data-page-name="wordloop-slides.html"].presentation-active h4 { font-size: 1.5rem; }
+body[data-page-name="wordloop-slides.html"].presentation-active h3 { font-size: 1.8rem; }
+body[data-page-name="wordloop-slides.html"].presentation-active h2 { font-size: 2.8rem; }
+body[data-page-name="wordloop-slides.html"].presentation-active h1 { font-size: 3.8rem; }
+
+body[data-page-name="wordloop-slides.html"].presentation-active .course-hero-image {
+    max-width: 200px;
+}
+
+body[data-page-name="wordloop-slides.html"].presentation-active .course-slide-image img,
+body[data-page-name="wordloop-slides.html"].presentation-active .feature-list-image img {
+    max-width: 80%;
+    margin: 0 auto;
+    display: block; /* Ensures margin auto works */
+}
+
+/* --- 5c. Scroll Animation System --- */
+@media (prefers-reduced-motion: no-preference) {
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        transition-delay: var(--animation-delay, 0s);
+    }
+
+    .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* --- 6. RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 992px) {
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.2rem; }
+    section { padding: 60px 0; }
+
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 300px;
+        height: calc(100vh - 80px);
+        background-color: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px;
+        gap: 25px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: right 0.4s ease-in-out;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-item-btn { width: 100%; }
+    .nav-item-btn .btn { width: 100%; text-align: center; }
+
+    .nav-item-slide-toggle {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .burger-menu { display: flex; }
+    .burger-menu.active .line:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .burger-menu.active .line:nth-child(2) { opacity: 0; }
+    .burger-menu.active .line:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+
+    .hero-container { flex-direction: column; text-align: center; }
+    .hero-text { order: 2; }
+    .hero-image { order: 1; }
+    
+    .courses-grid-v2 { grid-template-columns: 1fr; }
+    .about-program-container { flex-direction: column; text-align: center; }
+    .about-program-text { order: 2; }
+    .about-program-image { order: 1; }
+
+    .inscricao-cards { grid-template-columns: 1fr; }
+    .footer-container { grid-template-columns: 1fr 1fr; }
+    .footer-about { grid-column: 1 / -1; }
+
+    .course-slide-container { flex-direction: column !important; text-align: center; }
+    .course-slide-text { order: 2; }
+    .course-slide-image { order: 1; }
+    
+    .feature-grid-three-col .grid,
+    .icon-grid-three-col .grid {
+        grid-template-columns: 1fr;
+    }
+    .feature-list-with-image .feature-list-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .atividades-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+
+    .transversal-resource-cta-image {
+        max-width: 220px;
+        margin-bottom: 20px;
+    }
+    .transversal-resource-cta h4 {
+        font-size: 1.8rem;
+    }
+
+    .course-card-v2 { flex-direction: column; }
+    .course-card-v2-image {
+        flex-basis: 200px;
+    }
+    .feature-columns { grid-template-columns: 1fr; }
+    .image-grid-two-col .grid { grid-template-columns: 1fr; }
+    .atividades-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-container { grid-template-columns: 1fr; }
+    #presenter-remote {
+        right: 10px;
+        bottom: 60px;
+    }
+}

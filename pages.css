@@ -1,0 +1,475 @@
+/*
+=================================================================
+ This file contains styles that are specific to individual pages,
+ identified by the body[data-page-name] selector. It also
+ contains responsive media queries that are tied to these
+ page-specific layouts.
+=================================================================
+*/
+
+/* --- 4. PAGE-SPECIFIC STYLES --- */
+
+/* --- 4a. Home Page Sections --- */
+#hero {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin: 20px 0 30px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+#courses {
+    background-color: #fafbff;
+}
+
+#about-program {
+    background-color: var(--white);
+}
+
+.about-program-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-program-image {
+    flex: 1;
+}
+
+.about-program-image img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.about-program-text {
+    flex: 1;
+}
+
+#testimonials {
+    background-color: #fafbff;
+}
+
+#inscricao {
+    background-color: var(--light-gray);
+}
+
+.inscricao-container {
+    text-align: center;
+}
+
+.inscricao-container h2 {
+    margin-bottom: 1rem;
+}
+
+.inscricao-container > p {
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* --- 4b. Course Detail Page Sections --- */
+.course-detail {
+    padding: 60px 0;
+    background-color: var(--white);
+}
+.course-detail-container {
+    text-align: center;
+}
+.course-hero-image {
+    max-width: 250px;
+    height: auto;
+    margin: 0 auto 30px auto;
+    border-radius: var(--border-radius);
+}
+.course-detail-container h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+.course-detail-container p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+.course-intro {
+    background-color: #fafbff;
+    padding: 60px 0;
+    text-align: center;
+}
+.course-intro h2 { font-size: 2rem; }
+
+.course-intro.tall-slide {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.transversal-resource-cta {
+    padding: 80px 0 120px;
+    background-color: #fafbff;
+    text-align: center;
+    position: relative;
+}
+
+.transversal-resource-cta-image {
+    max-width: 250px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    position: relative;
+    animation: float-animation 5s ease-in-out infinite;
+}
+
+@keyframes float-animation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.transversal-resource-cta .container {
+    position: relative;
+    max-width: 700px;
+    padding-top: 0;
+}
+.transversal-resource-cta h4 {
+    color: var(--heading-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.transversal-resource-cta p {
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+
+.course-slide {
+    background-color: var(--white);
+    padding: 80px 0;
+}
+.course-slide.alt-bg { background-color: #fafbff; }
+
+.course-slide-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.course-slide.alt-layout .course-slide-container {
+    flex-direction: row-reverse;
+}
+
+.course-slide-text { flex: 1; }
+.course-slide-text ul { list-style: disc; padding-left: 20px; }
+.course-slide-text ul li { margin-bottom: 10px; }
+
+.course-slide-image {
+    flex: 1;
+    text-align: center;
+}
+.course-slide-image img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.feature-columns-section {
+    background-color: #fafbff;
+    padding: 80px 0;
+}
+
+.feature-icon {
+    display: inline-block;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+.feature-icon svg,
+.feature-icon img {
+    width: 48px;
+    height: 48px;
+}
+.feature-icon-small {
+    color: var(--primary-blue);
+    flex-shrink: 0; /* Prevents icon from shrinking */
+}
+.feature-icon-small svg {
+    width: 24px;
+    height: 24px;
+}
+
+.accordion-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.final-cta {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 60px 0;
+    text-align: center;
+}
+.final-cta h2 { color: var(--white); }
+.final-cta p {
+    color: #a9a9a9;
+    margin-bottom: 30px;
+}
+
+#atividades {
+    background-color: #fafbff;
+}
+
+.atividades-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.atividade-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.atividade-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.atividade-card-header {
+    position: relative;
+    padding: 20px;
+    min-height: 140px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.atividade-card-header .card-number {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+/* Card Gradients - Refreshed Palette */
+.atividade-card.color-1 .atividade-card-header {
+    background: linear-gradient(45deg, #748ffc, #4263eb);
+}
+.atividade-card.color-2 .atividade-card-header {
+    background: linear-gradient(45deg, #63e6be, #20c997);
+}
+.atividade-card.color-3 .atividade-card-header {
+    background: linear-gradient(45deg, #e599f7, #be4bdb);
+}
+.atividade-card.color-4 .atividade-card-header {
+    background: linear-gradient(45deg, #ff8787, #fa5252);
+}
+.atividade-card.color-5 .atividade-card-header {
+    background: linear-gradient(45deg, #ffd43b, #fcc419);
+}
+.atividade-card.color-6 .atividade-card-header {
+    background: linear-gradient(45deg, #66d9e8, #15aabf);
+}
+.atividade-card.color-7 .atividade-card-header {
+    background: linear-gradient(45deg, #ff922b, #fd7e14);
+}
+.atividade-card.color-8 .atividade-card-header {
+    background: linear-gradient(45deg, #91a7ff, #5c7cfa);
+}
+.atividade-card.color-9 .atividade-card-header {
+    background: linear-gradient(45deg, #8ce99a, #51cf66);
+}
+.atividade-card.color-10 .atividade-card-header {
+    background: linear-gradient(45deg, #f06595, #d6336c);
+}
+
+
+.atividade-card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.atividade-card-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+}
+
+.atividade-card-content p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    flex-grow: 1;
+    margin-bottom: 25px;
+}
+
+.atividade-card-content .btn {
+    align-self: flex-start;
+    width: 100%;
+    text-align: center;
+}
+
+/* Excel & Forms Page Specific Styles */
+body[data-page-name="excelforms.html"] .session-pill {
+    background-color: #35B729;
+}
+
+body[data-page-name="excelforms.html"] .atividade-card .btn-primary {
+    background-color: #35B729;
+}
+
+body[data-page-name="excelforms.html"] .atividade-card .btn-primary:hover {
+    background-color: #2c9a22; /* Darker green for hover */
+}
+
+body[data-page-name="excelforms.html"] #atividades .atividades-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* --- 4c. Library Page Sections --- */
+.library-section {
+    padding: 40px 0;
+    border-bottom: 2px solid #e0e0e0;
+}
+.library-section:last-child {
+    border-bottom: none;
+}
+.library-section-label {
+    text-align: center;
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    background-color: #f0f3ff;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.feature-grid-three-col .grid-item img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+}
+.icon-grid-three-col .grid-item {
+    text-align: center;
+}
+.icon-grid-three-col .icon-wrapper {
+    display: inline-block;
+    padding: 15px;
+    background-color: #f0f3ff;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    color: var(--primary-blue);
+}
+.icon-grid-three-col .icon-wrapper svg {
+    display: block;
+}
+
+.feature-list-with-image .feature-list-content {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+.feature-list-with-image .feature-list-text { flex: 1; }
+.feature-list-with-image .feature-list-image { flex: 1; }
+.feature-list-with-image .feature-list-image img { max-width: 100%; border-radius: var(--border-radius); }
+.feature-list-with-image .feature-list-text ul { list-style: none; }
+.feature-list-with-image .feature-list-text ul li { margin-bottom: 20px; }
+.feature-list-with-image .feature-list-text ul li h4 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.feature-list-with-image .feature-list-text ul li .feature-icon-small svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+.image-grid-two-col .grid-item img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+}
+.image-grid-two-col .icon-wrapper.large {
+    display: inline-block;
+    padding: 20px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.image-grid-two-col .icon-wrapper.large svg { display: block; }
+
+
+/* --- RESPONSIVE QUERIES FOR PAGE-SPECIFIC STYLES --- */
+@media (max-width: 992px) {
+    .hero-container { flex-direction: column; text-align: center; }
+    .hero-text { order: 2; }
+    .hero-image { order: 1; }
+    
+    .about-program-container { flex-direction: column; text-align: center; }
+    .about-program-text { order: 2; }
+    .about-program-image { order: 1; }
+
+    .course-slide-container { flex-direction: column !important; text-align: center; }
+    .course-slide-text { order: 2; }
+    .course-slide-image { order: 1; }
+    
+    .feature-list-with-image .feature-list-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .atividades-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+     body[data-page-name="excelforms.html"] #atividades .atividades-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+
+    .transversal-resource-cta-image {
+        max-width: 220px;
+        margin-bottom: 20px;
+    }
+    .transversal-resource-cta h4 {
+        font-size: 1.8rem;
+    }
+    
+    .atividades-grid {
+        grid-template-columns: 1fr;
+    }
+     body[data-page-name="excelforms.html"] #atividades .atividades-grid {
+        grid-template-columns: 1fr;
+    }
+}
