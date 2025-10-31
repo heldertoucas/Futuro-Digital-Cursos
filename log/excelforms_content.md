@@ -86,7 +86,10 @@
 - **07.03 - Tabelas dinâmicas:** Utilize ferramentas interativas de análise. (link: `https://camaralisboa.sharepoint.com/:x:/s/DMRHDDF-COMPETNCIASDIGITAIS794/EfZezxf3x8tPv4_mq18xa8QBwN5g_YvFkG-T-xupAIsfEw?e=l4cOaB`)
 - **07.04 - Fórmulas e funções:** Crie fórmulas para transformar dados em insights. (link: `https://camaralisboa.sharepoint.com/:x:/s/DMRHDDF-COMPETNCIASDIGITAIS794/EavH19hXEV5AoI-3J6aXvYkBHpU8o-v5FqY2S8mWmxNxyA?e=YlH5kM`)
 - **07.05 - Função Procx:** Use uma das funções mais poderosas para obter informação. (link: `https://camaralisboa.sharepoint.com/:x:/s/DMRHDDF-COMPETNCIASDIGITAIS794/Ea_B8r-58lZLipqA1j24ARsBKUEBvL8E7XJv82kU2sW6qQ?e=YcM93a`)
-
+- **07.06 - Exemplos de formulários:** Explore a criação de formulários com criatividade! (link: `https://camaralisboa.sharepoint.com/:w:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIOS%20DIGITAIS/DESAFIO%20DIGITAL%2076%20-%20FORMUL%C3%81RIOS.docx?download=1`)
+- **07.07 - Analise de Dados:** Trabalho colaborativo de análise de dados. (link: `https://camaralisboa.sharepoint.com/:x:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIOS%20DIGITAIS/DESAFIO%20DIGITAL%2077%20-%20ANALISE%20DADOS.xlsx?download=1`)
+- **07.08 - Jogo Excel:** Use uma das funções mais poderosas para obter informação. (link: `https://camaralisboa.sharepoint.com/:x:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIOS%20DIGITAIS/DESAFIO%20DIGITAL%2078%20-%20JOGO%20DO%20GALO.xlsx?download=1`)
+- **07.09 - Revisões:** Use uma das funções mais poderosas para obter informação. (link: `https://camaralisboa.sharepoint.com/:x:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIOS%20DIGITAIS/DESAFIO%20DIGITAL%2079%20-%20REVIS%C3%95ES%20EXCEL.xlsx?download=1`)
 ---
 
 ## 9. Chamada para Ação Final (`final-cta`)
