@@ -274,7 +274,8 @@ footer {
 }
 
 .feature-grid-three-col .grid,
-.icon-grid-three-col .grid {
+.icon-grid-three-col .grid,
+.support-grid-three-col {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -902,6 +903,21 @@ body[data-page-name="excelforms.html"] #atividades .atividades-grid {
     grid-template-columns: repeat(3, 1fr);
 }
 
+/* Teams & SharePoint Page Specific Styles */
+body[data-page-name="teamssharepoint.html"] .session-pill {
+    background-color: #7B3FE8;
+}
+body[data-page-name="teamssharepoint.html"] .atividade-card .btn-primary {
+    background-color: #7B3FE8;
+}
+body[data-page-name="teamssharepoint.html"] .atividade-card .btn-primary:hover {
+    background-color: #6a32d1;
+}
+body[data-page-name="teamssharepoint.html"] #atividades .atividades-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
 /* --- 4c. Library Page Sections --- */
 .library-section {
     padding: 40px 0;
@@ -1339,7 +1355,8 @@ body[data-page-name="wordloop-slides.html"].presentation-active .feature-list-im
     .course-slide-image { order: 1; }
     
     .feature-grid-three-col .grid,
-    .icon-grid-three-col .grid {
+    .icon-grid-three-col .grid,
+    .support-grid-three-col {
         grid-template-columns: 1fr;
     }
     .feature-list-with-image .feature-list-content {
@@ -1372,7 +1389,8 @@ body[data-page-name="wordloop-slides.html"].presentation-active .feature-list-im
     }
     .feature-columns { grid-template-columns: 1fr; }
     .image-grid-two-col .grid { grid-template-columns: 1fr; }
-    .atividades-grid {
+    .atividades-grid,
+    .support-grid-three-col {
         grid-template-columns: 1fr;
     }
      body[data-page-name="excelforms.html"] #atividades .atividades-grid {
