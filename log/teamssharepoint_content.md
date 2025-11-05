@@ -80,14 +80,15 @@
 - **IA Assistente Futuro Digital:** Assistente de IA para apoio à aprendizagem sobre as ferramentas colaborativas. (link: `https://m365.cloud.microsoft:443/chat/?titleId=T_91e2a188-f41f-270b-2eb4-c014ceba7938&source=embedded-builder`)
 
 ### Desafios Digitais
-- **08.01 - Personalize o seu escritório digital:** Afixe canais, agrupe-os em secções e adicione as suas aplicações mais usadas à barra lateral.
-- **08.02 - Comunicação eficaz:** Crie um anúncio formal com uma @menção e pratique a "regra de ouro" ao responder a uma publicação existente.
-- **08.03 - O ciclo de vida da reunião:** Agende uma reunião de canal, crie uma agenda colaborativa com Loop e simule a criação de uma ata com IA.
-- **08.04 - A biblioteca de documentos:** No SharePoint, crie uma nova biblioteca de documentos com colunas de metadados personalizadas (ex: Estado, Revisor).
-- **08.05 - Integrar SharePoint no Teams:** Crie uma vista privada na sua biblioteca e adicione-a como um novo separador num canal do Teams.
-- **08.06 - Canais standard vs. privados:** Teste as permissões e as limitações de funcionalidade (ex: impossibilidade de adicionar o Planner) de um canal privado.
-- **08.07 - Construir o "hub de projeto":** Edite a página principal do seu site SharePoint para incluir notícias, documentos e tarefas, e adicione essa página como um separador no Teams.
-- **08.08 - Ciclo de vida de um canal:** Pratique o processo completo de criação de um novo canal standard e a sua posterior eliminação.
+- **09.01 - Transforme mensagens em tarefas:** Explore o Teams e agilize o seu dia a dia com tarefas inteligentes. (link: 'https://drive.google.com/uc?export=download&id=1aT4mocPzuc2Y9ZvgbZtsCAmz7RUhtMZB')
+- **09.02 - Aprovação de documentos:** Saiba como transformar uma mensagem num fluxo simples e transparente de aprovação de documentos. (link: 'https://drive.google.com/uc?export=download&id=1eFVOOGePfq2q3kSBn7fVPk607TptN0tU')
+- **09.03 - Sondagens:** Obtenha resultados imediatos e guarde informações importantes partilhadas no Teams. (link: 'https://drive.google.com/uc?export=download&id=1RTUFJdCIACBOO-F2o6zA7-qLeuErcv7j')
+- **09.04 - Reconhecimento informal:** Saiba como reconhecer e incentivar a colaboração através de elogios simples (ex: Estado, Revisor). (link: 'https://drive.google.com/uc?export=download&id=1kmdd56Qi9Y8wUAgKNAdyt1pHxxOXQRUl')
+- **09.05 - Comunicar no canal da equipa:** Explore as funcionalidades avançadas de comunicação num canal do Teams. (link: 'https://drive.google.com/uc?export=download&id=1RtHK6BnkTeNDzZCuZwXZZ_Zd-90QasaY')
+- **09.06 - Quiz Equipa Teams ou Canal?:** Aceite o desafio e decida quando deve ser criado uma equipa Teams e quando deve ser criado um canal. (link: 'https://gemini.google.com/share/e9ac56745008')
+- **09.07 - Agilizar a recolha de dados:** Conheça o micrososft Lists e sistematiza a recolha de dados para a agilização de processos-chave da equipa. (link: 'https://drive.google.com/uc?export=download&id=1mZFBRHzq7RlvpIIPsa_W-XAtGoveXMXeIUNi6tkmuZw')
+- **09.08 - Biblioteca de documentos com metadados:** Pratique o processo completo de uma biblioteca de documentos com metadados personalizados. (link: 'https://drive.google.com/uc?export=download&id=1zIoeTdwhKsxLCY6YN6sE0yURXd0fwM5Te5PrCn9G27w')
+- **09.09 - Agendar e agir em Reuniões:** Pratique o processo completo de agendar uma reunião e criar uma ata de reunião com ajuda da IA. (link: 'https://drive.google.com/uc?export=download&id=14boxriyRAX6RJh2mNgMhVUST2qoi1Bt2GdsypFahEeM')
 
 ---
 
