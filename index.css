@@ -57,6 +57,7 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 17px;
 }
 
 body {
@@ -565,11 +566,20 @@ footer {
 
 /* --- 3e. Pills & Tags --- */
 .course-tag {
-    color: var(--primary-blue);
-    font-weight: 700;
-    margin-bottom: 10px;
-    display: block;
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: var(--white);
 }
+
+.course-tag.tag-blue { background-color: var(--primary-blue); }
+.course-tag.tag-green { background-color: #35B729; }
+.course-tag.tag-purple { background-color: #7B3FE8; }
+.course-tag.tag-dark { background-color: var(--dark-blue); }
+.course-tag.tag-orange { background-color: #fd7e14; }
 
 .session-pill {
     display: inline-block;
@@ -911,19 +921,6 @@ footer {
     width: 100%;
     text-align: center;
 }
-
-.infographic-cta {
-    background-color: var(--white);
-    text-align: center;
-    padding-bottom: 40px;
-}
-
-.infographic-cta .container {
-    border: 2px solid var(--border-color);
-    border-radius: var(--border-radius);
-    padding: 40px;
-}
-
 
 /* Excel & Forms Page Specific Styles */
 body[data-page-name="excelforms.html"] .session-pill {
@@ -1550,8 +1547,7 @@ body[data-page-name="wordloop-slides.html"].presentation-active .feature-list-im
     .course-slide-image { order: 1; }
     
     .feature-grid-three-col .grid,
-    .icon-grid-three-col .grid,
-    .support-grid-three-col .grid {
+    .icon-grid-three-col .grid {
         grid-template-columns: 1fr;
     }
     .feature-list-with-image .feature-list-content {
@@ -1563,9 +1559,6 @@ body[data-page-name="wordloop-slides.html"].presentation-active .feature-list-im
     }
     body[data-page-name="excelforms.html"] #atividades .atividades-grid {
         grid-template-columns: 1fr 1fr;
-    }
-    .stats-grid-four-col .grid {
-        grid-template-columns: repeat(2, 1fr);
     }
     .pricing-section .grid {
         grid-template-columns: 1fr;
@@ -1620,8 +1613,5 @@ body[data-page-name="wordloop-slides.html"].presentation-active .feature-list-im
     #presenter-remote {
         right: 10px;
         bottom: 60px;
-    }
-    .stats-grid-four-col .grid {
-        grid-template-columns: 1fr;
     }
 }
