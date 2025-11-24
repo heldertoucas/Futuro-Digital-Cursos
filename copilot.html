@@ -32,30 +32,471 @@
     </header>
 
     <main>
+        <!-- 1. Hero -->
         <section class="course-detail animate-on-scroll">
             <div class="container course-detail-container">
                 <img src="https://i.imgur.com/cPX9LRp.png" alt="Ilustração do curso Inteligência Artificial Copilot" class="course-hero-image">
-                <h1>Trabalhar em equipa com Inteligência Artificial Copilot</h1>
-                <p>Descubra como a IA pode ser a sua assistente pessoal para acelerar a escrita, resumir reuniões e automatizar tarefas.</p>
+                <h1>Trabalhar em equipa com a IA Microsoft Copilot</h1>
+                <p>O seu assistente pessoal para o dia a dia. Aprenda a acelerar tarefas, resumir reuniões, analisar dados e criar conteúdos com segurança e ética na CMLisboa.</p>
             </div>
         </section>
         
+        <!-- 2. Guia Transversal -->
         <section class="transversal-resource-cta">
             <div class="container">
                 <img src="https://i.imgur.com/Ld9GzP8.png" alt="Ilustração de colaboração e criatividade" class="transversal-resource-cta-image">
                 <h4>Primeiros Passos no Trabalho em Equipa</h4>
-                <p>Antes de mergulhar neste curso, explore o nosso guia essencial para a colaboração digital na CMLisboa.</p>
+                <p>Antes de dominar a IA, domine a colaboração. Explore o guia essencial para a cultura digital na CMLisboa.</p>
                 <a href="wordloop-slides.html" class="btn btn-primary">Ver Guia Essencial</a>
             </div>
         </section>
 
-        <section>
-            <div class="container" style="text-align: center;">
-                 <h3 style="margin-top: 40px;">Página em construção.</h3>
+        <!-- 3. Módulo 1: Fundamentos -->
+        <section class="accordion-section animate-on-scroll">
+            <div class="container">
+                <div class="section-header">
+                    <h2><span class="session-pill">Módulo 1</span>Segurança, Ética e Acesso</h2>
+                    <p>A utilização de IA na administração pública exige responsabilidade. Saiba como aceder e proteger os dados.</p>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>
+                                <span class="feature-icon-small"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-key"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg></span>
+                                Como Aceder
+                            </h4>
+                            <div class="accordion-icon"></div>
+                        </div>
+                        <div class="accordion-content">
+                            <p>O Copilot está integrado no Edge (barra lateral), no Microsoft 365 (Word, Excel, PPT) e no Teams. Procure o ícone do Copilot.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>
+                                <span class="feature-icon-small"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+                                A Regra de Ouro da Segurança
+                            </h4>
+                            <div class="accordion-icon"></div>
+                        </div>
+                        <div class="accordion-content">
+                            <p><strong>Nunca</strong> insira dados pessoais, confidenciais ou sensíveis (NIFs, moradas, nomes de munícipes) nos prompts.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>
+                                <span class="feature-icon-small"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye-off"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg></span>
+                                Técnica de Anonimização
+                            </h4>
+                            <div class="accordion-icon"></div>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Substitua dados reais por genéricos (ex: "Munícipe A", "Valor X") antes de pedir ajuda à IA.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>
+                                <span class="feature-icon-small"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span>
+                                Validação Humana
+                            </h4>
+                            <div class="accordion-icon"></div>
+                        </div>
+                        <div class="accordion-content">
+                            <p>A IA pode "alucinar" (inventar factos). O utilizador é sempre o responsável final e deve verificar todas as respostas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Módulo 2: Prompting -->
+        <section class="feature-list-with-image alt-bg animate-on-scroll">
+            <div class="container">
+                <div class="feature-list-content">
+                    <div class="feature-list-text">
+                         <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+                            <h2><span class="session-pill">Módulo 2</span>Engenharia de Prompts</h2>
+                            <p>A qualidade da resposta depende da qualidade do seu pedido. Use esta fórmula para resultados perfeitos.</p>
+                        </div>
+                        <ul>
+                            <li>
+                                <h4>1. O Quê? (Objetivo)</h4>
+                                <p>Use verbos de ação claros. Ex: "Resume", "Cria", "Analisa", "Reescreve".</p>
+                            </li>
+                             <li>
+                                <h4>2. Porquê? (Contexto)</h4>
+                                <p>Forneça informação que contextualize a tarefa. Ex: "Sou um técnico de RH a escrever para um novo funcionário..."</p>
+                            </li>
+                             <li>
+                                <h4>3. Fontes? (Base)</h4>
+                                <p>Indique onde a IA deve ir buscar a informação. Ex: "Com base no ficheiro 'Regulamento.pdf'..."</p>
+                            </li>
+                            <li>
+                                <h4>4. Como? (Formato)</h4>
+                                <p>Especifique o formato esperado do resultado. Ex: "...numa tabela", "...numa lista de tópicos", "...num parágrafo curto".</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="feature-list-image">
+                        <img src="https://i.imgur.com/cPX9LRp.png" alt="Ilustração de chat com IA">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Módulos 3, 4, 5: Microsoft 365 -->
+        <section class="course-slide animate-on-scroll">
+            <div class="container course-slide-container">
+                <div class="course-slide-text">
+                    <h3><span class="session-pill">Módulos 3-5</span>O seu Assistente no Word, Outlook e PowerPoint</h3>
+                    <p>Supere o bloqueio da página em branco e gira a comunicação num instante.</p>
+                    <ul>
+                        <li><strong>No Word:</strong> "Cria um rascunho de proposta com base nestas notas da reunião", "Reescreve este texto para ser mais formal".</li>
+                        <li><strong>No Outlook:</strong> "Resume esta cadeia longa de emails", "Sugere uma resposta a confirmar a presença".</li>
+                        <li><strong>No PowerPoint:</strong> "Sugere o rascunho de uma apresentação de 5 slides sobre 'Sustentabilidade' com base neste documento Word".</li>
+                    </ul>
+                </div>
+                <div class="course-slide-image">
+                    <img src="https://i.imgur.com/HODzPjK.png" alt="Copilot no Microsoft 365">
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Módulo 6: Excel -->
+        <section class="course-slide alt-bg alt-layout animate-on-scroll">
+            <div class="container course-slide-container">
+                <div class="course-slide-text">
+                    <h3><span class="session-pill">Módulo 6</span>Excel: O seu Analista de Dados Pessoal</h3>
+                    <p>Esqueça a memorização de sintaxes complexas. Transforme linguagem natural em fórmulas poderosas e insights visuais.</p>
+                    <ul>
+                        <li><strong>Construir Fórmulas:</strong> Descreva o cálculo (ex: "Soma os valores da coluna B se a coluna A for 'Lisboa'") e o Copilot escreve a função.</li>
+                        <li><strong>Explicar e Corrigir:</strong> Cole uma fórmula complexa que está a dar erro e peça ao Copilot para explicar o problema e sugerir a correção.</li>
+                        <li><strong>Visualizar Dados:</strong> Peça "Cria um gráfico de barras com as vendas por trimestre" ou "Destaca a vermelho os valores abaixo de 500".</li>
+                    </ul>
+                </div>
+                <div class="course-slide-image">
+                    <img src="https://i.imgur.com/T4rwgD6.png" alt="Copilot no Excel">
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Módulo 7: Cenários Práticos -->
+        <section class="accordion-section animate-on-scroll">
+            <div class="container">
+                <div class="section-header">
+                    <h2><span class="session-pill">Módulo 7</span>Fluxos de Trabalho Integrados</h2>
+                    <p>A verdadeira magia acontece quando ligamos as ferramentas. Veja exemplos reais de como poupar horas de trabalho.</p>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Da Reunião à Ação (Teams + Loop + Planner)</h4>
+                            <div class="accordion-icon"></div>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Comece com uma agenda colaborativa no Loop, use o Copilot no Teams para transcrever a reunião e extrair tarefas, e exporte-as diretamente para o Planner.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Do Inquérito ao Relatório (Forms + Excel + PowerPoint)</h4>
+                            <div class="accordion-icon"></div>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Recolha dados no Forms, use o Copilot no Excel para identificar as 3 principais tendências e peça ao Copilot no PowerPoint para criar uma apresentação com base nesses insights.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Automação de Processos (Forms + Power Automate)</h4>
+                            <div class="accordion-icon"></div>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Configure um fluxo onde um novo pedido no Forms (ex: "Aprovação de Despesa") envia automaticamente uma notificação de aprovação no Teams para a chefia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Módulo 8: Ética -->
+        <section class="feature-list-with-image alt-bg animate-on-scroll">
+            <div class="container">
+                <div class="feature-list-content">
+                    <div class="feature-list-text">
+                         <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+                            <h2><span class="session-pill">Módulo 8</span>Uso Responsável de IA</h2>
+                            <p>A tecnologia é uma ferramenta de suporte, nunca um substituto da sua autoria ou julgamento profissional.</p>
+                        </div>
+                        <ul>
+                            <li>
+                                <h4>O Utilizador é o Responsável</h4>
+                                <p>O AI Act define que quem utiliza a ferramenta é responsável pelo resultado. Não há "culpa do algoritmo".</p>
+                            </li>
+                             <li>
+                                <h4>Dever de Supervisão</h4>
+                                <p>Nunca aceite um resultado "cegamente". Tem o dever legal e ético de verificar a veracidade e justiça da informação.</p>
+                            </li>
+                             <li>
+                                <h4>Proteção de Dados (RGPD)</h4>
+                                <p>Assegure que o uso da IA não compromete os direitos dos cidadãos nem a privacidade dos seus dados.</p>
+                            </li>
+                            <li>
+                                <h4>Transparência</h4>
+                                <p>Sempre que um documento for substancialmente gerado por IA, é uma boa prática informar o destinatário.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="feature-list-image">
+                        <img src="https://i.imgur.com/2ul2gyo.png" alt="Ética na IA">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Recursos -->
+        <section id="atividades">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                     <h2><span class="session-pill">Módulo 9</span>Recursos de Aprendizagem</h2>
+                    <p>Domine a IA com estes recursos práticos.</p>
+                </div>
+                
+                <h3 style="text-align: center;">Recursos de Apoio</h3>
+                <div class="atividades-grid" style="margin-bottom: 50px;">
+                    <div class="atividade-card color-10 animate-on-scroll">
+                        <div class="atividade-card-header"><span class="card-number">Manual</span></div>
+                        <div class="atividade-card-content">
+                            <h3>Manual de Aprendizagens Copilot</h3>
+                            <p>O manual oficial e completo do curso, com todos os prompts e detalhes técnicos.</p>
+                            <a href="https://docs.google.com/document/d/e/2PACX-1vRha5jHXAt6_DSEmgQqwyx3IdddzElfZTsL0OVfpxOVt6RZHTiYzQd6eDzSWLkBaMj3qbv2v5WFnr_v/pub" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                        </div>
+                    </div>
+                     <div class="atividade-card color-7 animate-on-scroll" style="--animation-delay: 0.1s;">
+                        <div class="atividade-card-header"><span class="card-number">Movimento</span></div>
+                        <div class="atividade-card-content">
+                            <h3>IA para Todos</h3>
+                            <p>Manifesto para uma IA mais humana na CMLisboa.</p>
+                            <a href="https://heldertoucas.github.io/iaparatodoscml/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="text-align: center;">Desafios Digitais</h3>
+                <div class="atividades-grid">
+                    <!-- 10.06 (Active) -->
+                    <div class="atividade-card color-1 animate-on-scroll">
+                        <div class="atividade-card-header"><span class="card-number">10.06</span></div>
+                        <div class="atividade-card-content">
+                            <h3>Jogo da IA "Especialista"</h3>
+                            <p>Tente adivinhar a "profissão secreta" da IA.</p>
+                            <a href="https://docs.google.com/document/d/1w-gNsVszvZk0KYyT5z-7cjFJnbgU_2FspKA-7196mGo/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        </div>
+                    </div>
+                    <!-- 10.07 (Active) -->
+                    <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 0.1s;">
+                        <div class="atividade-card-header"><span class="card-number">10.07</span></div>
+                        <div class="atividade-card-content">
+                            <h3>IA com Personalidade</h3>
+                            <p>Explore como a IA pode adotar diferentes personalidades.</p>
+                            <a href="https://docs.google.com/document/d/1SeiAJ_Ot-qUWBX8MbZRBZUWb9mtBEJOP2JRuWu5CbWo/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        </div>
+                    </div>
+                    <!-- 10.08 (Active) -->
+                    <div class="atividade-card color-3 animate-on-scroll" style="--animation-delay: 0.2s;">
+                        <div class="atividade-card-header"><span class="card-number">10.08</span></div>
+                        <div class="atividade-card-content">
+                            <h3>Emails com IA</h3>
+                            <p>Utilize a IA para analisar e redigir respostas a emails.</p>
+                            <a href="https://docs.google.com/document/d/1qH7bNvEWoA0SCkc2dGstAnMGLBIsFCNETkEz3iToL98/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        </div>
+                    </div>
+                    <!-- 10.09 (Active) -->
+                    <div class="atividade-card color-4 animate-on-scroll" style="--animation-delay: 0.3s;">
+                        <div class="atividade-card-header"><span class="card-number">10.09</span></div>
+                        <div class="atividade-card-content">
+                            <h3>Análise de Dados com IA</h3>
+                            <p>Obtenha insights e gráficos a partir de tabelas de dados.</p>
+                            <a href="https://docs.google.com/document/d/1vJ_YfvYb-fMkbXcRODHhs4SOw8HrmSjeYb4YpQnp-ks/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        </div>
+                    </div>
+                     <!-- 10.10 (Active) -->
+                    <div class="atividade-card color-5 animate-on-scroll" style="--animation-delay: 0.4s;">
+                        <div class="atividade-card-header"><span class="card-number">10.10</span></div>
+                        <div class="atividade-card-content">
+                            <h3>Documentos com IA</h3>
+                            <p>Utilize a IA para decifrar e resumir documentos.</p>
+                            <a href="https://docs.google.com/document/d/17uNVHPVdC3l6-a4D0ubQDiWhSUVPftUbvEHvadxwEbY/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        </div>
+                    </div>
+                     <!-- 10.12 (Inactive) -->
+                    <div class="atividade-card color-6 animate-on-scroll" style="--animation-delay: 0.5s; opacity: 0.7;">
+                        <div class="atividade-card-header"><span class="card-number">10.12</span></div>
+                        <div class="atividade-card-content">
+                            <h3>Criar imagens com IA</h3>
+                            <p>Aprenda a criar imagens fantásticas a partir de texto.</p>
+                            <a href="#" class="btn btn-secondary">Em Breve</a>
+                        </div>
+                    </div>
+                     <!-- 10.13 (Inactive) -->
+                    <div class="atividade-card color-7 animate-on-scroll" style="--animation-delay: 0.6s; opacity: 0.7;">
+                        <div class="atividade-card-header"><span class="card-number">10.13</span></div>
+                        <div class="atividade-card-content">
+                            <h3>Representações da IA</h3>
+                            <p>Use a IA para transformar conceitos abstratos em arte.</p>
+                             <a href="#" class="btn btn-secondary">Em Breve</a>
+                        </div>
+                    </div>
+                     <!-- 10.14 (Inactive) -->
+                    <div class="atividade-card color-8 animate-on-scroll" style="--animation-delay: 0.7s; opacity: 0.7;">
+                        <div class="atividade-card-header"><span class="card-number">10.14</span></div>
+                        <div class="atividade-card-content">
+                            <h3>Transformação Visual IA</h3>
+                            <p>Utilize o poder da IA para alterar e melhorar fotografias.</p>
+                             <a href="#" class="btn btn-secondary">Em Breve</a>
+                        </div>
+                    </div>
+                     <!-- 10.15 (Inactive) -->
+                    <div class="atividade-card color-9 animate-on-scroll" style="--animation-delay: 0.8s; opacity: 0.7;">
+                        <div class="atividade-card-header"><span class="card-number">10.15</span></div>
+                        <div class="atividade-card-content">
+                            <h3>A minha IA</h3>
+                            <p>Construa a sua própria IA personalizada.</p>
+                             <a href="#" class="btn btn-secondary">Em Breve</a>
+                        </div>
+                    </div>
+                     <!-- 10.16 (Inactive) -->
+                    <div class="atividade-card color-10 animate-on-scroll" style="opacity: 0.7;">
+                        <div class="atividade-card-header"><span class="card-number">10.16</span></div>
+                        <div class="atividade-card-content">
+                            <h3>Apresentações com IA</h3>
+                            <p>Crie uma apresentação de slides profissional em minutos.</p>
+                             <a href="#" class="btn btn-secondary">Em Breve</a>
+                        </div>
+                    </div>
+                     <!-- 10.17 (Inactive) -->
+                    <div class="atividade-card color-1 animate-on-scroll" style="opacity: 0.7;">
+                        <div class="atividade-card-header"><span class="card-number">10.17</span></div>
+                        <div class="atividade-card-content">
+                            <h3>Avatar de IA</h3>
+                            <p>Crie o seu próprio vídeo com uma personagem de IA.</p>
+                             <a href="#" class="btn btn-secondary">Em Breve</a>
+                        </div>
+                    </div>
+                     <!-- 10.18 (Inactive) -->
+                    <div class="atividade-card color-2 animate-on-scroll" style="opacity: 0.7;">
+                        <div class="atividade-card-header"><span class="card-number">10.18</span></div>
+                        <div class="atividade-card-content">
+                            <h3>Música com IA</h3>
+                            <p>Crie letras e estilos musicais com a ajuda da IA.</p>
+                             <a href="#" class="btn btn-secondary">Em Breve</a>
+                        </div>
+                    </div>
+                     <!-- 10.19 (Inactive) -->
+                    <div class="atividade-card color-3 animate-on-scroll" style="opacity: 0.7;">
+                        <div class="atividade-card-header"><span class="card-number">10.19</span></div>
+                        <div class="atividade-card-content">
+                            <h3>Dilemas</h3>
+                            <p>Debata os grandes desafios éticos da IA.</p>
+                             <a href="#" class="btn btn-secondary">Em Breve</a>
+                        </div>
+                    </div>
+                     <!-- 10.26 (Inactive) -->
+                    <div class="atividade-card color-4 animate-on-scroll" style="opacity: 0.7;">
+                        <div class="atividade-card-header"><span class="card-number">10.26</span></div>
+                        <div class="atividade-card-content">
+                            <h3>Guia Prompts</h3>
+                            <p>Aprenda as melhores técnicas para criar pedidos eficazes.</p>
+                             <a href="#" class="btn btn-secondary">Em Breve</a>
+                        </div>
+                    </div>
+                     <!-- 10.28 (Inactive) -->
+                    <div class="atividade-card color-5 animate-on-scroll" style="opacity: 0.7;">
+                        <div class="atividade-card-header"><span class="card-number">10.28</span></div>
+                        <div class="atividade-card-content">
+                            <h3>Contas IA Gratuitas</h3>
+                            <p>Explore as funcionalidades do Gemini, ChatGPT e Copilot.</p>
+                             <a href="#" class="btn btn-secondary">Em Breve</a>
+                        </div>
+                    </div>
+                    <!-- 10.29 (Active) -->
+                    <div class="atividade-card color-6 animate-on-scroll">
+                        <div class="atividade-card-header"><span class="card-number">10.29</span></div>
+                        <div class="atividade-card-content">
+                            <h3>A evolução da IA generativa</h3>
+                            <p>Explora os conceitos mais importantes da IA Generativa.</p>
+                            <a href="https://docs.google.com/document/d/15LNnGUyTNI1T2JecjVGbg1PR7tzPgGDPr0cn0HMTr4s/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        </div>
+                    </div>
+                     <!-- 10.30 (Inactive) -->
+                    <div class="atividade-card color-7 animate-on-scroll" style="opacity: 0.7;">
+                        <div class="atividade-card-header"><span class="card-number">10.30</span></div>
+                        <div class="atividade-card-content">
+                            <h3>Jogos Interativos com IA</h3>
+                            <p>Crie o seu próprio jogo interativo com IA.</p>
+                             <a href="#" class="btn btn-secondary">Em Breve</a>
+                        </div>
+                    </div>
+                     <!-- 10.31 (Inactive) -->
+                    <div class="atividade-card color-8 animate-on-scroll" style="opacity: 0.7;">
+                        <div class="atividade-card-header"><span class="card-number">10.31</span></div>
+                        <div class="atividade-card-content">
+                            <h3>ChatGPT no modo "Projeto"</h3>
+                            <p>Utilize a funcionalidade "projetos" do chatgpt.</p>
+                             <a href="#" class="btn btn-secondary">Em Breve</a>
+                        </div>
+                    </div>
+                    <!-- 10.32 (Active) -->
+                    <div class="atividade-card color-9 animate-on-scroll">
+                        <div class="atividade-card-header"><span class="card-number">10.32</span></div>
+                        <div class="atividade-card-content">
+                            <h3>Dicas úteis IA</h3>
+                            <p>Conheça dicas úteis sobre a utilização de IAs.</p>
+                            <a href="https://heldertoucas.github.io/iapt-revisoes/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        </div>
+                    </div>
+                    <!-- 10.33 (Active) -->
+                    <div class="atividade-card color-10 animate-on-scroll">
+                        <div class="atividade-card-header"><span class="card-number">10.33</span></div>
+                        <div class="atividade-card-content">
+                            <h3>Conceitos Fundamentais IA</h3>
+                            <p>Reveja os conceitos-chave da IA.</p>
+                            <a href="https://heldertoucas.github.io/iapt-revisoes/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        </div>
+                    </div>
+                    <!-- 10.34 (Active) -->
+                    <div class="atividade-card color-1 animate-on-scroll">
+                        <div class="atividade-card-header"><span class="card-number">10.34</span></div>
+                        <div class="atividade-card-content">
+                            <h3>Ferramentas de IA</h3>
+                            <p>Explore as ferramentas mais populares de IA.</p>
+                            <a href="https://heldertoucas.github.io/iapt-revisoes/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        </div>
+                    </div>
+                     <!-- 10.35 (Inactive) -->
+                    <div class="atividade-card color-2 animate-on-scroll" style="opacity: 0.7;">
+                        <div class="atividade-card-header"><span class="card-number">10.35</span></div>
+                        <div class="atividade-card-content">
+                            <h3>A minha app de IA</h3>
+                            <p>Utilize o Google AI Studio para criar uma Web App.</p>
+                             <a href="#" class="btn btn-secondary">Em Breve</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta animate-on-scroll">
+            <div class="container">
+                <h2>Pronto para o Futuro do Trabalho?</h2>
+                <p>Inscreva-se e aprenda a usar a IA como o seu copiloto diário.</p>
+                <a href="index.html#inscricao" class="btn btn-primary">Inscrever-me Agora</a>
             </div>
         </section>
     </main>
-    
+
     <footer>
         <div class="container footer-container">
             <div class="footer-about">
