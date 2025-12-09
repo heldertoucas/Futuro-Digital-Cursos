@@ -150,6 +150,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Resource Lock Logic ---
+    function initializeResourceLock() {
+        const section = document.getElementById('atividades');
+        if (!section || !section.dataset.password) return;
+
+        const password = section.dataset.password;
+        const lockContainer = document.getElementById('resource-lock');
+        const contentContainer = document.getElementById('resources-content');
+        const input = document.getElementById('lock-password');
+        const btn = document.getElementById('unlock-btn');
+        const error = document.getElementById('lock-error');
+
+        if (!lockContainer || !contentContainer || !input || !btn || !error) return;
+
+        // Check if previously unlocked
+        const pageId = document.body.dataset.pageName || 'unknown';
+        if (localStorage.getItem('unlocked_' + pageId) === 'true') {
+            lockContainer.style.display = 'none';
+            contentContainer.style.display = 'block';
+            return;
+        }
+
+        const checkPassword = () => {
+            if (input.value === password) {
+                lockContainer.style.display = 'none';
+                contentContainer.style.display = 'block';
+                localStorage.setItem('unlocked_' + pageId, 'true');
+                // Trigger scroll animation check for newly revealed elements
+                initializeScrollAnimations(); 
+            } else {
+                error.style.display = 'block';
+                input.style.borderColor = '#dc3545';
+                input.value = '';
+                input.focus();
+            }
+        };
+
+        btn.addEventListener('click', checkPassword);
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') checkPassword();
+        });
+    }
+
     // --- Presentation (Slide) Mode ---
     let destroySlideMode = null;
 
@@ -395,9 +438,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         initializeAccordions();
+        initializeResourceLock(); // Added resource lock initialization
         initializeTestimonialSlider();
         handlePresentationMode();
-        initializeScrollAnimations(); // Add scroll animation initialization here
+        initializeScrollAnimations(); 
     }
 
 

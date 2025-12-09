@@ -18,6 +18,7 @@
     3c. Testimonial Slider
     3d. Accordion
     3e. Pills & Tags
+    3f. Resource Lock Screen
 
 4. PAGE-SPECIFIC STYLES
     4a. Home Page Sections
@@ -303,6 +304,7 @@ footer {
     font-weight: 500;
     transition: all 0.3s ease;
     border: 1px solid transparent;
+    cursor: pointer;
 }
 
 .btn-primary {
@@ -591,6 +593,59 @@ footer {
     font-weight: 500;
     margin-right: 15px;
     vertical-align: middle;
+}
+
+/* --- 3f. Resource Lock Screen --- */
+.resource-lock-container {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    max-width: 550px;
+    margin: 0 auto 50px auto;
+    border: 1px solid var(--border-color);
+}
+
+.lock-icon {
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.lock-icon svg {
+    width: 60px;
+    height: 60px;
+}
+
+.lock-message {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: var(--heading-color);
+}
+
+.password-input {
+    display: block;
+    width: 200px;
+    margin: 0 auto 20px auto;
+    padding: 12px;
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    text-align: center;
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.password-input:focus {
+    border-color: var(--primary-blue);
+}
+
+.lock-error {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    display: none;
 }
 
 

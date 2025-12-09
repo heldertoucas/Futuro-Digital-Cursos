@@ -258,365 +258,379 @@
         </section>
 
         <!-- 9. Recursos -->
-        <section id="atividades">
+        <section id="atividades" data-password="914">
             <div class="container">
                 <div class="section-header animate-on-scroll">
                      <h2><span class="session-pill">Módulo 9</span>Recursos de Aprendizagem</h2>
                     <p>Domine a IA com estes recursos práticos.</p>
                 </div>
                 
-                <!-- Subsecção 1: Recursos de Apoio -->
-                <h3 style="text-align: center; margin-top: 40px; margin-bottom: 30px;">Recursos de Apoio</h3>
-                <div class="atividades-grid" style="margin-bottom: 50px;">
-                    <div class="atividade-card color-10 animate-on-scroll">
-                        <div class="atividade-card-header">
-                            <span class="card-number">
-                                <!-- Icon: BookOpen (Lucide) -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 1-4 4v14a3 3 0 0 0 3-3h7z"/></svg>
-                            </span>
-                        </div>
-                        <div class="atividade-card-content">
-                            <h3>Manual de Aprendizagens Copilot</h3>
-                            <p>O manual oficial e completo do curso, com todos os prompts e detalhes técnicos.</p>
-                            <a href="https://docs.google.com/document/d/e/2PACX-1vRha5jHXAt6_DSEmgQqwyx3IdddzElfZTsL0OVfpxOVt6RZHTiYzQd6eDzSWLkBaMj3qbv2v5WFnr_v/pub" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
-                        </div>
+                <!-- Lock Interface -->
+                <div id="resource-lock" class="resource-lock-container">
+                    <div class="lock-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                     </div>
-                    <div class="atividade-card color-8 animate-on-scroll" style="--animation-delay: 0.1s;">
-                        <div class="atividade-card-header">
-                            <span class="card-number">
-                                <!-- Icon: Compass (Lucide) -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-compass"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-                            </span>
-                        </div>
-                        <div class="atividade-card-content">
-                            <h3>Guia Essencial Equipas ON</h3>
-                            <p>As bases da colaboração digital para um trabalho em equipa mais eficiente.</p>
-                            <a href="wordloop-slides.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
-                        </div>
-                    </div>
-                     <div class="atividade-card color-7 animate-on-scroll" style="--animation-delay: 0.2s;">
-                        <div class="atividade-card-header">
-                            <span class="card-number">
-                                <!-- Icon: Scroll (Lucide) -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scroll"><path d="M8 21h12a2 2 0 0 0 2-2v-2H10v2a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v3h4"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/></svg>
-                            </span>
-                        </div>
-                        <div class="atividade-card-content">
-                            <h3>Manifesto IA para Todos</h3>
-                            <p>Uma visão para uma Inteligência Artificial mais humana e inclusiva na CMLisboa.</p>
-                            <a href="https://iaptcml-oy2p3l9ux-heldertoucas-projects.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
-                        </div>
-                    </div>
+                    <p class="lock-message">Introduza a senha do curso para aceder aos recursos.</p>
+                    <input type="password" id="lock-password" class="password-input" maxlength="3" placeholder="___">
+                    <button id="unlock-btn" class="btn btn-primary">Desbloquear</button>
+                    <p id="lock-error" class="lock-error">Senha incorreta. Tente novamente.</p>
                 </div>
 
-                <!-- Subsecção 2: Apps do Curso -->
-                <h3 style="text-align: center; margin-bottom: 30px;">Apps do Curso</h3>
-                <div class="atividades-grid" style="margin-bottom: 50px;">
-                     <div class="atividade-card color-9 animate-on-scroll">
-                        <div class="atividade-card-header">
-                             <span class="card-number">
-                                <!-- Icon: Factory (Lucide) -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-factory"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></svg>
-                            </span>
+                <!-- Content (Hidden by Default) -->
+                <div id="resources-content" style="display: none;">
+                    <!-- Subsecção 1: Recursos de Apoio -->
+                    <h3 style="text-align: center; margin-top: 40px; margin-bottom: 30px;">Recursos de Apoio</h3>
+                    <div class="atividades-grid" style="margin-bottom: 50px;">
+                        <div class="atividade-card color-10 animate-on-scroll">
+                            <div class="atividade-card-header">
+                                <span class="card-number">
+                                    <!-- Icon: BookOpen (Lucide) -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 1-4 4v14a3 3 0 0 0 3-3h7z"/></svg>
+                                </span>
+                            </div>
+                            <div class="atividade-card-content">
+                                <h3>Manual de Aprendizagens Copilot</h3>
+                                <p>O manual oficial e completo do curso, com todos os prompts e detalhes técnicos.</p>
+                                <a href="https://docs.google.com/document/d/e/2PACX-1vRha5jHXAt6_DSEmgQqwyx3IdddzElfZTsL0OVfpxOVt6RZHTiYzQd6eDzSWLkBaMj3qbv2v5WFnr_v/pub" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
                         </div>
-                        <div class="atividade-card-content">
-                            <h3>Fábrica de Prompts</h3>
-                            <p>Uma ferramenta interativa para ajudar a construir os seus prompts perfeitos.</p>
-                            <a href="https://iaptcml-oy2p3l9ux-heldertoucas-projects.vercel.app/#/prompt-factory" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                        <div class="atividade-card color-8 animate-on-scroll" style="--animation-delay: 0.1s;">
+                            <div class="atividade-card-header">
+                                <span class="card-number">
+                                    <!-- Icon: Compass (Lucide) -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-compass"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                                </span>
+                            </div>
+                            <div class="atividade-card-content">
+                                <h3>Guia Essencial Equipas ON</h3>
+                                <p>As bases da colaboração digital para um trabalho em equipa mais eficiente.</p>
+                                <a href="wordloop-slides.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="atividade-card color-1 animate-on-scroll" style="--animation-delay: 0.1s;">
-                        <div class="atividade-card-header">
-                            <span class="card-number">
-                                <!-- Icon: Crown (Lucide) -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-crown"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg>
-                            </span>
-                        </div>
-                        <div class="atividade-card-content">
-                            <h3>Mestre de prompts</h3>
-                            <p>Crie o prompt perfeito em segundos.</p>
-                            <a href="https://ai.studio/apps/drive/1_Gn5d1w3oslu9d_RfETYB1pA8HeKabA6?fullscreenApplet=true" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
-                        </div>
-                    </div>
-                     <div class="atividade-card color-6 animate-on-scroll" style="--animation-delay: 0.2s;">
-                        <div class="atividade-card-header">
-                            <span class="card-number">
-                                <!-- Icon: Wrench (Lucide) -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                            </span>
-                        </div>
-                        <div class="atividade-card-content">
-                            <h3>Ferramentas de IA</h3>
-                            <p>Explore as ferramentas mais populares de IA e conheça as suas características.</p>
-                            <a href="https://heldertoucas.github.io/iapt-revisoes2/?mode=tools" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
-                        </div>
-                    </div>
-                     <div class="atividade-card color-5 animate-on-scroll" style="--animation-delay: 0.3s;">
-                        <div class="atividade-card-header">
-                            <span class="card-number">
-                                <!-- Icon: Lightbulb (Lucide) -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-1 1.5-2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
-                            </span>
-                        </div>
-                        <div class="atividade-card-content">
-                            <h3>Dicas úteis IA</h3>
-                            <p>Conheça dicas práticas e truques para tirar o máximo partido da IA.</p>
-                            <a href="https://heldertoucas.github.io/iapt-revisoes2/?mode=tips&id=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                         <div class="atividade-card color-7 animate-on-scroll" style="--animation-delay: 0.2s;">
+                            <div class="atividade-card-header">
+                                <span class="card-number">
+                                    <!-- Icon: Scroll (Lucide) -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scroll"><path d="M8 21h12a2 2 0 0 0 2-2v-2H10v2a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v3h4"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/></svg>
+                                </span>
+                            </div>
+                            <div class="atividade-card-content">
+                                <h3>Manifesto IA para Todos</h3>
+                                <p>Uma visão para uma Inteligência Artificial mais humana e inclusiva na CMLisboa.</p>
+                                <a href="https://iaptcml-oy2p3l9ux-heldertoucas-projects.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="atividade-card color-4 animate-on-scroll" style="--animation-delay: 0.4s;">
-                        <div class="atividade-card-header">
-                            <span class="card-number">
-                                <!-- Icon: Brain (Lucide) -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg>
-                            </span>
-                        </div>
-                        <div class="atividade-card-content">
-                            <h3>Conceitos Essenciais IA</h3>
-                            <p>Reveja os conceitos-chave da IA de forma interativa.</p>
-                            <a href="https://heldertoucas.github.io/iapt-revisoes2/?mode=review&id=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
-                        </div>
-                    </div>
-                    <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 0.5s;">
-                        <div class="atividade-card-header">
-                            <span class="card-number">
-                                <!-- Icon: History (Lucide) -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-history"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
-                            </span>
-                        </div>
-                        <div class="atividade-card-content">
-                            <h3>A evolução da IA generativa</h3>
-                            <p>Explora os conceitos mais importantes e a história da IA Generativa.</p>
-                            <a href="https://generative-ai-explor-vipw.bolt.host/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
-                        </div>
-                    </div>
-                     <div class="atividade-card color-3 animate-on-scroll" style="--animation-delay: 0.6s;">
-                        <div class="atividade-card-header">
-                            <span class="card-number">
-                                <!-- Icon: LayoutGrid (Lucide) -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-grid"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
-                            </span>
-                        </div>
-                        <div class="atividade-card-content">
-                            <h3>O que são Tokens?</h3>
-                            <p>Uma explicação interativa sobre como a IA "lê" e processa o texto.</p>
-                            <a href="https://ai.studio/apps/drive/16Sr8iibp_1LZCf7dTc5sH8YqV2khdoo9?fullscreenApplet=true" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
-                        </div>
-                    </div>
-                     <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 0.7s;">
-                        <div class="atividade-card-header">
-                            <span class="card-number">
-                                <!-- Icon: AppWindow (Lucide) -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-app-window"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 4v4"/><path d="M2 8h20"/><path d="M6 4v4"/></svg>
-                            </span>
-                        </div>
-                        <div class="atividade-card-content">
-                            <h3>A minha app de IA</h3>
-                            <p>Utilize o Google AI Studio para criar uma Web App.</p>
-                             <a href="https://docs.google.com/document/d/1u3b-BxaXrcNQqBnQK1uWSfkbiI4xa-02zTaSj5X1OWU/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Subsecção 3: Desafios Digitais -->
-                <h3 style="text-align: center; margin-bottom: 30px;">Desafios Digitais</h3>
-                <div class="atividades-grid">
-                    <!-- 10.06 -->
-                    <div class="atividade-card color-1 animate-on-scroll">
-                        <div class="atividade-card-header"><span class="card-number">10.06</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Jogo da IA "Especialista"</h3>
-                            <p>Tente adivinhar a "profissão secreta" da IA.</p>
-                            <a href="https://docs.google.com/document/d/1w-gNsVszvZk0KYyT5z-7cjFJnbgU_2FspKA-7196mGo/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                    <!-- Subsecção 2: Apps do Curso -->
+                    <h3 style="text-align: center; margin-bottom: 30px;">Apps do Curso</h3>
+                    <div class="atividades-grid" style="margin-bottom: 50px;">
+                         <div class="atividade-card color-9 animate-on-scroll">
+                            <div class="atividade-card-header">
+                                 <span class="card-number">
+                                    <!-- Icon: Factory (Lucide) -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-factory"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></svg>
+                                </span>
+                            </div>
+                            <div class="atividade-card-content">
+                                <h3>Fábrica de Prompts</h3>
+                                <p>Uma ferramenta interativa para ajudar a construir os seus prompts perfeitos.</p>
+                                <a href="https://iaptcml-oy2p3l9ux-heldertoucas-projects.vercel.app/#/prompt-factory" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
+                        </div>
+                        <div class="atividade-card color-1 animate-on-scroll" style="--animation-delay: 0.1s;">
+                            <div class="atividade-card-header">
+                                <span class="card-number">
+                                    <!-- Icon: Crown (Lucide) -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-crown"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg>
+                                </span>
+                            </div>
+                            <div class="atividade-card-content">
+                                <h3>Mestre de prompts</h3>
+                                <p>Crie o prompt perfeito em segundos.</p>
+                                <a href="https://ai.studio/apps/drive/1_Gn5d1w3oslu9d_RfETYB1pA8HeKabA6?fullscreenApplet=true" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
+                        </div>
+                         <div class="atividade-card color-6 animate-on-scroll" style="--animation-delay: 0.2s;">
+                            <div class="atividade-card-header">
+                                <span class="card-number">
+                                    <!-- Icon: Wrench (Lucide) -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                                </span>
+                            </div>
+                            <div class="atividade-card-content">
+                                <h3>Ferramentas de IA</h3>
+                                <p>Explore as ferramentas mais populares de IA e conheça as suas características.</p>
+                                <a href="https://heldertoucas.github.io/iapt-revisoes2/?mode=tools" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
+                        </div>
+                         <div class="atividade-card color-5 animate-on-scroll" style="--animation-delay: 0.3s;">
+                            <div class="atividade-card-header">
+                                <span class="card-number">
+                                    <!-- Icon: Lightbulb (Lucide) -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-1 1.5-2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                                </span>
+                            </div>
+                            <div class="atividade-card-content">
+                                <h3>Dicas úteis IA</h3>
+                                <p>Conheça dicas práticas e truques para tirar o máximo partido da IA.</p>
+                                <a href="https://heldertoucas.github.io/iapt-revisoes2/?mode=tips&id=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
+                        </div>
+                        <div class="atividade-card color-4 animate-on-scroll" style="--animation-delay: 0.4s;">
+                            <div class="atividade-card-header">
+                                <span class="card-number">
+                                    <!-- Icon: Brain (Lucide) -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg>
+                                </span>
+                            </div>
+                            <div class="atividade-card-content">
+                                <h3>Conceitos Essenciais IA</h3>
+                                <p>Reveja os conceitos-chave da IA de forma interativa.</p>
+                                <a href="https://heldertoucas.github.io/iapt-revisoes2/?mode=review&id=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
+                        </div>
+                        <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 0.5s;">
+                            <div class="atividade-card-header">
+                                <span class="card-number">
+                                    <!-- Icon: History (Lucide) -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-history"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+                                </span>
+                            </div>
+                            <div class="atividade-card-content">
+                                <h3>A evolução da IA generativa</h3>
+                                <p>Explora os conceitos mais importantes e a história da IA Generativa.</p>
+                                <a href="https://generative-ai-explor-vipw.bolt.host/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
+                        </div>
+                         <div class="atividade-card color-3 animate-on-scroll" style="--animation-delay: 0.6s;">
+                            <div class="atividade-card-header">
+                                <span class="card-number">
+                                    <!-- Icon: LayoutGrid (Lucide) -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-grid"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                                </span>
+                            </div>
+                            <div class="atividade-card-content">
+                                <h3>O que são Tokens?</h3>
+                                <p>Uma explicação interativa sobre como a IA "lê" e processa o texto.</p>
+                                <a href="https://ai.studio/apps/drive/16Sr8iibp_1LZCf7dTc5sH8YqV2khdoo9?fullscreenApplet=true" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
+                        </div>
+                         <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 0.7s;">
+                            <div class="atividade-card-header">
+                                <span class="card-number">
+                                    <!-- Icon: AppWindow (Lucide) -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-app-window"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 4v4"/><path d="M2 8h20"/><path d="M6 4v4"/></svg>
+                                </span>
+                            </div>
+                            <div class="atividade-card-content">
+                                <h3>A minha app de IA</h3>
+                                <p>Utilize o Google AI Studio para criar uma Web App.</p>
+                                 <a href="https://docs.google.com/document/d/1u3b-BxaXrcNQqBnQK1uWSfkbiI4xa-02zTaSj5X1OWU/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
                         </div>
                     </div>
-                    <!-- 10.07 -->
-                    <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 0.1s;">
-                        <div class="atividade-card-header"><span class="card-number">10.07</span></div>
-                        <div class="atividade-card-content">
-                            <h3>IA com Personalidade</h3>
-                            <p>Explore como a IA pode adotar diferentes personalidades.</p>
-                            <a href="https://docs.google.com/document/d/1SeiAJ_Ot-qUWBX8MbZRBZUWb9mtBEJOP2JRuWu5CbWo/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+
+                    <!-- Subsecção 3: Desafios Digitais -->
+                    <h3 style="text-align: center; margin-bottom: 30px;">Desafios Digitais</h3>
+                    <div class="atividades-grid">
+                        <!-- 10.06 -->
+                        <div class="atividade-card color-1 animate-on-scroll">
+                            <div class="atividade-card-header"><span class="card-number">10.06</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Jogo da IA "Especialista"</h3>
+                                <p>Tente adivinhar a "profissão secreta" da IA.</p>
+                                <a href="https://docs.google.com/document/d/1w-gNsVszvZk0KYyT5z-7cjFJnbgU_2FspKA-7196mGo/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- 10.08 -->
-                    <div class="atividade-card color-3 animate-on-scroll" style="--animation-delay: 0.2s;">
-                        <div class="atividade-card-header"><span class="card-number">10.08</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Emails com IA</h3>
-                            <p>Utilize a IA para analisar e redigir respostas a emails.</p>
-                            <a href="https://docs.google.com/document/d/1qH7bNvEWoA0SCkc2dGstAnMGLBIsFCNETkEz3iToL98/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        <!-- 10.07 -->
+                        <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 0.1s;">
+                            <div class="atividade-card-header"><span class="card-number">10.07</span></div>
+                            <div class="atividade-card-content">
+                                <h3>IA com Personalidade</h3>
+                                <p>Explore como a IA pode adotar diferentes personalidades.</p>
+                                <a href="https://docs.google.com/document/d/1SeiAJ_Ot-qUWBX8MbZRBZUWb9mtBEJOP2JRuWu5CbWo/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- 10.09 -->
-                    <div class="atividade-card color-4 animate-on-scroll" style="--animation-delay: 0.3s;">
-                        <div class="atividade-card-header"><span class="card-number">10.09</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Análise de Dados com IA</h3>
-                            <p>Obtenha insights e gráficos a partir de tabelas de dados.</p>
-                            <a href="https://docs.google.com/document/d/1vJ_YfvYb-fMkbXcRODHhs4SOw8HrmSjeYb4YpQnp-ks/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        <!-- 10.08 -->
+                        <div class="atividade-card color-3 animate-on-scroll" style="--animation-delay: 0.2s;">
+                            <div class="atividade-card-header"><span class="card-number">10.08</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Emails com IA</h3>
+                                <p>Utilize a IA para analisar e redigir respostas a emails.</p>
+                                <a href="https://docs.google.com/document/d/1qH7bNvEWoA0SCkc2dGstAnMGLBIsFCNETkEz3iToL98/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                     <!-- 10.10 -->
-                    <div class="atividade-card color-5 animate-on-scroll" style="--animation-delay: 0.4s;">
-                        <div class="atividade-card-header"><span class="card-number">10.10</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Documentos com IA</h3>
-                            <p>Utilize a IA para decifrar e resumir documentos.</p>
-                            <a href="https://docs.google.com/document/d/17uNVHPVdC3l6-a4D0ubQDiWhSUVPftUbvEHvadxwEbY/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        <!-- 10.09 -->
+                        <div class="atividade-card color-4 animate-on-scroll" style="--animation-delay: 0.3s;">
+                            <div class="atividade-card-header"><span class="card-number">10.09</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Análise de Dados com IA</h3>
+                                <p>Obtenha insights e gráficos a partir de tabelas de dados.</p>
+                                <a href="https://docs.google.com/document/d/1vJ_YfvYb-fMkbXcRODHhs4SOw8HrmSjeYb4YpQnp-ks/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- 10.12 -->
-                    <div class="atividade-card color-6 animate-on-scroll" style="--animation-delay: 0.5s;">
-                        <div class="atividade-card-header"><span class="card-number">10.12</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Criar imagens com IA</h3>
-                            <p>Aprenda a criar imagens fantásticas a partir de texto.</p>
-                            <a href="https://docs.google.com/document/d/1NoP0Q3U-dT-2DHlNGnyVyjmO8XUnPTXrSuavWBGf2BY/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                         <!-- 10.10 -->
+                        <div class="atividade-card color-5 animate-on-scroll" style="--animation-delay: 0.4s;">
+                            <div class="atividade-card-header"><span class="card-number">10.10</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Documentos com IA</h3>
+                                <p>Utilize a IA para decifrar e resumir documentos.</p>
+                                <a href="https://docs.google.com/document/d/17uNVHPVdC3l6-a4D0ubQDiWhSUVPftUbvEHvadxwEbY/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                     <!-- 10.13 -->
-                    <div class="atividade-card color-7 animate-on-scroll" style="--animation-delay: 0.6s;">
-                        <div class="atividade-card-header"><span class="card-number">10.13</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Representações da IA</h3>
-                            <p>Use a IA para transformar conceitos abstratos em arte.</p>
-                             <a href="https://docs.google.com/document/d/11YMx5sfEtTrTEV-FFucfLn4fDlcZiZ36yBnZ_nJBdyw/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        <!-- 10.12 -->
+                        <div class="atividade-card color-6 animate-on-scroll" style="--animation-delay: 0.5s;">
+                            <div class="atividade-card-header"><span class="card-number">10.12</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Criar imagens com IA</h3>
+                                <p>Aprenda a criar imagens fantásticas a partir de texto.</p>
+                                <a href="https://docs.google.com/document/d/1NoP0Q3U-dT-2DHlNGnyVyjmO8XUnPTXrSuavWBGf2BY/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                     <!-- 10.14 -->
-                    <div class="atividade-card color-8 animate-on-scroll" style="--animation-delay: 0.7s;">
-                        <div class="atividade-card-header"><span class="card-number">10.14</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Transformação Visual IA</h3>
-                            <p>Utilize o poder da IA para alterar e melhorar fotografias.</p>
-                             <a href="https://docs.google.com/document/d/15HrEgXIX-edGNPNftIbI57hkclfNTDmr4Pviok0r44o/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                         <!-- 10.13 -->
+                        <div class="atividade-card color-7 animate-on-scroll" style="--animation-delay: 0.6s;">
+                            <div class="atividade-card-header"><span class="card-number">10.13</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Representações da IA</h3>
+                                <p>Use a IA para transformar conceitos abstratos em arte.</p>
+                                 <a href="https://docs.google.com/document/d/11YMx5sfEtTrTEV-FFucfLn4fDlcZiZ36yBnZ_nJBdyw/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                     <!-- 10.15 -->
-                    <div class="atividade-card color-9 animate-on-scroll" style="--animation-delay: 0.8s;">
-                        <div class="atividade-card-header"><span class="card-number">10.15</span></div>
-                        <div class="atividade-card-content">
-                            <h3>A minha IA</h3>
-                            <p>Construa a sua própria IA personalizada.</p>
-                             <a href="https://docs.google.com/document/d/1xOMwA6tlUYVptTkmNaxmCEQeJlR6DX7DmWxITASCFqc/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                         <!-- 10.14 -->
+                        <div class="atividade-card color-8 animate-on-scroll" style="--animation-delay: 0.7s;">
+                            <div class="atividade-card-header"><span class="card-number">10.14</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Transformação Visual IA</h3>
+                                <p>Utilize o poder da IA para alterar e melhorar fotografias.</p>
+                                 <a href="https://docs.google.com/document/d/15HrEgXIX-edGNPNftIbI57hkclfNTDmr4Pviok0r44o/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                     <!-- 10.16 -->
-                    <div class="atividade-card color-10 animate-on-scroll" style="--animation-delay: 0.9s;">
-                        <div class="atividade-card-header"><span class="card-number">10.16</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Apresentações com IA</h3>
-                            <p>Crie uma apresentação de slides profissional em minutos.</p>
-                             <a href="https://docs.google.com/document/d/1VafdRqbNsjzfrntKFJyiuCcvBgm4yHiPq3PMusLOiSg/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                         <!-- 10.15 -->
+                        <div class="atividade-card color-9 animate-on-scroll" style="--animation-delay: 0.8s;">
+                            <div class="atividade-card-header"><span class="card-number">10.15</span></div>
+                            <div class="atividade-card-content">
+                                <h3>A minha IA</h3>
+                                <p>Construa a sua própria IA personalizada.</p>
+                                 <a href="https://docs.google.com/document/d/1xOMwA6tlUYVptTkmNaxmCEQeJlR6DX7DmWxITASCFqc/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                     <!-- 10.17 -->
-                    <div class="atividade-card color-1 animate-on-scroll" style="--animation-delay: 1.0s;">
-                        <div class="atividade-card-header"><span class="card-number">10.17</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Avatar de IA</h3>
-                            <p>Crie o seu próprio vídeo com uma personagem de IA.</p>
-                             <a href="https://docs.google.com/document/d/1z24lRnX88HUpetBm88t-R0m3zxNJPFeqsJDMk1SiiPU/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                         <!-- 10.16 -->
+                        <div class="atividade-card color-10 animate-on-scroll" style="--animation-delay: 0.9s;">
+                            <div class="atividade-card-header"><span class="card-number">10.16</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Apresentações com IA</h3>
+                                <p>Crie uma apresentação de slides profissional em minutos.</p>
+                                 <a href="https://docs.google.com/document/d/1VafdRqbNsjzfrntKFJyiuCcvBgm4yHiPq3PMusLOiSg/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                     <!-- 10.18 -->
-                    <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 1.1s;">
-                        <div class="atividade-card-header"><span class="card-number">10.18</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Música com IA</h3>
-                            <p>Crie letras e estilos musicais com a ajuda da IA.</p>
-                             <a href="https://docs.google.com/document/d/1vvaN-8M6QTUPlDe4WMFWKIQuJ0sA-A_kpS10M065fOE/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                         <!-- 10.17 -->
+                        <div class="atividade-card color-1 animate-on-scroll" style="--animation-delay: 1.0s;">
+                            <div class="atividade-card-header"><span class="card-number">10.17</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Avatar de IA</h3>
+                                <p>Crie o seu próprio vídeo com uma personagem de IA.</p>
+                                 <a href="https://docs.google.com/document/d/1z24lRnX88HUpetBm88t-R0m3zxNJPFeqsJDMk1SiiPU/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                     <!-- 10.19 -->
-                    <div class="atividade-card color-3 animate-on-scroll" style="--animation-delay: 1.2s;">
-                        <div class="atividade-card-header"><span class="card-number">10.19</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Dilemas</h3>
-                            <p>Debata os grandes desafios éticos da IA.</p>
-                             <a href="https://docs.google.com/document/d/1l9lwrk16TET9Ii3JpRlCaNCUVrCp1NM5oCW236On3Tk/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                         <!-- 10.18 -->
+                        <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 1.1s;">
+                            <div class="atividade-card-header"><span class="card-number">10.18</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Música com IA</h3>
+                                <p>Crie letras e estilos musicais com a ajuda da IA.</p>
+                                 <a href="https://docs.google.com/document/d/1vvaN-8M6QTUPlDe4WMFWKIQuJ0sA-A_kpS10M065fOE/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                     <!-- 10.26 -->
-                    <div class="atividade-card color-4 animate-on-scroll" style="--animation-delay: 1.3s;">
-                        <div class="atividade-card-header"><span class="card-number">10.26</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Guia Prompts</h3>
-                            <p>Aprenda as melhores técnicas para criar pedidos eficazes.</p>
-                             <a href="https://docs.google.com/document/d/1Wi_XdIEH-5W2fOTSUiN8b7XQ0T5UssEuB6uQXpBcrRE/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                         <!-- 10.19 -->
+                        <div class="atividade-card color-3 animate-on-scroll" style="--animation-delay: 1.2s;">
+                            <div class="atividade-card-header"><span class="card-number">10.19</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Dilemas</h3>
+                                <p>Debata os grandes desafios éticos da IA.</p>
+                                 <a href="https://docs.google.com/document/d/1l9lwrk16TET9Ii3JpRlCaNCUVrCp1NM5oCW236On3Tk/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                     <!-- 10.28 -->
-                    <div class="atividade-card color-5 animate-on-scroll" style="--animation-delay: 1.4s;">
-                        <div class="atividade-card-header"><span class="card-number">10.28</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Contas IA Gratuitas</h3>
-                            <p>Explore as funcionalidades do Gemini, ChatGPT e Copilot.</p>
-                             <a href="https://docs.google.com/document/d/1aikxl1Jwn4_Z_nZXPBJGxJXl7MI3fszrtVJnHRtwLro/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                         <!-- 10.26 -->
+                        <div class="atividade-card color-4 animate-on-scroll" style="--animation-delay: 1.3s;">
+                            <div class="atividade-card-header"><span class="card-number">10.26</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Guia Prompts</h3>
+                                <p>Aprenda as melhores técnicas para criar pedidos eficazes.</p>
+                                 <a href="https://docs.google.com/document/d/1Wi_XdIEH-5W2fOTSUiN8b7XQ0T5UssEuB6uQXpBcrRE/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- 10.29 -->
-                    <div class="atividade-card color-6 animate-on-scroll" style="--animation-delay: 1.5s;">
-                        <div class="atividade-card-header"><span class="card-number">10.29</span></div>
-                        <div class="atividade-card-content">
-                            <h3>A evolução da IA</h3>
-                            <p>Documento sobre a história e conceitos da IA Generativa.</p>
-                            <a href="https://docs.google.com/document/d/15LNnGUyTNI1T2JecjVGbg1PR7tzPgGDPr0cn0HMTr4s/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                         <!-- 10.28 -->
+                        <div class="atividade-card color-5 animate-on-scroll" style="--animation-delay: 1.4s;">
+                            <div class="atividade-card-header"><span class="card-number">10.28</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Contas IA Gratuitas</h3>
+                                <p>Explore as funcionalidades do Gemini, ChatGPT e Copilot.</p>
+                                 <a href="https://docs.google.com/document/d/1aikxl1Jwn4_Z_nZXPBJGxJXl7MI3fszrtVJnHRtwLro/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                     <!-- 10.30 -->
-                    <div class="atividade-card color-7 animate-on-scroll" style="--animation-delay: 1.6s;">
-                        <div class="atividade-card-header"><span class="card-number">10.30</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Jogos Interativos com IA</h3>
-                            <p>Crie o seu próprio jogo interativo com IA.</p>
-                             <a href="https://docs.google.com/document/d/1Oe6WONol_m2IrFeEBmAHbTiM2fbuWa7njlgiIQ3K7XQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        <!-- 10.29 -->
+                        <div class="atividade-card color-6 animate-on-scroll" style="--animation-delay: 1.5s;">
+                            <div class="atividade-card-header"><span class="card-number">10.29</span></div>
+                            <div class="atividade-card-content">
+                                <h3>A evolução da IA</h3>
+                                <p>Documento sobre a história e conceitos da IA Generativa.</p>
+                                <a href="https://docs.google.com/document/d/15LNnGUyTNI1T2JecjVGbg1PR7tzPgGDPr0cn0HMTr4s/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                     <!-- 10.31 -->
-                    <div class="atividade-card color-8 animate-on-scroll" style="--animation-delay: 1.7s;">
-                        <div class="atividade-card-header"><span class="card-number">10.31</span></div>
-                        <div class="atividade-card-content">
-                            <h3>ChatGPT no modo "Projeto"</h3>
-                            <p>Utilize a funcionalidade "projetos" do chatgpt.</p>
-                             <a href="https://docs.google.com/document/d/10aKZCOxw04IYunkpHhyTJblBVDmZQ8Ow7M9qO0toM34/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                         <!-- 10.30 -->
+                        <div class="atividade-card color-7 animate-on-scroll" style="--animation-delay: 1.6s;">
+                            <div class="atividade-card-header"><span class="card-number">10.30</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Jogos Interativos com IA</h3>
+                                <p>Crie o seu próprio jogo interativo com IA.</p>
+                                 <a href="https://docs.google.com/document/d/1Oe6WONol_m2IrFeEBmAHbTiM2fbuWa7njlgiIQ3K7XQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- 10.32 -->
-                    <div class="atividade-card color-9 animate-on-scroll" style="--animation-delay: 1.8s;">
-                        <div class="atividade-card-header"><span class="card-number">10.32</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Dicas úteis IA</h3>
-                            <p>Revisão de dicas práticas para o uso diário.</p>
-                            <a href="https://heldertoucas.github.io/iapt-revisoes2/?mode=tips&id=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                         <!-- 10.31 -->
+                        <div class="atividade-card color-8 animate-on-scroll" style="--animation-delay: 1.7s;">
+                            <div class="atividade-card-header"><span class="card-number">10.31</span></div>
+                            <div class="atividade-card-content">
+                                <h3>ChatGPT no modo "Projeto"</h3>
+                                <p>Utilize a funcionalidade "projetos" do chatgpt.</p>
+                                 <a href="https://docs.google.com/document/d/10aKZCOxw04IYunkpHhyTJblBVDmZQ8Ow7M9qO0toM34/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                     <!-- 10.33 -->
-                    <div class="atividade-card color-10 animate-on-scroll" style="--animation-delay: 1.9s;">
-                        <div class="atividade-card-header"><span class="card-number">10.33</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Conceitos Fundamentais IA</h3>
-                            <p>Reveja os conceitos-chave da IA.</p>
-                            <a href="https://heldertoucas.github.io/iapt-revisoes2/?mode=review&id=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        <!-- 10.32 -->
+                        <div class="atividade-card color-9 animate-on-scroll" style="--animation-delay: 1.8s;">
+                            <div class="atividade-card-header"><span class="card-number">10.32</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Dicas úteis IA</h3>
+                                <p>Revisão de dicas práticas para o uso diário.</p>
+                                <a href="https://heldertoucas.github.io/iapt-revisoes2/?mode=tips&id=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- 10.34 -->
-                    <div class="atividade-card color-1 animate-on-scroll" style="--animation-delay: 2.0s;">
-                        <div class="atividade-card-header"><span class="card-number">10.34</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Ferramentas de IA</h3>
-                            <p>Conheça o ecossistema de ferramentas disponíveis.</p>
-                            <a href="https://heldertoucas.github.io/iapt-revisoes2/?mode=tools" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                         <!-- 10.33 -->
+                        <div class="atividade-card color-10 animate-on-scroll" style="--animation-delay: 1.9s;">
+                            <div class="atividade-card-header"><span class="card-number">10.33</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Conceitos Fundamentais IA</h3>
+                                <p>Reveja os conceitos-chave da IA.</p>
+                                <a href="https://heldertoucas.github.io/iapt-revisoes2/?mode=review&id=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                     <!-- 10.35 -->
-                    <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 2.1s;">
-                        <div class="atividade-card-header"><span class="card-number">10.35</span></div>
-                        <div class="atividade-card-content">
-                            <h3>A minha app de IA</h3>
-                            <p>Utilize o Google AI Studio para criar uma Web App.</p>
-                             <a href="https://docs.google.com/document/d/1u3b-BxaXrcNQqBnQK1uWSfkbiI4xa-02zTaSj5X1OWU/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        <!-- 10.34 -->
+                        <div class="atividade-card color-1 animate-on-scroll" style="--animation-delay: 2.0s;">
+                            <div class="atividade-card-header"><span class="card-number">10.34</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Ferramentas de IA</h3>
+                                <p>Conheça o ecossistema de ferramentas disponíveis.</p>
+                                <a href="https://heldertoucas.github.io/iapt-revisoes2/?mode=tools" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
+                        </div>
+                         <!-- 10.35 -->
+                        <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 2.1s;">
+                            <div class="atividade-card-header"><span class="card-number">10.35</span></div>
+                            <div class="atividade-card-content">
+                                <h3>A minha app de IA</h3>
+                                <p>Utilize o Google AI Studio para criar uma Web App.</p>
+                                 <a href="https://docs.google.com/document/d/1u3b-BxaXrcNQqBnQK1uWSfkbiI4xa-02zTaSj5X1OWU/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
                     </div>
                 </div>

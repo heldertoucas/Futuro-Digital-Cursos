@@ -207,78 +207,92 @@
            </div>
        </section>
         
-        <section id="atividades">
+        <section id="atividades" data-password="205">
             <div class="container">
                 <div class="section-header animate-on-scroll">
                     <h2><span class="session-pill">Módulo 6</span>Recursos de Aprendizagem</h2>
                     <p>Consolide o seu conhecimento com os manuais e desafios práticos do curso.</p>
                 </div>
                 
-                <h3 style="text-align: center; margin-bottom: 30px;">Recursos de Apoio</h3>
-                <div class="atividades-grid" style="margin-bottom: 50px;">
-                    <div class="atividade-card color-1 animate-on-scroll">
-                        <div class="atividade-card-header"><span class="card-number">Manual</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Manual - Teams e SharePoint</h3>
-                            <p>Manual de formação completo com todo o conteúdo do curso.</p>
-                            <a href="https://docs.google.com/document/d/e/2PACX-1vRpYLfxoVpdfnHoXUcL4z6WJfgPSC3g0F9ZZY_GWV1SqI_Ym4aTzTJnfL5rbuW0NprudgbGuUqa47Sb/pub" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
-                        </div>
+                <!-- Lock Interface -->
+                <div id="resource-lock" class="resource-lock-container">
+                    <div class="lock-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                     </div>
-                    <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 0.1s;">
-                        <div class="atividade-card-header"><span class="card-number">Guia</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Guia - Gerir o caos de Emails</h3>
-                            <p>Um guia de referência rápida para gerir a sua caixa de entrada com FOCO.</p>
-                            <a href="https://docs.google.com/document/d/e/2PACX-1vRpYLfxoVpdfnHoXUcL4z6WJfgPSC3g0F9ZZY_GWV1SqI_Ym4aTzTJnfL5rbuW0NprudgbGuUqa47Sb/pub#h.624q6g0l8m32" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
-                        </div>
-                    </div>
-                     <div class="atividade-card color-3 animate-on-scroll" style="--animation-delay: 0.2s;">
-                        <div class="atividade-card-header"><span class="card-number">IA</span></div>
-                        <div class="atividade-card-content">
-                            <h3>IA Assistente Futuro Digital</h3>
-                            <p>Assistente de IA para apoio à aprendizagem sobre as ferramentas colaborativas.</p>
-                            <a href="https://m365.cloud.microsoft:443/chat/?titleId=T_91e2a188-f41f-270b-2eb4-c014ceba7938&source=embedded-builder" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
-                        </div>
-                    </div>
+                    <p class="lock-message">Introduza a senha do curso para aceder aos recursos.</p>
+                    <input type="password" id="lock-password" class="password-input" maxlength="3" placeholder="___">
+                    <button id="unlock-btn" class="btn btn-primary">Desbloquear</button>
+                    <p id="lock-error" class="lock-error">Senha incorreta. Tente novamente.</p>
                 </div>
 
-                <h3 style="text-align: center; margin-bottom: 30px;">Desafios Digitais</h3>
-                <div class="atividades-grid">
-                     <div class="atividade-card color-4 animate-on-scroll">
-                        <div class="atividade-card-header"><span class="card-number">09.01</span></div>
-                        <div class="atividade-card-content"><h3>Transforme mensagens em tarefas</h3><p>Explore o Teams e agilize o seu dia a dia com tarefas inteligentes.</p><a href="https://drive.google.com/uc?export=download&id=1aT4mocPzuc2Y9ZvgbZtsCAmz7RUhtMZB" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a></div>
+                <!-- Content (Hidden by Default) -->
+                <div id="resources-content" style="display: none;">
+                    <h3 style="text-align: center; margin-bottom: 30px;">Recursos de Apoio</h3>
+                    <div class="atividades-grid" style="margin-bottom: 50px;">
+                        <div class="atividade-card color-1 animate-on-scroll">
+                            <div class="atividade-card-header"><span class="card-number">Manual</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Manual - Teams e SharePoint</h3>
+                                <p>Manual de formação completo com todo o conteúdo do curso.</p>
+                                <a href="https://docs.google.com/document/d/e/2PACX-1vRpYLfxoVpdfnHoXUcL4z6WJfgPSC3g0F9ZZY_GWV1SqI_Ym4aTzTJnfL5rbuW0NprudgbGuUqa47Sb/pub" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
+                        </div>
+                        <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 0.1s;">
+                            <div class="atividade-card-header"><span class="card-number">Guia</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Guia - Gerir o caos de Emails</h3>
+                                <p>Um guia de referência rápida para gerir a sua caixa de entrada com FOCO.</p>
+                                <a href="https://docs.google.com/document/d/e/2PACX-1vRpYLfxoVpdfnHoXUcL4z6WJfgPSC3g0F9ZZY_GWV1SqI_Ym4aTzTJnfL5rbuW0NprudgbGuUqa47Sb/pub#h.624q6g0l8m32" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
+                        </div>
+                         <div class="atividade-card color-3 animate-on-scroll" style="--animation-delay: 0.2s;">
+                            <div class="atividade-card-header"><span class="card-number">IA</span></div>
+                            <div class="atividade-card-content">
+                                <h3>IA Assistente Futuro Digital</h3>
+                                <p>Assistente de IA para apoio à aprendizagem sobre as ferramentas colaborativas.</p>
+                                <a href="https://m365.cloud.microsoft:443/chat/?titleId=T_91e2a188-f41f-270b-2eb4-c014ceba7938&source=embedded-builder" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
+                        </div>
                     </div>
-                     <div class="atividade-card color-5 animate-on-scroll" style="--animation-delay: 0.1s;">
-                        <div class="atividade-card-header"><span class="card-number">09.02</span></div>
-                        <div class="atividade-card-content"><h3>Aprovação de documentos</h3><p>Saiba como transformar uma mensagem num fluxo simples e transparente de aprovação de documentos.</p><a href="https://drive.google.com/uc?export=download&id=1eFVOOGePfq2q3kSBn7fVPk607TptN0tU" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a></div>
-                    </div>
-                     <div class="atividade-card color-6 animate-on-scroll" style="--animation-delay: 0.2s;">
-                        <div class="atividade-card-header"><span class="card-number">09.03</span></div>
-                        <div class="atividade-card-content"><h3>Sondagens</h3><p>Obtenha resultados imediatos e guarde informações importantes partilhadas no Teams.</p><a href="https://drive.google.com/uc?export=download&id=1RTUFJdCIACBOO-F2o6zA7-qLeuErcv7j" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a></div>
-                    </div>
-                     <div class="atividade-card color-7 animate-on-scroll" style="--animation-delay: 0.3s;">
-                        <div class="atividade-card-header"><span class="card-number">09.04</span></div>
-                        <div class="atividade-card-content"><h3>Reconhecimento informal</h3><p>Saiba como reconhecer e incentivar a colaboração através de elogios simples (ex: Estado, Revisor).</p><a href="https://drive.google.com/uc?export=download&id=1kmdd56Qi9Y8wUAgKNAdyt1pHxxOXQRUl" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a></div>
-                    </div>
-                     <div class="atividade-card color-8 animate-on-scroll" style="--animation-delay: 0.4s;">
-                        <div class="atividade-card-header"><span class="card-number">09.05</span></div>
-                        <div class="atividade-card-content"><h3>Comunicar no canal da equipa</h3><p>Explore as funcionalidades avançadas de comunicação num canal do Teams.</p><a href="https://drive.google.com/uc?export=download&id=1RtHK6BnkTeNDzZCuZwXZZ_Zd-90QasaY" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a></div>
-                    </div>
-                     <div class="atividade-card color-9 animate-on-scroll" style="--animation-delay: 0.5s;">
-                        <div class="atividade-card-header"><span class="card-number">09.06</span></div>
-                        <div class="atividade-card-content"><h3>Quiz Equipa Teams ou Canal?</h3><p>Aceite o desafio e decida quando deve ser criado uma equipa Teams e quando deve ser criado um canal.</p><a href="https://gemini.google.com/share/e9ac56745008" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a></div>
-                    </div>
-                    <div class="atividade-card color-10 animate-on-scroll" style="--animation-delay: 0.6s;">
-                        <div class="atividade-card-header"><span class="card-number">09.07</span></div>
-                        <div class="atividade-card-content"><h3>Agilizar a recolha de dados</h3><p>Conheça o micrososft Lists e sistematiza a recolha de dados para a agilização de processos-chave da equipa.</p><a href="https://drive.google.com/uc?export=download&id=1mZFBRHzq7RlvpIIPsa_W-XAtGoveXMXeIUNi6tkmuZw" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a></div>
-                    </div>
-                    <div class="atividade-card color-1 animate-on-scroll" style="--animation-delay: 0.7s;">
-                        <div class="atividade-card-header"><span class="card-number">09.08</span></div>
-                        <div class="atividade-card-content"><h3>Biblioteca de documentos com metadados</h3><p>Pratique o processo completo de uma biblioteca de documentos com metadados personalizados.</p><a href="https://drive.google.com/uc?export=download&id=1zIoeTdwhKsxLCY6YN6sE0yURXd0fwM5Te5PrCn9G27w" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a></div>
-                    </div>
-                    <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 0.8s;">
-                        <div class="atividade-card-header"><span class="card-number">09.09</span></div>
-                        <div class="atividade-card-content"><h3>Agendar e agir em Reuniões</h3><p>Pratique o processo completo de agendar uma reunião e criar uma ata de reunião com ajuda da IA.</p><a href="https://docs.google.com/document/d/1v0SjFM4RT4jK2xfPV9SOIFOtOJ78SHKhmeMlMG-PK8Y/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a></div>
+
+                    <h3 style="text-align: center; margin-bottom: 30px;">Desafios Digitais</h3>
+                    <div class="atividades-grid">
+                         <div class="atividade-card color-4 animate-on-scroll">
+                            <div class="atividade-card-header"><span class="card-number">09.01</span></div>
+                            <div class="atividade-card-content"><h3>Transforme mensagens em tarefas</h3><p>Explore o Teams e agilize o seu dia a dia com tarefas inteligentes.</p><a href="https://drive.google.com/uc?export=download&id=1aT4mocPzuc2Y9ZvgbZtsCAmz7RUhtMZB" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a></div>
+                        </div>
+                         <div class="atividade-card color-5 animate-on-scroll" style="--animation-delay: 0.1s;">
+                            <div class="atividade-card-header"><span class="card-number">09.02</span></div>
+                            <div class="atividade-card-content"><h3>Aprovação de documentos</h3><p>Saiba como transformar uma mensagem num fluxo simples e transparente de aprovação de documentos.</p><a href="https://drive.google.com/uc?export=download&id=1eFVOOGePfq2q3kSBn7fVPk607TptN0tU" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a></div>
+                        </div>
+                         <div class="atividade-card color-6 animate-on-scroll" style="--animation-delay: 0.2s;">
+                            <div class="atividade-card-header"><span class="card-number">09.03</span></div>
+                            <div class="atividade-card-content"><h3>Sondagens</h3><p>Obtenha resultados imediatos e guarde informações importantes partilhadas no Teams.</p><a href="https://drive.google.com/uc?export=download&id=1RTUFJdCIACBOO-F2o6zA7-qLeuErcv7j" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a></div>
+                        </div>
+                         <div class="atividade-card color-7 animate-on-scroll" style="--animation-delay: 0.3s;">
+                            <div class="atividade-card-header"><span class="card-number">09.04</span></div>
+                            <div class="atividade-card-content"><h3>Reconhecimento informal</h3><p>Saiba como reconhecer e incentivar a colaboração através de elogios simples (ex: Estado, Revisor).</p><a href="https://drive.google.com/uc?export=download&id=1kmdd56Qi9Y8wUAgKNAdyt1pHxxOXQRUl" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a></div>
+                        </div>
+                         <div class="atividade-card color-8 animate-on-scroll" style="--animation-delay: 0.4s;">
+                            <div class="atividade-card-header"><span class="card-number">09.05</span></div>
+                            <div class="atividade-card-content"><h3>Comunicar no canal da equipa</h3><p>Explore as funcionalidades avançadas de comunicação num canal do Teams.</p><a href="https://drive.google.com/uc?export=download&id=1RtHK6BnkTeNDzZCuZwXZZ_Zd-90QasaY" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a></div>
+                        </div>
+                         <div class="atividade-card color-9 animate-on-scroll" style="--animation-delay: 0.5s;">
+                            <div class="atividade-card-header"><span class="card-number">09.06</span></div>
+                            <div class="atividade-card-content"><h3>Quiz Equipa Teams ou Canal?</h3><p>Aceite o desafio e decida quando deve ser criado uma equipa Teams e quando deve ser criado um canal.</p><a href="https://gemini.google.com/share/e9ac56745008" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a></div>
+                        </div>
+                        <div class="atividade-card color-10 animate-on-scroll" style="--animation-delay: 0.6s;">
+                            <div class="atividade-card-header"><span class="card-number">09.07</span></div>
+                            <div class="atividade-card-content"><h3>Agilizar a recolha de dados</h3><p>Conheça o micrososft Lists e sistematiza a recolha de dados para a agilização de processos-chave da equipa.</p><a href="https://drive.google.com/uc?export=download&id=1mZFBRHzq7RlvpIIPsa_W-XAtGoveXMXeIUNi6tkmuZw" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a></div>
+                        </div>
+                        <div class="atividade-card color-1 animate-on-scroll" style="--animation-delay: 0.7s;">
+                            <div class="atividade-card-header"><span class="card-number">09.08</span></div>
+                            <div class="atividade-card-content"><h3>Biblioteca de documentos com metadados</h3><p>Pratique o processo completo de uma biblioteca de documentos com metadados personalizados.</p><a href="https://drive.google.com/uc?export=download&id=1zIoeTdwhKsxLCY6YN6sE0yURXd0fwM5Te5PrCn9G27w" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a></div>
+                        </div>
+                        <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 0.8s;">
+                            <div class="atividade-card-header"><span class="card-number">09.09</span></div>
+                            <div class="atividade-card-content"><h3>Agendar e agir em Reuniões</h3><p>Pratique o processo completo de agendar uma reunião e criar uma ata de reunião com ajuda da IA.</p><a href="https://docs.google.com/document/d/1v0SjFM4RT4jK2xfPV9SOIFOtOJ78SHKhmeMlMG-PK8Y/view" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a></div>
+                        </div>
                     </div>
                 </div>
             </div>

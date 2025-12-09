@@ -220,65 +220,79 @@
             </div>
         </section>
 
-        <section id="atividades">
+        <section id="atividades" data-password="842">
             <div class="container">
                 <div class="section-header animate-on-scroll">
                     <h2>Recursos de Aprendizagem</h2>
                     <p>Domine a estruturação e colaboração em documentos com estes desafios digitais.</p>
                 </div>
 
-                <h3 style="text-align: center;">Recursos de Apoio</h3>
-                <div class="atividades-grid" style="margin-bottom: 50px;">
-                    <div class="atividade-card color-7 animate-on-scroll">
-                        <div class="atividade-card-header"><span class="card-number">Manual</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Manual de Formação - Word e Loop</h3>
-                            <p>Consulte o manual completo do curso para aprofundar todos os tópicos.</p>
-                            <a href="https://docs.google.com/document/d/e/2PACX-1vRhtwleRWVO9TIQMwJqYM-SAk_p4EkQUdop8wsRe0HFjDoEZh8-e_1zMztfK0AOYucFzB7TiXFvELZg/pub" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
-                        </div>
+                <!-- Lock Interface -->
+                <div id="resource-lock" class="resource-lock-container">
+                    <div class="lock-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                     </div>
-                     <div class="atividade-card color-9 animate-on-scroll" style="--animation-delay: 0.1s;">
-                        <div class="atividade-card-header"><span class="card-number">IA</span></div>
-                        <div class="atividade-card-content">
-                            <h3>IA Assistente Futuro Digital</h3>
-                            <p>Utilize esta IA para apoio à aprendizagem e esclarecimento de dúvidas.</p>
-                            <a href="https://camaralisboa.sharepoint.com/:w:/s/DMRHDDF-COMPETNCIASDIGITAIS794/EdyKs19kL19EheXPLJKfmRoBuWSe9Vgr8yFcHIwI7BYS4A?e=qD6jjq" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
-                        </div>
-                    </div>
+                    <p class="lock-message">Introduza a senha do curso para aceder aos recursos.</p>
+                    <input type="password" id="lock-password" class="password-input" maxlength="3" placeholder="___">
+                    <button id="unlock-btn" class="btn btn-primary">Desbloquear</button>
+                    <p id="lock-error" class="lock-error">Senha incorreta. Tente novamente.</p>
                 </div>
 
-                <h3 style="text-align: center;">Desafios Digitais</h3>
-                <div class="atividades-grid">
-                    <div class="atividade-card color-1 animate-on-scroll">
-                        <div class="atividade-card-header"><span class="card-number">06.01</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Lisboa Secreta</h3>
-                            <p>Formate o documento "Jardins de Lisboa", guarde-o no OneDrive e consulte o histórico de versões.</p>
-                            <a href="https://camaralisboa.sharepoint.com/:w:/s/DMRHDDF-COMPETNCIASDIGITAIS794/EexzyfU6H_1Dti4jQRsLvsIBnFehjVov-BwR5DZMyXcXdg?e=lE50WA" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                <!-- Content (Hidden by Default) -->
+                <div id="resources-content" style="display: none;">
+                    <h3 style="text-align: center;">Recursos de Apoio</h3>
+                    <div class="atividades-grid" style="margin-bottom: 50px;">
+                        <div class="atividade-card color-7 animate-on-scroll">
+                            <div class="atividade-card-header"><span class="card-number">Manual</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Manual de Formação - Word e Loop</h3>
+                                <p>Consulte o manual completo do curso para aprofundar todos os tópicos.</p>
+                                <a href="https://docs.google.com/document/d/e/2PACX-1vRhtwleRWVO9TIQMwJqYM-SAk_p4EkQUdop8wsRe0HFjDoEZh8-e_1zMztfK0AOYucFzB7TiXFvELZg/pub" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
+                        </div>
+                         <div class="atividade-card color-9 animate-on-scroll" style="--animation-delay: 0.1s;">
+                            <div class="atividade-card-header"><span class="card-number">IA</span></div>
+                            <div class="atividade-card-content">
+                                <h3>IA Assistente Futuro Digital</h3>
+                                <p>Utilize esta IA para apoio à aprendizagem e esclarecimento de dúvidas.</p>
+                                <a href="https://camaralisboa.sharepoint.com/:w:/s/DMRHDDF-COMPETNCIASDIGITAIS794/EdyKs19kL19EheXPLJKfmRoBuWSe9Vgr8yFcHIwI7BYS4A?e=qD6jjq" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 0.1s;">
-                        <div class="atividade-card-header"><span class="card-number">06.02</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Quem conta um conto...</h3>
-                            <p>Crie uma história coletiva com o poder da coautoria em tempo real do Micrososft Word.</p>
-                            <a href="https://camaralisboa.sharepoint.com/:w:/s/DMRHDDF-COMPETNCIASDIGITAIS794/EWvV-PegIoxFvE_pMndKFOQB8hccLrhbty-59E6UD3qZPA?e=hJGAWz" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+
+                    <h3 style="text-align: center;">Desafios Digitais</h3>
+                    <div class="atividades-grid">
+                        <div class="atividade-card color-1 animate-on-scroll">
+                            <div class="atividade-card-header"><span class="card-number">06.01</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Lisboa Secreta</h3>
+                                <p>Formate o documento "Jardins de Lisboa", guarde-o no OneDrive e consulte o histórico de versões.</p>
+                                <a href="https://camaralisboa.sharepoint.com/:w:/s/DMRHDDF-COMPETNCIASDIGITAIS794/EexzyfU6H_1Dti4jQRsLvsIBnFehjVov-BwR5DZMyXcXdg?e=lE50WA" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="atividade-card color-3 animate-on-scroll" style="--animation-delay: 0.2s;">
-                        <div class="atividade-card-header"><span class="card-number">06.03</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Uma pausa…</h3>
-                            <p>Nesta pausa supreendente, desenvolva um projeto em equipa com recurso ao Microsoft Word.</p>
-                            <a href="https://camaralisboa.sharepoint.com/:w:/s/DMRHDDF-COMPETNCIASDIGITAIS794/ES3wwmUNdPdGjxt2l1hbiqABL-0hY8qLXFUfIwsKPiOQTg?e=5pKAt6" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                        <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 0.1s;">
+                            <div class="atividade-card-header"><span class="card-number">06.02</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Quem conta um conto...</h3>
+                                <p>Crie uma história coletiva com o poder da coautoria em tempo real do Micrososft Word.</p>
+                                <a href="https://camaralisboa.sharepoint.com/:w:/s/DMRHDDF-COMPETNCIASDIGITAIS794/EWvV-PegIoxFvE_pMndKFOQB8hccLrhbty-59E6UD3qZPA?e=hJGAWz" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="atividade-card color-4 animate-on-scroll" style="--animation-delay: 0.3s;">
-                        <div class="atividade-card-header"><span class="card-number">06.04</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Roteiro sobre Lisboa</h3>
-                            <p>Crie pastas e formate documentos Word sobre informações turísticas de Lisboa.</p>
-                            <a href="https://camaralisboa.sharepoint.com/:w:/s/DMRHDDF-COMPETNCIASDIGITAIS794/EfGzVgzfxzNOg2cZKRcCj1QBkxMnJ3mvilIa52vOkLiaUg?e=ksD1m6" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                        <div class="atividade-card color-3 animate-on-scroll" style="--animation-delay: 0.2s;">
+                            <div class="atividade-card-header"><span class="card-number">06.03</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Uma pausa…</h3>
+                                <p>Nesta pausa supreendente, desenvolva um projeto em equipa com recurso ao Microsoft Word.</p>
+                                <a href="https://camaralisboa.sharepoint.com/:w:/s/DMRHDDF-COMPETNCIASDIGITAIS794/ES3wwmUNdPdGjxt2l1hbiqABL-0hY8qLXFUfIwsKPiOQTg?e=5pKAt6" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
+                        </div>
+                        <div class="atividade-card color-4 animate-on-scroll" style="--animation-delay: 0.3s;">
+                            <div class="atividade-card-header"><span class="card-number">06.04</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Roteiro sobre Lisboa</h3>
+                                <p>Crie pastas e formate documentos Word sobre informações turísticas de Lisboa.</p>
+                                <a href="https://camaralisboa.sharepoint.com/:w:/s/DMRHDDF-COMPETNCIASDIGITAIS794/EfGzVgzfxzNOg2cZKRcCj1QBkxMnJ3mvilIa52vOkLiaUg?e=ksD1m6" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
                         </div>
                     </div>
                 </div>

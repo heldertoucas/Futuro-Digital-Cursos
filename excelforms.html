@@ -159,7 +159,7 @@
                             </li>
                              <li>
                                 <h4>Segmentação de Dados</h4>
-                                <p>Adicione filtros visuais em forma de botões. Permita que a sua equipa explore os dados de forma interativa, filtrando por ano, departamento ou qualquer outra categoria.</p>
+                                <p>Adicione filtros visuais em forma de botões. Permita que os seus colegas explorem os dados de forma interativa, filtrando por ano, departamento ou qualquer outra categoria.</p>
                             </li>
                              <li>
                                 <h4>Dashboards</h4>
@@ -189,134 +189,148 @@
         </section>
         
         <!-- Módulo 6: Recursos -->
-        <section id="atividades">
+        <section id="atividades" data-password="736">
             <div class="container">
                 <div class="section-header animate-on-scroll">
                      <h2><span class="session-pill">Módulo 6</span>Recursos de Aprendizagem</h2>
                     <p>Domine a recolha e análise de dados com estes desafios e manuais.</p>
                 </div>
                 
-                <h3 style="text-align: center;">Recursos de Apoio</h3>
-                <div class="atividades-grid" style="margin-bottom: 50px;">
-                     <!-- Card 6 -->
-                    <div class="atividade-card color-6 animate-on-scroll" style="--animation-delay: 0.5s;">
-                        <div class="atividade-card-header"><span class="card-number">Manual</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Manual - Excel e Forms</h3>
-                            <p>Link para o manual de formação completo.</p>
-                            <a href="https://docs.google.com/document/d/e/2PACX-1vQsNDnt_qT7wFLdE3t4Q6k8lO0WjivHH-Ccw5EAK0GefF4FWV_PVqETHdL9g2TaOjpz6ATEQLphTBZ-/pub" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
-                        </div>
+                <!-- Lock Interface -->
+                <div id="resource-lock" class="resource-lock-container">
+                    <div class="lock-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                     </div>
-                     <!-- Card 7 -->
-                    <div class="atividade-card color-7 animate-on-scroll" style="--animation-delay: 0.6s;">
-                        <div class="atividade-card-header"><span class="card-number">Guia</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Guia - 10 Fórmulas Úteis</h3>
-                            <p>Um guia de referência rápida com as fórmulas mais úteis.</p>
-                            <a href="https://docs.google.com/document/d/e/2PACX-1vQsNDnt_qT7wFLdE3t4Q6k8lO0WjivHH-Ccw5EAK0GefF4FWV_PVqETHdL9g2TaOjpz6ATEQLphTBZ-/pub#h.5z47v62s9vgt" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
-                        </div>
-                    </div>
-                     <!-- Card 8 -->
-                    <div class="atividade-card color-8 animate-on-scroll" style="--animation-delay: 0.7s;">
-                        <div class="atividade-card-header"><span class="card-number">Guia</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Guia - Perguntas Frequentes</h3>
-                            <p>Um guia de referência rápida com as respostas às perguntas mais frequentes.</p>
-                            <a href="https://docs.google.com/document/d/e/2PACX-1vQsNDnt_qT7wFLdE3t4Q6k8lO0WjivHH-Ccw5EAK0GefF4FWV_PVqETHdL9g2TaOjpz6ATEQLphTBZ-/pub#h.l671sxn6pfag" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
-                        </div>
-                    </div>
-                      <!-- Card 9 -->
-                    <div class="atividade-card color-9 animate-on-scroll" style="--animation-delay: 0.8s;">
-                        <div class="atividade-card-header"><span class="card-number">IA</span></div>
-                        <div class="atividade-card-content">
-                            <h3>IA Assistente Futuro Digital</h3>
-                            <p>Link para o assistente de IA para apoio à aprendizagem.</p>
-                            <a href="https://m365.cloud.microsoft:443/chat/?titleId=T_91e2a188-f41f-270b-2eb4-c014ceba7938&source=embedded-builder" class="btn btn-primary">Abrir Desafio</a>
-                        </div>
-                    </div>
+                    <p class="lock-message">Introduza a senha do curso para aceder aos recursos.</p>
+                    <input type="password" id="lock-password" class="password-input" maxlength="3" placeholder="___">
+                    <button id="unlock-btn" class="btn btn-primary">Desbloquear</button>
+                    <p id="lock-error" class="lock-error">Senha incorreta. Tente novamente.</p>
                 </div>
 
-                <h3 style="text-align: center;">Desafios Digitais</h3>
-                <div class="atividades-grid">
-                    <!-- Card 1 -->
-                    <div class="atividade-card color-1 animate-on-scroll">
-                        <div class="atividade-card-header"><span class="card-number">07.01</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Editar e formatar dados</h3>
-                            <p>Aprenda passo a passo a tirar o maior partido do Excel.</p>
-                            <a href="https://camaralisboa.sharepoint.com/:x:/s/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/EWVI819Q8n5EukUjY5RJg5YBqmIl8CF4g4BHVj9_TLvIAA?download=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                <!-- Content (Hidden by Default) -->
+                <div id="resources-content" style="display: none;">
+                    <h3 style="text-align: center;">Recursos de Apoio</h3>
+                    <div class="atividades-grid" style="margin-bottom: 50px;">
+                         <!-- Card 6 -->
+                        <div class="atividade-card color-6 animate-on-scroll" style="--animation-delay: 0.5s;">
+                            <div class="atividade-card-header"><span class="card-number">Manual</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Manual - Excel e Forms</h3>
+                                <p>Link para o manual de formação completo.</p>
+                                <a href="https://docs.google.com/document/d/e/2PACX-1vQsNDnt_qT7wFLdE3t4Q6k8lO0WjivHH-Ccw5EAK0GefF4FWV_PVqETHdL9g2TaOjpz6ATEQLphTBZ-/pub" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
+                        </div>
+                         <!-- Card 7 -->
+                        <div class="atividade-card color-7 animate-on-scroll" style="--animation-delay: 0.6s;">
+                            <div class="atividade-card-header"><span class="card-number">Guia</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Guia - 10 Fórmulas Úteis</h3>
+                                <p>Um guia de referência rápida com as fórmulas mais úteis.</p>
+                                <a href="https://docs.google.com/document/d/e/2PACX-1vQsNDnt_qT7wFLdE3t4Q6k8lO0WjivHH-Ccw5EAK0GefF4FWV_PVqETHdL9g2TaOjpz6ATEQLphTBZ-/pub#h.5z47v62s9vgt" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
+                        </div>
+                         <!-- Card 8 -->
+                        <div class="atividade-card color-8 animate-on-scroll" style="--animation-delay: 0.7s;">
+                            <div class="atividade-card-header"><span class="card-number">Guia</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Guia - Perguntas Frequentes</h3>
+                                <p>Um guia de referência rápida com as respostas às perguntas mais frequentes.</p>
+                                <a href="https://docs.google.com/document/d/e/2PACX-1vQsNDnt_qT7wFLdE3t4Q6k8lO0WjivHH-Ccw5EAK0GefF4FWV_PVqETHdL9g2TaOjpz6ATEQLphTBZ-/pub#h.l671sxn6pfag" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir</a>
+                            </div>
+                        </div>
+                          <!-- Card 9 -->
+                        <div class="atividade-card color-9 animate-on-scroll" style="--animation-delay: 0.8s;">
+                            <div class="atividade-card-header"><span class="card-number">IA</span></div>
+                            <div class="atividade-card-content">
+                                <h3>IA Assistente Futuro Digital</h3>
+                                <p>Link para o assistente de IA para apoio à aprendizagem.</p>
+                                <a href="https://m365.cloud.microsoft:443/chat/?titleId=T_91e2a188-f41f-270b-2eb4-c014ceba7938&source=embedded-builder" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
                     </div>
-                    <!-- Card 2 -->
-                    <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 0.1s;">
-                        <div class="atividade-card-header"><span class="card-number">07.02</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Ordenar e filtrar dados</h3>
-                            <p>Explore ferramentas e estratégias de organização e organização de dados.</p>
-                            <a href="https://camaralisboa.sharepoint.com/:x:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIO%20DIGITAL%2072%20-%20ORDENAR%20e%20FILTRAR.xlsx?download=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+
+                    <h3 style="text-align: center;">Desafios Digitais</h3>
+                    <div class="atividades-grid">
+                        <!-- Card 1 -->
+                        <div class="atividade-card color-1 animate-on-scroll">
+                            <div class="atividade-card-header"><span class="card-number">07.01</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Editar e formatar dados</h3>
+                                <p>Aprenda passo a passo a tirar o maior partido do Excel.</p>
+                                <a href="https://camaralisboa.sharepoint.com/:x:/s/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/EWVI819Q8n5EukUjY5RJg5YBqmIl8CF4g4BHVj9_TLvIAA?download=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="atividade-card color-3 animate-on-scroll" style="--animation-delay: 0.2s;">
-                        <div class="atividade-card-header"><span class="card-number">07.03</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Tabelas dinâmicas</h3>
-                            <p>Utilize ferramentas interativas de análise de dados.</p>
-                             <a href="https://camaralisboa.sharepoint.com/:x:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIO%20DIGITAL%2073%20-%20ORDENAR%20e%20FILTRAR%20II.xlsx?download=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        <!-- Card 2 -->
+                        <div class="atividade-card color-2 animate-on-scroll" style="--animation-delay: 0.1s;">
+                            <div class="atividade-card-header"><span class="card-number">07.02</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Ordenar e filtrar dados</h3>
+                                <p>Explore ferramentas e estratégias de organização e organização de dados.</p>
+                                <a href="https://camaralisboa.sharepoint.com/:x:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIO%20DIGITAL%2072%20-%20ORDENAR%20e%20FILTRAR.xlsx?download=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Card 4 -->
-                    <div class="atividade-card color-4 animate-on-scroll" style="--animation-delay: 0.3s;">
-                        <div class="atividade-card-header"><span class="card-number">07.04</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Fórmulas e funções</h3>
-                            <p>Crie fórmulas e funções que permitem transformar dados em insights.</p>
-                            <a href="https://camaralisboa.sharepoint.com/:x:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIO%20DIGITAL%2074%20-%20FO%CC%81RMULAS%20E%20FUNC%CC%A7O%CC%83ES.xlsx?download=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        <!-- Card 3 -->
+                        <div class="atividade-card color-3 animate-on-scroll" style="--animation-delay: 0.2s;">
+                            <div class="atividade-card-header"><span class="card-number">07.03</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Tabelas dinâmicas</h3>
+                                <p>Utilize ferramentas interativas de análise de dados.</p>
+                                 <a href="https://camaralisboa.sharepoint.com/:x:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIO%20DIGITAL%2073%20-%20ORDENAR%20e%20FILTRAR%20II.xlsx?download=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                     <!-- Card 5 -->
-                    <div class="atividade-card color-5 animate-on-scroll" style="--animation-delay: 0.4s;">
-                        <div class="atividade-card-header"><span class="card-number">07.05</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Função Procx</h3>
-                            <p>Saiba como usar uma das funções mais poderosas para a obtenção de informação a partir de dados.</p>
-                            <a href="https://camaralisboa.sharepoint.com/:x:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIO%20DIGITAL%2075%20-%20FUNC%CC%A7A%CC%83O%20PROCX.xlsx?download=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        <!-- Card 4 -->
+                        <div class="atividade-card color-4 animate-on-scroll" style="--animation-delay: 0.3s;">
+                            <div class="atividade-card-header"><span class="card-number">07.04</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Fórmulas e funções</h3>
+                                <p>Crie fórmulas e funções que permitem transformar dados em insights.</p>
+                                <a href="https://camaralisboa.sharepoint.com/:x:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIO%20DIGITAL%2074%20-%20FO%CC%81RMULAS%20E%20FUNC%CC%A7O%CC%83ES.xlsx?download=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Card 6 -->
-                    <div class="atividade-card color-6 animate-on-scroll" style="--animation-delay: 0.5s;">
-                        <div class="atividade-card-header"><span class="card-number">07.06</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Exemplos de formulários</h3>
-                            <p>Explore a criação de formulários com criatividade!</p>
-                            <a href="https://camaralisboa.sharepoint.com/:w:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIOS%20DIGITAIS/DESAFIO%20DIGITAL%2076%20-%20FORMUL%C3%81RIOS.docx?download=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                         <!-- Card 5 -->
+                        <div class="atividade-card color-5 animate-on-scroll" style="--animation-delay: 0.4s;">
+                            <div class="atividade-card-header"><span class="card-number">07.05</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Função Procx</h3>
+                                <p>Saiba como usar uma das funções mais poderosas para a obtenção de informação a partir de dados.</p>
+                                <a href="https://camaralisboa.sharepoint.com/:x:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIO%20DIGITAL%2075%20-%20FUNC%CC%A7A%CC%83O%20PROCX.xlsx?download=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Card 7 -->
-                    <div class="atividade-card color-7 animate-on-scroll" style="--animation-delay: 0.6s;">
-                        <div class="atividade-card-header"><span class="card-number">07.07</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Analise de Dados</h3>
-                            <p>Trabalho colaborativo de análise de dados.</p>
-                            <a href="https://camaralisboa.sharepoint.com/:x:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIOS%20DIGITAIS/DESAFIO%20DIGITAL%2077%20-%20ANALISE%20DADOS.xlsx?download=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        <!-- Card 6 -->
+                        <div class="atividade-card color-6 animate-on-scroll" style="--animation-delay: 0.5s;">
+                            <div class="atividade-card-header"><span class="card-number">07.06</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Exemplos de formulários</h3>
+                                <p>Explore a criação de formulários com criatividade!</p>
+                                <a href="https://camaralisboa.sharepoint.com/:w:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIOS%20DIGITAIS/DESAFIO%20DIGITAL%2076%20-%20FORMUL%C3%81RIOS.docx?download=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Card 8 -->
-                    <div class="atividade-card color-8 animate-on-scroll" style="--animation-delay: 0.7s;">
-                        <div class="atividade-card-header"><span class="card-number">07.08</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Jogo Excel</h3>
-                            <p>Use uma das funções mais poderosas para obter informação.</p>
-                            <a href="https://camaralisboa.sharepoint.com/:x:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIOS%20DIGITAIS/DESAFIO%20DIGITAL%2078%20-%20JOGO%20DO%20GALO.xlsx?download=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        <!-- Card 7 -->
+                        <div class="atividade-card color-7 animate-on-scroll" style="--animation-delay: 0.6s;">
+                            <div class="atividade-card-header"><span class="card-number">07.07</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Analise de Dados</h3>
+                                <p>Trabalho colaborativo de análise de dados.</p>
+                                <a href="https://camaralisboa.sharepoint.com/:x:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIOS%20DIGITAIS/DESAFIO%20DIGITAL%2077%20-%20ANALISE%20DADOS.xlsx?download=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Card 9 -->
-                    <div class="atividade-card color-9 animate-on-scroll" style="--animation-delay: 0.8s;">
-                        <div class="atividade-card-header"><span class="card-number">07.09</span></div>
-                        <div class="atividade-card-content">
-                            <h3>Revisões</h3>
-                            <p>Use uma das funções mais poderosas para obter informação.</p>
-                            <a href="https://camaralisboa.sharepoint.com/:x:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIOS%20DIGITAIS/DESAFIO%20DIGITAL%2079%20-%20REVIS%C3%95ES%20EXCEL.xlsx?download=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                        <!-- Card 8 -->
+                        <div class="atividade-card color-8 animate-on-scroll" style="--animation-delay: 0.7s;">
+                            <div class="atividade-card-header"><span class="card-number">07.08</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Jogo Excel</h3>
+                                <p>Use uma das funções mais poderosas para obter informação.</p>
+                                <a href="https://camaralisboa.sharepoint.com/:x:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIOS%20DIGITAIS/DESAFIO%20DIGITAL%2078%20-%20JOGO%20DO%20GALO.xlsx?download=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
+                        </div>
+                        <!-- Card 9 -->
+                        <div class="atividade-card color-9 animate-on-scroll" style="--animation-delay: 0.8s;">
+                            <div class="atividade-card-header"><span class="card-number">07.09</span></div>
+                            <div class="atividade-card-content">
+                                <h3>Revisões</h3>
+                                <p>Use uma das funções mais poderosas para obter informação.</p>
+                                <a href="https://camaralisboa.sharepoint.com/:x:/r/sites/DMRHDDF-COMPETNCIASDIGITAIS-FUTURO-ExceleForms-CGCML2025/Shared%20Documents/FUTURO%20-%20Excel%20e%20Forms%20-%20CG%20CML%202025/DESAFIOS%20DIGITAIS/DESAFIO%20DIGITAL%2079%20-%20REVIS%C3%95ES%20EXCEL.xlsx?download=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Abrir Desafio</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -376,7 +390,7 @@
         <a href="index.html" class="preview-nav-link">Home</a>
         <a href="wordloop.html" class="preview-nav-link">Word/Loop</a>
         <a href="wordloop-slides.html" class="preview-nav-link">Word/Loop (Slides)</a>
-        <a href="excelforms.html" class="preview-nav-link">Excel/Forms</a>
+        <a href="excelforms.html" class="preview-nav-link active">Excel/Forms</a>
         <a href="teamssharepoint.html" class="preview-nav-link">Teams/SharePoint</a>
         <a href="copilot.html" class="preview-nav-link">Copilot</a>
         <a href="googleforms.html" class="preview-nav-link">Google Forms</a>
