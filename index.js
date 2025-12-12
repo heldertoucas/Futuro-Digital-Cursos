@@ -150,12 +150,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Resource Lock Logic ---
+    // --- Resource Lock Logic (Dynamic Password) ---
     function initializeResourceLock() {
         const section = document.getElementById('atividades');
-        if (!section || !section.dataset.password) return;
+        if (!section) return;
 
-        const password = section.dataset.password;
         const lockContainer = document.getElementById('resource-lock');
         const contentContainer = document.getElementById('resources-content');
         const input = document.getElementById('lock-password');
@@ -164,16 +163,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!lockContainer || !contentContainer || !input || !btn || !error) return;
 
-        // Check if previously unlocked
+        // 1. Determine Page Name
         const pageId = document.body.dataset.pageName || 'unknown';
+
+        // 2. Check if previously unlocked in LocalStorage
         if (localStorage.getItem('unlocked_' + pageId) === 'true') {
             lockContainer.style.display = 'none';
             contentContainer.style.display = 'block';
             return;
         }
 
+        // 3. Generate Dynamic Password
+        // Logic: [Course Index] + [Day of Month (2 digits)]
+        
+        const courseIndexMap = {
+            'word.html': '1',
+            'loopplanner.html': '2',
+            'excelforms.html': '3',
+            'teamssharepoint.html': '4',
+            'copilot.html': '5',
+            'googleforms.html': '6',
+            'wordloop.html': '7' // Legacy
+        };
+
+        const courseIndex = courseIndexMap[pageId];
+        
+        // If not a course page (e.g. index.html), default to static or disable
+        if (!courseIndex) return; 
+
+        const today = new Date();
+        const dayOfMonth = String(today.getDate()).padStart(2, '0'); // e.g., '05' or '25'
+        
+        const dynamicPassword = courseIndex + dayOfMonth;
+        
+        // Debugging: Log password to console for the trainer/developer
+        console.log(`🔐 Password for ${pageId} today: ${dynamicPassword}`);
+
         const checkPassword = () => {
-            if (input.value === password) {
+            if (input.value === dynamicPassword) {
                 lockContainer.style.display = 'none';
                 contentContainer.style.display = 'block';
                 localStorage.setItem('unlocked_' + pageId, 'true');
@@ -438,7 +465,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         initializeAccordions();
-        initializeResourceLock(); // Added resource lock initialization
+        initializeResourceLock(); // Initialize dynamic resource lock
         initializeTestimonialSlider();
         handlePresentationMode();
         initializeScrollAnimations(); 
