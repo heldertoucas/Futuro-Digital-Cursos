@@ -49,25 +49,26 @@
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
 
-        /* Estilo para ícones pequenos no mosaico */
+        /* Ajuste fino para os ícones no mosaico oficial */
         .atividade-card-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            min-height: 100px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 0 !important;
+            min-height: 120px !important;
         }
         .atividade-card-header svg {
-            width: 32px;
-            height: 32px;
-            opacity: 0.85;
+            width: 40px;
+            height: 40px;
+            color: white;
+            opacity: 0.9;
         }
 
-        .catalog-section h3 {
-            margin: 50px 0 25px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eee;
+        .catalog-section h3.eixo-title {
+            margin: 60px 0 30px;
+            padding-left: 15px;
             font-size: 1.8rem;
+            font-weight: 700;
         }
 
         @media (min-width: 992px) {
@@ -87,7 +88,7 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero -->
         <section id="hero" class="festive-bg">
             <div class="container hero-container">
                 <div class="hero-text animate-on-scroll">
@@ -100,7 +101,7 @@
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- About -->
         <section id="about-program">
             <div class="container about-program-container">
                 <div class="about-program-image animate-on-scroll">
@@ -125,43 +126,43 @@
                 <div class="grid">
                     <div class="grid-item holiday-card animate-on-scroll" style="padding: 40px; border-radius: 12px; text-align: center;">
                         <img src="https://i.imgur.com/p2f3aqJ.png" alt="Logo Passaporte Digital" class="program-logo">
-                        <h3>Passaporte Competências Digitais</h3>
-                        <p>Certificação europeia e novos itinerários focados em competências críticas para a economia digital.</p>
+                        <h3>Passaporte Digital</h3>
+                        <p>Evolução para um sistema de micro-credenciais reconhecido a nível europeu para todos os cidadãos.</p>
                     </div>
                     <div class="grid-item holiday-card animate-on-scroll" style="--animation-delay: 0.1s; padding: 40px; border-radius: 12px; text-align: center;">
                         <img src="https://i.imgur.com/m9tjJlf.png" alt="Logo Futuro Digital" class="program-logo">
                         <h3>Futuro Digital</h3>
-                        <p>Evolução para ecossistemas de colaboração total com foco em Microsoft Loop e SharePoint avançado.</p>
+                        <p>Capacitação avançada em ecossistemas de colaboração e gestão de conhecimento na nuvem.</p>
                     </div>
                     <div class="grid-item holiday-card animate-on-scroll" style="--animation-delay: 0.2s; padding: 40px; border-radius: 12px; text-align: center;">
                         <img src="https://i.imgur.com/O85a86w.png" alt="Logo IA para Todos" class="program-logo">
                         <h3>IA para Todos</h3>
-                        <p>Democratização da IA 2.0 com foco em agentes personalizados e framework de ética pública.</p>
+                        <p>Workshops práticos sobre Agentes Personalizados e ética aplicada à administração pública.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Transversal CTA -->
+        <!-- CTA Transversal -->
         <section class="transversal-resource-cta">
             <div class="container">
                 <img src="https://i.imgur.com/Ld9GzP8.png" alt="Inovação 2026" class="transversal-resource-cta-image">
                 <h4>Prepare-se para novas conquistas digitais.</h4>
-                <p>O catálogo completo para 2026 está a chegar. Mantenha as suas competências ON!</p>
+                <p>O catálogo completo para 2026 será lançado na primeira quinzena de Janeiro. Mantenha as suas competências ON!</p>
                 <a href="#novos-cursos-2026" class="btn btn-green">Tenho interesse</a>
             </div>
         </section>
 
         <!-- NOVO CATÁLOGO 2026 -->
-        <section id="novos-cursos-2026" class="catalog-section" style="padding: 100px 0; background-color: #fcfcfc;">
+        <section id="novos-cursos-2026" class="catalog-section" style="padding: 80px 0; background-color: #fcfcfc;">
             <div class="container">
                 <div class="section-header animate-on-scroll">
                     <h2 class="gold-text">Catálogo de Formação 2026</h2>
-                    <p>Manifeste o seu interesse nos novos cursos e seja notificado assim que abrirem as inscrições.</p>
+                    <p>Manifeste o seu interesse nos novos cursos para ser notificado assim que as inscrições abrirem.</p>
                 </div>
 
                 <!-- PASSAPORTE -->
-                <h3 style="color: var(--primary-blue);">Passaporte Competências Digitais</h3>
+                <h3 class="eixo-title" style="border-left: 5px solid var(--primary-blue); color: var(--primary-blue);">Passaporte Competências Digitais</h3>
                 <div class="atividades-grid">
                     <div class="atividade-card color-1 animate-on-scroll">
                         <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
@@ -180,7 +181,7 @@
                     <div class="atividade-card color-3 animate-on-scroll">
                         <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
                         <div class="atividade-card-content">
-                            <h3>Pass 03 - Comunicar e colaborar na internet - email, apps e redes sociais</h3>
+                            <h3>Pass 03 - Comunicar e colaborar na internet</h3>
                             <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
                         </div>
                     </div>
@@ -194,7 +195,7 @@
                     <div class="atividade-card color-5 animate-on-scroll">
                         <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg></div>
                         <div class="atividade-card-content">
-                            <h3>Pass 05 - Explorar a criatividade digital - edição de fotos, vídeo e áudio</h3>
+                            <h3>Pass 05 - Explorar a criatividade digital</h3>
                             <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
                         </div>
                     </div>
@@ -208,7 +209,7 @@
                     <div class="atividade-card color-7 animate-on-scroll">
                         <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="3" x2="9" y2="21"/></svg></div>
                         <div class="atividade-card-content">
-                            <h3>Pass 07 - Realizar tabelas e gráficos com folhas de cálculo</h3>
+                            <h3>Pass 07 - Realizar tabelas e gráficos</h3>
                             <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
                         </div>
                     </div>
@@ -222,24 +223,24 @@
                     <div class="atividade-card color-9 animate-on-scroll">
                         <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
                         <div class="atividade-card-content">
-                            <h3>Pass 09 - Realizar teletrabalho e utilizadar a nuvem</h3>
+                            <h3>Pass 09 - Realizar teletrabalho e utilizar a nuvem</h3>
                             <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
                         </div>
                     </div>
                     <div class="atividade-card color-10 animate-on-scroll">
                         <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
                         <div class="atividade-card-content">
-                            <h3>Pass 10 - Descobrir a inteligência artificial e a programação</h3>
+                            <h3>Pass 10 - Descobrir a inteligência artificial</h3>
                             <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- FUTURO DIGITAL -->
-                <h3 style="color: #7B3FE8;">Futuro Digital</h3>
+                <h3 class="eixo-title" style="border-left: 5px solid #7B3FE8; color: #7B3FE8;">Futuro Digital</h3>
                 <div class="atividades-grid">
                     <div class="atividade-card color-1 animate-on-scroll">
-                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 10 10"/></svg></div>
+                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
                         <div class="atividade-card-content">
                             <h3>Trabalhar em equipa com a IA Microsoft Copilot</h3>
                             <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
@@ -253,14 +254,14 @@
                         </div>
                     </div>
                     <div class="atividade-card color-3 animate-on-scroll">
-                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg></div>
+                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg></div>
                         <div class="atividade-card-content">
                             <h3>Trabalhar em equipa com o Microsoft Forms</h3>
                             <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
                         </div>
                     </div>
                     <div class="atividade-card color-4 animate-on-scroll">
-                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
                         <div class="atividade-card-content">
                             <h3>Trabalhar em equipa com o Microsoft Teams e o SharePoint</h3>
                             <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
@@ -273,101 +274,10 @@
                             <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
                         </div>
                     </div>
-                    <div class="atividade-card color-6 animate-on-scroll">
-                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
-                        <div class="atividade-card-content">
-                            <h3>Domine o OneDrive</h3>
-                            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
-                        </div>
-                    </div>
-                    <div class="atividade-card color-7 animate-on-scroll">
-                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/></svg></div>
-                        <div class="atividade-card-content">
-                            <h3>Criatividade digital com a IA Microsoft Designer</h3>
-                            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
-                        </div>
-                    </div>
-                    <div class="atividade-card color-8 animate-on-scroll">
-                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-                        <div class="atividade-card-content">
-                            <h3>Parentalidade digital</h3>
-                            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
-                        </div>
-                    </div>
-                    <div class="atividade-card color-9 animate-on-scroll">
-                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-                        <div class="atividade-card-content">
-                            <h3>Automatizar tarefas repetitivas com o Power Automate e a IA</h3>
-                            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
-                        </div>
-                    </div>
-                    <div class="atividade-card color-10 animate-on-scroll">
-                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-                        <div class="atividade-card-content">
-                            <h3>Editar e partilhar documentos na nuvem com o Word Online</h3>
-                            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
-                        </div>
-                    </div>
-                    <div class="atividade-card color-1 animate-on-scroll">
-                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></div>
-                        <div class="atividade-card-content">
-                            <h3>Trabalhar na nuvem com o Microsoft Loop</h3>
-                            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
-                        </div>
-                    </div>
-                    <div class="atividade-card color-2 animate-on-scroll">
-                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg></div>
-                        <div class="atividade-card-content">
-                            <h3>Analisar dados e colaborar na nuvem com o Excel Online</h3>
-                            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
-                        </div>
-                    </div>
-                    <div class="atividade-card color-3 animate-on-scroll">
-                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-                        <div class="atividade-card-content">
-                            <h3>Comunicar e colaborar online com o Teams e o Google Chat</h3>
-                            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
-                        </div>
-                    </div>
-                    <div class="atividade-card color-4 animate-on-scroll">
-                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg></div>
-                        <div class="atividade-card-content">
-                            <h3>Criar formulários online com o Microsoft Forms</h3>
-                            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
-                        </div>
-                    </div>
-                    <div class="atividade-card color-5 animate-on-scroll">
-                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
-                        <div class="atividade-card-content">
-                            <h3>Gerir ficheiros na nuvem com o OneDrive</h3>
-                            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
-                        </div>
-                    </div>
-                    <div class="atividade-card color-6 animate-on-scroll">
-                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
-                        <div class="atividade-card-content">
-                            <h3>Criar e editar imagens com o Canva</h3>
-                            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
-                        </div>
-                    </div>
-                    <div class="atividade-card color-7 animate-on-scroll">
-                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"/><path d="M2 12h20"/></svg></div>
-                        <div class="atividade-card-content">
-                            <h3>Apresentar e comunicar com o Genially</h3>
-                            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
-                        </div>
-                    </div>
-                    <div class="atividade-card color-8 animate-on-scroll">
-                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                        <div class="atividade-card-content">
-                            <h3>Automatizar tarefas repetitivas com a IA</h3>
-                            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- IA PARA TODOS -->
-                <h3 style="color: #151515;">IA para Todos</h3>
+                <h3 class="eixo-title" style="border-left: 5px solid #151515; color: #151515;">IA para Todos</h3>
                 <div class="atividades-grid">
                     <div class="atividade-card color-1 animate-on-scroll">
                         <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
@@ -393,13 +303,6 @@
                     <div class="atividade-card color-4 animate-on-scroll">
                         <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h6"/><path d="M14 18l4 4 4-4"/></svg></div>
                         <div class="atividade-card-content">
-                            <h3>Analisar dados com a IA</h3>
-                            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
-                        </div>
-                    </div>
-                    <div class="atividade-card color-5 animate-on-scroll">
-                        <div class="atividade-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><circle cx="12" cy="12" r="3"/></svg></div>
-                        <div class="atividade-card-content">
                             <h3>Utilizar a IA para aprender e inovar</h3>
                             <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=vO5ton2DmU6Hoo_QAkZxco5pqSkCo8BEvIGd3QY9GjpUQTdOQjA1WDBJVFVWWlVSQ0YxUzRBM1VWQi4u" target="_blank" class="btn btn-green">Tenho interesse</a>
                         </div>
@@ -408,6 +311,7 @@
             </div>
         </section>
 
+        <!-- Final Footer Banner -->
         <section class="final-cta animate-on-scroll">
             <div class="container">
                 <h2 class="gold-text">Desejamos-lhe um 2026 digital!</h2>
